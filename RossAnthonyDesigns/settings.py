@@ -10,6 +10,7 @@ if os.path.isfile("env.py"):
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
+ALLAUTH_DIR = os.path.join(BASE_DIR, 'templates', 'allauth')
 
 
 # Quick-start development settings - unsuitable for production
@@ -40,7 +41,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
 
     'cloudinary',
-    'store.apps.StoreConfig',
+    'home.apps.HomeConfig',
 ]
 
 MIDDLEWARE = [
@@ -58,7 +59,7 @@ ROOT_URLCONF = 'RossAnthonyDesigns.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [TEMPLATES_DIR],
+        'DIRS': [TEMPLATES_DIR, ALLAUTH_DIR],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

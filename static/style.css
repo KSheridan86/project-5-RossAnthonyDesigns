@@ -1,0 +1,568 @@
+/* Universal Styles */
+
+* {
+    font-family: 'Oswald', sans-serif;
+}
+
+body {
+    background-color: whitesmoke;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+nav {
+    background-image: linear-gradient(320deg, #ff85436b 0%, #6f8ca2 40%);
+    background-color: #6f8ca2;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.navbar-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+}
+
+.avatar {
+    height: 2rem;
+    width: 2rem;
+    opacity: .8;
+}
+
+.bag {
+    color: black;
+    margin-right: 1rem;
+}
+
+.blur {
+    background: rgba(255, 255, 255, 0.2);
+    color: black;
+    box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.2);
+}
+
+.pic-shadow {
+    box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.2);
+}
+
+.btn {
+    height: 3rem;
+    width: 5rem;
+}
+
+
+
+.btn-header {
+    height: 3rem;
+    width: 5rem;
+}
+
+.cart-btn {
+    height: 5rem;
+    width: 5rem;
+}
+
+.sign-in-btn {
+    height: 3rem;
+    width: 5rem;
+}
+
+.cart {
+    height: 3.5rem;
+    width: 6rem;
+}
+
+.form-control {
+    display: inline;
+    border: 1px solid black
+}
+
+.newsletter {
+    width: 8rem;
+    height: 3rem;
+}
+
+.social {
+    font-size: 2rem;
+}
+
+.error-pic {
+    height: 20vh;
+}
+
+.pic {
+    opacity: .85;
+    border-radius: 50%;
+}
+
+.footer-borders {
+    border-bottom: 1px solid rgb(212, 212, 212);
+}
+
+.footer-borders-about {
+    border-bottom: 1px solid rgb(212, 212, 212);
+}
+
+.copyright {
+    color: black;
+}
+
+/* 
+  .back-to-top {
+    text-align: center;
+    height: .1rem;
+    color: black;
+    text-decoration: none;
+    position: sticky;
+    z-index: 5000;
+    float: right;
+  } */
+
+
+/* Home Page */
+
+.featured-image {
+    height: 70%;
+    width: 100%;
+    border-radius: 2.5%;
+    box-shadow: 5px 5px 10px 1px;
+    object-fit: cover;
+}
+
+
+/* Shop Page */
+
+.featured-image-shop {
+    border-radius: 2.5%;
+    box-shadow: 5px 5px 10px 1px;
+    object-fit: cover;
+}
+
+
+/* Single Item Page */
+
+.featured-image-item {
+    height: 100%;
+    width: 100%;
+    border-radius: 2.5%;
+    box-shadow: 5px 5px 10px 1px;
+    object-fit: cover;
+}
+
+
+/* Artist Page */
+
+.artist-image {
+    width: 100%;
+}
+
+.artist-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    ;
+}
+
+.underlap {
+    z-index: -1;
+}
+
+.overlap {
+    background-color: whitesmoke;
+}
+
+.contact-me {
+    background-color: #6f8ca2;
+    height: 3.5rem;
+}
+
+
+/* 404 page */
+
+.error-card {
+    height: 40vh;
+    width: 75vw;
+}
+
+.bg404 {
+    background-color: #6f8ca2;
+}
+
+
+/* Register page */
+
+.register-box {
+    height: 47vh;
+    width: 80vw;
+}
+
+.delete-box {
+    height: 35vh;
+    width: 100vw;
+}
+
+
+/* Cart page */
+
+.cart-img {
+    height: 4rem;
+    margin-right: 1rem;
+    border-radius: 50%;
+}
+
+.cart-box {
+    height: 47vh;
+    width: 80vw;
+}
+
+.remove-item {
+    height: 2rem;
+    margin-left: 1rem;
+    margin-top: .9rem;
+    float: right;
+}
+
+
+/* Header Image behind carousels and footer*/
+
+.header {
+    background: url("../static/images/cloud-forest.jpg");
+    text-align: center;
+    width: 100%;
+    height: 140vh;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0 0 85% 85% / 20%;
+    z-index: 5;
+}
+
+.header .overlay {
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    text-shadow: 1px 1px 1px #333;
+    background-image: linear-gradient(135deg, #6f8ca2 10%, #fd5e086b 100%);
+}
+
+.header-artist-carousel {
+    height: 95vh;
+}
+
+.header-footer {
+    background: url("../static/images/cloud-forest.jpg");
+    text-align: center;
+    width: 100%;
+    height: 15vh;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    overflow: hidden;
+    border-radius: 85% 85% 0 0 / 20%;
+    z-index: 5;
+}
+
+.header-footer .overlay {
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    text-shadow: 1px 1px 1px #333;
+    background-image: linear-gradient(135deg, #6f8ca2 10%, #fd5e086b 100%);
+}
+
+
+/* Animations */
+
+.come-in {
+    transform: translateX(-360px);
+    animation: come-in 1s ease forwards;
+    opacity: 0;
+}
+
+@keyframes come-in {
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    position: relative;
+    transform: translateX(-150px);
+    opacity: 0;
+    transition: 1s all ease;
+}
+
+.fade-in.active {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.top-btn {
+    height: 3rem;
+    width: 5rem;
+    display: none;
+    color: black;
+    font-size: .8rem;
+    font-weight: bold;
+    text-decoration: none;
+    padding: .5rem;
+    border-radius: 50%;
+    bottom: 1rem;
+    position: fixed;
+    z-index: 5000;
+    animation: bounce 0.5s;
+    animation-direction: alternate;
+    animation-timing-function: cubic-bezier(.5, 0.05, 1, .5);
+    animation-iteration-count: infinite;
+}
+
+@keyframes bounce {
+    from {
+        transform: translate3d(0, 0, 0);
+    }
+
+    to {
+        transform: translate3d(0, 1rem, 0);
+    }
+}
+
+
+/* media queries */
+
+@media (max-width: 766px) {
+    .nav-item {
+        border-bottom: 1px solid black;
+    }
+}
+
+@media (min-width:768px) and (max-width: 968px) {
+    .cart-box {
+        height: 47vh;
+        width: 60vw;
+    }
+
+    .sign-in-btn {
+        height: 2.9rem;
+        width: 4.5rem;
+        font-size: 1.35rem;
+    }
+
+    .bag {
+        font-size: 1.25rem;
+    }
+
+    .form-control {
+        width: 65%;
+    }
+
+    .footer-borders-about {
+        border-bottom: none;
+    }
+
+    .header {
+        height: 130vh;
+    }
+
+    .blur {
+        width: 50vw;
+    }
+
+    .pic {
+        border-radius: 5%;
+    }
+
+    .come-in-border {
+        box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.2);
+        border-radius: 5%;
+    }
+
+    .header-artist-carousel {
+        height: 100vh;
+    }
+
+    .btn-header {
+        width: 6rem;
+        height: 4rem;
+        margin-top: 1rem;
+    }
+}
+
+@media (min-width: 968px) {
+    .form-control {
+        width: 65%;
+    }
+
+    .cart-box {
+        height: 47vh;
+        width: 60vw;
+    }
+
+    .bag {
+        font-size: 1.5rem;
+    }
+
+    .footer-borders {
+        border: none;
+    }
+
+    .footer-borders-about {
+        border-bottom: none;
+    }
+
+    .footer-borders-4x4 {
+        border-top: 1px solid rgb(212, 212, 212);
+    }
+
+    .header {
+        height: 90vh;
+    }
+
+    .blur {
+        width: 50%;
+    }
+
+    .header-artist-carousel {
+        height: 110vh;
+    }
+
+    .pic {
+        border-radius: 5%;
+    }
+
+    .come-in-border {
+        box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.2);
+        border-radius: 5%;
+    }
+
+    .btn-header {
+        width: 6rem;
+        height: 4rem;
+        margin-top: 1rem;
+    }
+}
+
+
+/* temporary fix until media queries are finalized */
+@media (min-width: 1240px) {
+    .cart-box {
+        height: 65vh;
+        width: 50vw;
+    }
+
+    .form-control {
+        width: 55%;
+    }
+
+    .cart-img {
+        height: 6rem;
+        margin-right: 3rem;
+        margin-left: 2rem;
+        margin-top: 1rem;
+    }
+
+    .remove-item {
+        height: 3rem;
+    }
+
+    .cart-item-text {
+        font-size: 1.75rem;
+    }
+
+    .nav-item {
+        font-size: 2.5rem;
+    }
+
+    .footer-borders-4x4 {
+        border-top: none;
+    }
+
+    .header {
+        height: 120vh;
+    }
+
+    .header-artist-carousel {
+        height: 120vh;
+    }
+
+    .btn-header {
+        width: 8rem;
+        height: 6rem;
+        margin-top: 2rem;
+        font-size: 1.5rem;
+    }
+
+    .artist-blurb {
+        font-size: 1.25rem;
+    }
+}
+
+
+/* Code sourced from free resources */
+/* Metal Style buttons */
+
+.metal {
+    text-align: center;
+    color: hsla(0, 0%, 10%, 1);
+    text-shadow: hsla(0, 0%, 40%, .5) 0 -1px 0, hsla(0, 0%, 100%, .6) 0 2px 1px;
+    background-color: hsl(0, 0%, 90%);
+    box-shadow: inset hsla(0, 0%, 15%, 1) 0 0px 0px 3px,
+        /* border */
+        inset hsla(0, 0%, 15%, .8) 0 -1px 5px 4px,
+        /* soft SD */
+        inset hsla(0, 0%, 0%, .25) 0 -1px 0px 7px,
+        /* bottom SD */
+        inset hsla(0, 0%, 100%, .7) 0 2px 1px 7px,
+        /* top HL */
+
+        hsla(0, 0%, 0%, .15) 0 -1px 6px 1px,
+        /* outer SD */
+        hsla(0, 0%, 90%, .5) 0 5px 9px 2px;
+    /* outer HL */
+
+    transition: color .2s;
+}
+
+.metal-light {
+    text-align: center;
+    color: hsla(0, 0%, 10%, 1);
+    text-shadow: hsla(0, 0%, 40%, .5) 0 -1px 0, hsla(0, 0%, 100%, .6) 0 2px 1px;
+
+
+}
+
+.metal.linear {
+    border-radius: .5em;
+    background-image: -webkit-repeating-linear-gradient(left, hsla(0, 0%, 100%, 0) 0%, hsla(0, 0%, 100%, 0) 6%, hsla(0, 0%, 100%, .1) 7.5%),
+        -webkit-repeating-linear-gradient(left, hsla(0, 0%, 0%, 0) 0%, hsla(0, 0%, 0%, 0) 4%, hsla(0, 0%, 0%, .03) 4.5%),
+        -webkit-repeating-linear-gradient(left, hsla(0, 0%, 100%, 0) 0%, hsla(0, 0%, 100%, 0) 1.2%, hsla(0, 0%, 100%, .15) 2.2%),
+
+        linear-gradient(180deg, hsl(0, 0%, 78%) 0%,
+            hsl(0, 0%, 90%) 47%,
+            hsl(0, 0%, 78%) 53%,
+            hsl(0, 0%, 70%)100%);
+}
+
+.metal:active {
+    color: hsl(210, 100%, 40%);
+    text-shadow: hsla(210, 100%, 20%, .3) 0 -1px 0, hsl(210, 100%, 85%) 0 2px 1px, hsla(200, 100%, 80%, 1) 0 0 5px, hsla(210, 100%, 50%, .6) 0 0 20px;
+    box-shadow:
+        inset hsla(210, 100%, 30%, 1) 0 0px 0px 4px,
+        /* border */
+        inset hsla(210, 100%, 15%, .4) 0 -1px 5px 4px,
+        /* soft SD */
+        inset hsla(210, 100%, 20%, .25) 0 -1px 0px 7px,
+        /* bottom SD */
+        inset hsla(210, 100%, 100%, .7) 0 2px 1px 7px,
+        /* top HL */
+
+        hsla(210, 100%, 75%, .8) 0 0px 3px 2px,
+        /* outer SD */
+        hsla(210, 50%, 40%, .25) 0 -5px 6px 4px,
+        /* outer SD */
+        hsla(210, 80%, 95%, 1) 0 5px 6px 4px;
+    /* outer HL */
+}

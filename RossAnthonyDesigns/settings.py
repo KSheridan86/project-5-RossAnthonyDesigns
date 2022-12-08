@@ -39,9 +39,9 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-
     'cloudinary',
     'home.apps.HomeConfig',
+    'sculptures.apps.SculpturesConfig',
 ]
 
 MIDDLEWARE = [

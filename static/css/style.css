@@ -32,6 +32,12 @@ ul {
     width: 2rem;
     opacity: .8;
 }
+.chimp-avatar {
+    height: 3rem;
+    width: 3rem;
+    margin-left: 8rem;
+    margin-top: -2rem;
+}
 
 .bag {
     color: black;

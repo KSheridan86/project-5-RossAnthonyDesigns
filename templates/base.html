@@ -37,7 +37,7 @@
 
     <title>RossAnthonyDesigns {% block extra_title %}{% endblock extra_title %}</title>
 
-    <link rel="icon" type="image/png" href="../static/images/anvil.png">
+    <link rel="icon" type="image/png" href="/media/anvil.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald&family=Playfair+Display:wght@500&display=swap"
@@ -100,7 +100,7 @@
                         <a class="nav-link" href="{% url 'account_logout' %}">Log Out</a>
                     </li>
                     {% else %}
-                    <li class="h4 mb-0 d-md-none">
+                    <li class="h4 mb-0 d-md-none me-2 me-lg-5">
                         <a class="nav-link" href="{% url 'account_login' %}">Log In</a>
                     </li>
                     {% endif %}
@@ -328,8 +328,10 @@
 
         <div class="header-footer">
             <div class="overlay">
+                
                 <div class="text-start p-4 copyright">
-                    Designed & Built by ChimpTech.ie <br>© 2022 ChimpTech
+                    Designed & Built by ChimpTech.ie <br>© 2022 ChimpTech <br>
+                    <!-- <img src="/media/chimp-tech.png" class="chimp-avatar"> -->
                 </div>
                 <!-- {% if request.user.is_superuser %}
                 <div class="">

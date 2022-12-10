@@ -1,0 +1,186 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- Main content -->
+<main>
+
+    <!-- Artist carousel -->
+    <div class="header header-artist-carousel d-none d-md-block">
+        <div class="overlay">
+            <div class="text-center blur mx-auto mt-lg-4 rounded">
+                <h1 class="p-3 metal-light">The Man Behind the Art</h1>
+            </div>
+
+            <div class="container-fluid g-0 mt-2 mt-lg-4">
+                <div class="row justify-content-center">
+                    <div id="carouselExampleDark" class="col-12 col-md-8 col-lg-5 g-0 carousel carousel-dark slide"
+                        data-bs-ride="carousel">
+                        <div class="carousel-inner come-in-border">
+                            <div class="carousel-item active" data-bs-interval="10000">
+                                <img src="/media/artist.jpg" class="pic shadow-4-strong d-block w-100"
+                                    alt="...">
+                            </div>
+                            <div class="carousel-item" data-bs-interval="2000">
+                                <img src="/media/ross&maia-square.jpg"
+                                    class="pic shadow-4-strong d-block w-100" alt="...">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Mobile layout -->
+    <div class="container-fluid g-0 d-lg-none ">
+        <div class="underlap row text-center sticky-top">
+            <div class="col-12 col-lg-6 d-md-none">
+                <img class="artist-image" src="/media/artist.jpg">
+            </div>
+        </div>
+        <div class="row justify-content-md-end">
+            <div class="text-center d-md-none contact-me">
+                <h1 class="p-2 metal-light">The Man Behind the Art</h1>
+            </div>
+            <div class="col-lg-6 text-center overlap">
+                <p class="artist-title mt-5">Form & Function</p>
+                <p class="p-4 p-md-5">
+                    Continually evolving but always focused on realism, I transform sheets of metal into vibrant
+                    manifestations of the human, animal and natural form.
+                    The process of manipulating steel is not planned but rather instinctive;
+                    the figure springs forth from the imagination, the textures, shapes and colorations coming
+                    together as I hammer, grind and weld each component.
+                    I follow no guide or single school of technique, allowing my creativity and multiple
+                    metalworking disciplines to come together as needed.
+                    Fluid movement is always present, whether shown in muscle texture,
+                    wind or water currents.
+                    Each piece is inspired by the vivid beauty I witness every day, the completion is a testament
+                    to the rich material I draw on.
+                    Through the study of form and function, the practice of exploring the elements of the
+                    raw materials I work with, and a desire to always elevate the craftsmanship of my art, each
+                    sculpture grows and moves in its own way.
+                    <br>
+                    <br>
+                    Ross currently resides in the rolling countryside of Westmeath Ireland with his fiancé,
+                    daughter,
+                    dog, cats and various wildlife that wander by.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Desktop layout -->
+    <div class="container-fluid g-0 d-none d-lg-block">
+        <div class="row">
+            <div class="col-12 col-lg-6 col-xl-5 mx-auto text-center mt-4">
+                <div class="text-center p-5">
+                    <p class="artist-title border-bottom border-2">Form & Function</p>
+                    <p class="artist-blurb">
+                        Continually evolving but always focused on realism, I transform sheets of metal into vibrant
+                        manifestations of the human, animal and natural form.
+                        The process of manipulating steel is not planned but rather instinctive;
+                        the figure springs forth from the imagination, the textures, shapes and colorations coming
+                        together as I hammer, grind and weld each component.
+                        I follow no guide or single school of technique, allowing my creativity and multiple
+                        metalworking disciplines to come together as needed.
+                        Fluid movement is always present, whether shown in muscle texture,
+                        wind or water currents.
+                        Each piece is inspired by the vivid beauty I witness every day, the completion is a
+                        testament
+                        to the rich material I draw on.
+                        Through the study of form and function, the practice of exploring the elements of the
+                        raw materials I work with, and a desire to always elevate the craftsmanship of my art, each
+                        sculpture grows and moves in its own way.
+                        <br>
+                        <br>
+                        Ross currently resides in the rolling countryside of Westmeath Ireland with his fiancé,
+                        daughter,
+                        dog, cats and various wildlife that wander by.
+                        <br>
+                        <br>
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="col-lg-6 text-center p-4 mt-5">
+                <form>
+                    <p class="artist-title border-bottom border-2">Want to work together?</p>
+                    <p class="artist-blurb">Got an idea for a piece you would like to commission?<br>Want a stall
+                        set up
+                        at your event?<br>Or
+                        maybe
+                        you just want to say hello!<br>Whatever it is I would love to hear from you.</p>
+                    <div class="form-group">
+                        <label for="name"></label>
+                        <input type="text" class="form-control" id="name" aria-describedby="nameHelp"
+                            placeholder="Enter your name">
+                    </div>
+
+                    <div class="form-group mt-3">
+                        <label for="exampleInputEmail1"></label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                            placeholder="Enter your email">
+                    </div>
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                        else.
+                    </small>
+
+                    <div class="form-group mt-3">
+                        <label for="exampleFormControlTextarea1"></label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"
+                            placeholder="Enter your message"></textarea>
+                    </div>
+                    <button type="submit" class="btn metal linear mt-3">Send</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact form -->
+    <h1 class="p-2 text-center metal-light d-lg-none contact-me">Contact Me</h1>
+    <div class="contact-form text-center p-4 mt-0 d-lg-none">
+        <form>
+            <p>Got an idea for a piece you would like to commission?<br>Want a stall set up at your event?<br>Or
+                maybe
+                you just want to say hello!<br>Whatever it is I would love to hear from you.</p>
+            <div class="form-group">
+                <label for="name"></label>
+                <input type="text" class="form-control" id="name" aria-describedby="nameHelp"
+                    placeholder="Enter your name">
+            </div>
+
+            <div class="form-group mt-3">
+                <label for="exampleInputEmail1"></label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                    placeholder="Enter your email">
+            </div>
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                else.
+            </small>
+
+            <div class="form-group mt-3">
+                <label for="exampleFormControlTextarea1"></label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"
+                    placeholder="Enter your message"></textarea>
+            </div>
+            <button type="submit" class="btn metal linear mt-3">Send</button>
+        </form>
+    </div>
+
+</main>
+{% endblock content %}

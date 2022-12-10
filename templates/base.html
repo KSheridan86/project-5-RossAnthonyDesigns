@@ -89,7 +89,7 @@
                         <a class="nav-link {% if page == 'shop' %} active {% endif %}" href="{% url 'shop' %}">Shop</a>
                     </li>
                     <li class="nav-item h4 me-2 me-lg-5" id="active-link">
-                        <a class="nav-link" href="./artist.html">Artist</a>
+                        <a class="nav-link {% if page == 'artist' %} active {% endif %}" href="{% url 'artist' %}">Artist</a>
                     </li>
                     <li class="nav-item h4 me-2 me-lg-5">
                         <a class="nav-link" href="#footer">Contact</a>
@@ -107,11 +107,11 @@
                 </ul>
                 {% if request.user.is_authenticated %}
                 <li class="navbar-nav h4 mx-4 d-none d-md-flex">
-                    <a class="metal linear sign-in-btn p-2" href="./register-login.html">Log out</a>
+                    <a class="metal linear sign-in-btn p-2" href="{% url 'account_logout' %}">Log out</a>
                 </li>
                 {% else %}
                 <li class="navbar-nav h4 mx-4 d-none d-md-flex">
-                    <a class="metal linear sign-in-btn p-2" href="./register-login.html">Log In</a>
+                    <a class="metal linear sign-in-btn p-2" href="{% url 'account_login' %}">Log In</a>
                 </li>
                 {% endif %}
             </div>

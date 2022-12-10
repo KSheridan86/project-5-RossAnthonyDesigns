@@ -10,3 +10,11 @@ def index(request):
         'page': page
     }
     return render(request, 'home/index.html', context)
+
+
+def artist(request):
+    page = 'artist'
+    context = {
+        'page': page,
+    }
+    return render(request, 'home/artist.html', context)

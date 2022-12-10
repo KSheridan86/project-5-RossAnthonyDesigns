@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<main>
+
+    <!-- Main content -->
+    <div class="container text-center mt-2 come-in">
+        <div class="row justify-content-center  ">
+            {% for piece in sculptures %}
+            <div class="col-10 col-md-6 col-lg-3 p-2 mt-5 border-bottom border-2">
+                <img class="col-12 col-md-10 featured-image-shop" src="{{piece.image.url}}">
+                <h3 class="mt-3">{{piece.title}}</h3>
+                <p>{{piece.description}}</p>
+                <h4>€{{piece.price|floatformat:0}}</h4>
+                <button type="button" class="metal linear cart mb-5">Add to
+                    Cart</button>
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+
+</main>
+
+{% endblock content %}

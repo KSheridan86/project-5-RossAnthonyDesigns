@@ -25,15 +25,7 @@ function reveal() {
     }
 }
 
-// To check the scroll position on page load
 reveal();
-
-
-
-
-
-
-
 
 window.addEventListener("scroll", reveal);
 window.addEventListener("scroll", backToTop);

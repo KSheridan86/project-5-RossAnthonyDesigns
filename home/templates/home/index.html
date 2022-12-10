@@ -83,17 +83,20 @@
 
     <div class="container text-center mt-4">
         <div class="row justify-content-center">
+
+            {% for piece in sculptures %}
             <div class="col-12 col-md-6 col-lg-4 col-xl-4 p-4 mb-5 fade-in">
                 <a href="./item.html" class="noHover">
-                    <img class="featured-image" src="/media/owl2.jpg">
+                    <img class="featured-image" src="{{piece.image.url}}">
                 </a>
-                <h2 class="mt-3 metal-light">Barn owl</h2>
-                <p>Life sized barn owl<br>With layered steel feathers</p>
-                <h4>€1800</h4>
+                <h2 class="mt-3 metal-light">{{piece.title}}</h2>
+                <p>{{piece.description}}</p>
+                <h4>€{{piece.price|floatformat:0}}</h4>
                 <button class="btn metal linear">Info</button>
                 <div class="border-bottom border-2 mt-4"></div>
             </div>
-            <div class="col-12 col-md-6 col-lg-4 col-xl-4 p-4 mb-5 fade-in">
+            {% endfor %}
+            <!-- <div class="col-12 col-md-6 col-lg-4 col-xl-4 p-4 mb-5 fade-in">
                 <img class="featured-image" src="/media/Butterfly.jpg">
                 <h2 class="mt-3 metal-light">Butterfly</h2>
                 <p>Built to withstand the elements<br>Perfect for the garden</p>
@@ -108,7 +111,7 @@
                 <h4>€65</h4>
                 <button class="btn metal linear">Info</button>
                 <div class="border-bottom border-2 mt-4"></div>
-            </div>
+            </div> -->
         </div>
     </div>
 {% endblock content %}

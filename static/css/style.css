@@ -588,3 +588,10 @@ ul {
 .noHover{
     pointer-events: none;
 }
+
+
+/* fix this, it's highlighting the nav links, not wanted. */
+a:hover {
+    color: #fd5e086b !important;
+    text-decoration: none;
+}

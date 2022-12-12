@@ -81,7 +81,7 @@
 
     <!-- Main content -->
 
-    <div class="container text-center mt-4">
+    <div class="container text-center mt-4 mb-5">
         <div class="row justify-content-center">
 
             {% for piece in sculptures %}
@@ -89,7 +89,7 @@
                 <a href="{% url 'single_item' piece.id %}">
                     <img class="featured-image" src="{{piece.image.url}}">
                 </a>
-                <h2 class="mt-3 metal-light">{{piece.title}}</h2>
+                <h2 class="mt-3 metal-light" style="height: 3rem;">{{piece.title}}</h2>
                 <p>{{piece.description}}</p>
                 <h4>€{{piece.price|floatformat:0}}</h4>
                 <button class="btn metal linear">Info</button>

@@ -61,7 +61,7 @@
                     </div>
                     <p>
                         {% if grand_total %}
-                        €{{ grand_total|floatformat:2 }}
+                        €{{ grand_total|floatformat:0 }}
                         {% else %}
                         €0.00
                         {% endif %}
@@ -123,7 +123,7 @@
                     </div>
                     <p>
                         {% if grand_total %}
-                        €{{ grand_total|floatformat:2 }}
+                        €{{ grand_total|floatformat:0 }}
                         {% else %}
                         €0.00
                         {% endif %}

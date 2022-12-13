@@ -21,3 +21,8 @@ def add_to_cart(request, item_id):
 
     request.session['cart'] = cart
     return redirect(redirect_url)
+
+
+def delete_cart(request):
+    request.session['cart'] = {}
+    return redirect('view_cart')

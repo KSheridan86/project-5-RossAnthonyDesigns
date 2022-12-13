@@ -8,47 +8,51 @@
 
     <!-- Cart -->
     <h1 class="text-center mt-3 text-decoration-underline">Shopping Cart</h1>
+    <a href="{% url 'shop' %}" class="btn rounded-0" style="margin-top: -5rem;">
+        <span class="icon">
+            <i class="fas fa-chevron-left"></i>
+        </span>
+        <span class="text-uppercase">Keep Shopping</span>
+    </a>
 
     {% if cart_items %}
     
-    <div class="d-flex justify-content-center mt-4">
-        {% for item in cart_items %}
+    <div class="d-flex justify-content-center mt-2">
+        
         <div class="cart-box p-3 mb-md-5">
             <ul class="list-group">
+                {% for item in cart_items %}
                 <li class="list-group-item">
                     <div class="mt-2">
-                        <a href="./item.html"><img class="cart-img" src="./assets/images/Butterfly.jpg"></a>
-                        <span class="cart-item-text">{{item.price}}</span>
-                        <span class="cart-item-text"> - Butterfly</span>
-                        <span><a href="#"><img class="remove-item" src="./assets/images/cross.png"></a></span>
-
+                        <a href="./item.html"><img class="cart-img" src="{{ item.product.image.url }}"></a>
+                        <span class="cart-item-text">€{{item.product.price|floatformat:0}}</span>
+                        <span class="cart-item-text"> - {{item.product.title}}</span>
+                        <span><a href="#"><img class="remove-item" src="/media/cross.png"></a></span>
                     </div>
                     <div class="text-end">
-                        <span class="cart-item-text">Quantity - 1</span>
+                        <span class="cart-item-text">Quantity - {{ item.quantity }}</span>
                     </div>
                 </li>
-                <li class="list-group-item">
-                    <div>
-                        <a href="./item.html"><img class="cart-img" src="./assets/images/rose.jpg"></a>
-                        <span class="cart-item-text">€65</span>
-                        <span class="cart-item-text"> - Rose</span>
-                        <span><a href="#"><img class="remove-item" src="./assets/images/cross.png"></a></span>
-                    </div>
-                    <div class="text-end">
-                        <span class="cart-item-text">Quantity - 2</span>
-                    </div>
-                </li>
+                {% endfor %}
             </ul>
             <!-- Add running total + Shipping + Complete purchase button -->
             <div class="text-end mt-2">
-                <span class="cart-item-text">Delivery cost - €15</span>
+                <span class="cart-item-text">Total - €{{ total|floatformat:0 }}</span>
             </div>
             <div class="text-end mt-2">
-                <span class="cart-item-text">Total - €395</span>
+                <span class="cart-item-text">Delivery cost - €{{ delivery|floatformat:0 }}</span>
+            </div>
+            <div class="text-end mt-2">
+                <span class="cart-item-text">Grand Total - €{{ grand_total|floatformat:0 }}</span>
+            </div>
+            <div class="text-center mb-5 mt-4">
+                <!-- fix dodgy button -->
+                <a class="btn metal linear p-2 cart-btn" href="">Pay Now</a>
             </div>
         </div>
-        {% endfor %}
     </div>
+   
+    
     {% else %}
     <h3 class="text-center mt-3">Your Cart is Empty</h3>
     <div class="text-center mb-5">

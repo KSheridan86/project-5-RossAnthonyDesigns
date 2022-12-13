@@ -4,15 +4,12 @@
 {% block content %}
 
 <main>
-
     <div class="container text-center p-4 mt-3">
-
         <div class="row justify-content-center justify-content-xl-evenly come-in">
             <div class="col-12 col-md-8 col-lg-6 col-xl-4 come-in">
                 <a href="{{ piece.image.url }}" target="_blank">
                     <img class="featured-image-item" src="{{piece.image.url}}">
                 </a>
-                
             </div>
 
             <div class="col-12 col-lg-6 col-xl-4">
@@ -29,10 +26,24 @@
                 <span class="fs-4">€{{piece.price|floatformat:0}}</span>
                 <span><small><small class="text-danger">Excl del...</small></small></span>
                 <br>
-                <button type="button" class="cart-btn metal linear mb-2 mt-2">Add to Cart</button>
+                <form action="{% url 'add_to_cart' piece.id %}" method="POST">
+                    {% csrf_token %}
+                    <p class="mt-3"><strong>Quantity:</strong></p>
+                    <input class="form-control qty_input w-25" type="number" name="quantity" value="1" min="1" max="99"
+                        data-item_id="{{ piece.id }}" id="id_qty_{{ piece.id }}">
+                    <br>
+                    <input type="submit" class="cart-btn metal linear mb-2 mt-2" value="Add to Cart">
+                    <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                </form>
             </div>
         </div>
     </div>
+    <a href="{% url 'shop' %}" class="btn btn-outline-black rounded-0">
+        <span class="icon">
+            <i class="fas fa-chevron-left"></i>
+        </span>
+        <span class="text-uppercase">Keep Shopping</span>
+    </a>
 
 </main>
 

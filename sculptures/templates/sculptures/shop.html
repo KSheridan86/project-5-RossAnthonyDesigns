@@ -8,14 +8,14 @@
     <!-- Main content -->
 
     <div class="dropdown">
-        <button class="sign-in-btn metal linear dropdown-toggle" type="button" id="dropdownMenuButton1"
+        <button class="btn border border-dark border-2 rounded dropdown-toggle mt-2" type="button" id="dropdownMenuButton1"
             data-bs-toggle="dropdown" aria-expanded="false">
             Order:
         </button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
             <li>
-                <a href="{% url 'shop' %}?sort=price&direction=asc" class="dropdown-item">Price Asc</a>
-                <a href="{% url 'shop' %}?sort=price&direction=desc" class="dropdown-item">Price Desc</a>
+                <a href="{% url 'shop' %}?sort=price&direction=asc" class="dropdown-item text text-decoration-underline ">Price Asc &#8593;</a>
+                <a href="{% url 'shop' %}?sort=price&direction=desc" class="dropdown-item">Price Desc &#8595;</a>
             </li>
 
         </ul>

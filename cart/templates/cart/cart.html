@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+<main>
+
+    <!-- Cart -->
+    <h1 class="text-center mt-3 text-decoration-underline">Shopping Cart</h1>
+
+    {% if cart_items %}
+    <div class="d-flex justify-content-center mt-4">
+        <div class="cart-box p-3 mb-md-5">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <div class="mt-2">
+                        <a href="./item.html"><img class="cart-img" src="./assets/images/Butterfly.jpg"></a>
+                        <span class="cart-item-text">€250</span>
+                        <span class="cart-item-text"> - Butterfly</span>
+                        <span><a href="#"><img class="remove-item" src="./assets/images/cross.png"></a></span>
+
+                    </div>
+                    <div class="text-end">
+                        <span class="cart-item-text">Quantity - 1</span>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <div>
+                        <a href="./item.html"><img class="cart-img" src="./assets/images/rose.jpg"></a>
+                        <span class="cart-item-text">€65</span>
+                        <span class="cart-item-text"> - Rose</span>
+                        <span><a href="#"><img class="remove-item" src="./assets/images/cross.png"></a></span>
+                    </div>
+                    <div class="text-end">
+                        <span class="cart-item-text">Quantity - 2</span>
+                    </div>
+                </li>
+            </ul>
+            <!-- Add running total + Shipping + Complete purchase button -->
+            <div class="text-end mt-2">
+                <span class="cart-item-text">Delivery cost - €15</span>
+            </div>
+            <div class="text-end mt-2">
+                <span class="cart-item-text">Total - €395</span>
+            </div>
+        </div>
+    </div>
+    {% else %}
+    <h3 class="text-center mt-3">Your Cart is Empty</h3>
+    <div class="text-center mb-5">
+        <a class="btn mt-4 mb-4 metal linear empty-cart" href="{% url 'shop' %}">Continue Shopping?</a>
+    </div>
+  
+    
+    {% endif %}
+
+</main>
+
+{% endblock content %}

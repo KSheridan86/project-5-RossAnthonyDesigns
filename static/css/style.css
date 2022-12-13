@@ -91,6 +91,11 @@ ul {
     height: 3rem;
 }
 
+.empty-cart {
+    width: 8rem;
+    height: 4rem;
+}
+
 .social {
     font-size: 2rem;
 }

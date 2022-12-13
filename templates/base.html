@@ -54,7 +54,7 @@
                 <img class="avatar" src="/media/user-default.png">
             </a>
             <a class="navbar-brand p-2" href="{% url 'home' %}">RossAnthonyDesigns</a>
-            <a href="./cart.html" class="mt-3 d-md-none">
+            <a href="{% url 'view_cart' %}" class="mt-3 d-md-none">
                 <div class="text-center">
                     <div>
                         <i class="fa-solid fa-cart-shopping bag mx-auto"></i>
@@ -116,7 +116,7 @@
                 {% endif %}
             </div>
 
-            <a href="./cart.html" class="mt-3 d-none d-md-block">
+            <a href="{% url 'view_cart' %}" class="mt-3 d-none d-md-block">
                 <div class="text-center">
                     <div>
                         <i class="fa-solid fa-cart-shopping bag mx-auto"></i>

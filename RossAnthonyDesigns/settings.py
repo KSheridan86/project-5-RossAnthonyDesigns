@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'cloudinary',
     'home.apps.HomeConfig',
     'sculptures.apps.SculpturesConfig',
+    'cart.apps.CartConfig',
 ]
 
 MIDDLEWARE = [

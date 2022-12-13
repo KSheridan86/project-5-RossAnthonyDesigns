@@ -4,6 +4,12 @@
 {% block content %}
 
 <main>
+    <a href="{% url 'shop' %}" class="btn rounded-0 d-none d-md-block">
+        <span class="icon">
+            <i class="fas fa-chevron-left"></i>
+        </span>
+        <span class="text-uppercase">Keep Shopping</span>
+    </a>
     <div class="container text-center p-4 mt-3">
         <div class="row justify-content-center justify-content-xl-evenly come-in">
             <div class="col-12 col-md-8 col-lg-6 col-xl-4 come-in">
@@ -29,16 +35,38 @@
                 <form action="{% url 'add_to_cart' piece.id %}" method="POST">
                     {% csrf_token %}
                     <p class="mt-3"><strong>Quantity:</strong></p>
+
+                    <!-- walkthrough code -->
+
+                    <button class="decrement-qty btn rounded-0" data-item_id="{{ piece.id }}"
+                        id="decrement-qty_{{ piece.id }}">
+                            <i class="fas fa-minus"></i>
+                    </button>
+
                     <input class="form-control qty_input w-25" type="number" name="quantity" value="1" min="1" max="99"
                         data-item_id="{{ piece.id }}" id="id_qty_{{ piece.id }}">
+
+                    <button class="increment-qty btn rounded-0" data-item_id="{{ piece.id }}"
+                        id="increment-qty_{{ piece.id }}">
+                            <i class="fas fa-plus"></i>
+                    </button>
+
                     <br>
                     <input type="submit" class="cart-btn metal linear mb-2 mt-2" value="Add to Cart">
                     <input type="hidden" name="redirect_url" value="{{ request.path }}">
+
+
+
+
+
+
+
+
                 </form>
             </div>
         </div>
     </div>
-    <a href="{% url 'shop' %}" class="btn rounded-0">
+    <a href="{% url 'shop' %}" class="btn rounded-0 d-md-none">
         <span class="icon">
             <i class="fas fa-chevron-left"></i>
         </span>

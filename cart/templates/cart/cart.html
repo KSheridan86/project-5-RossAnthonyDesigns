@@ -17,9 +17,9 @@
 
     {% if cart_items %}
     
-    <div class="d-flex justify-content-center mt-2">
+    <div class="d-flex justify-content-center mt-2 mb-5">
         
-        <div class="cart-box p-3 mb-md-5">
+        <div class="cart-box p-3 mb-md-5 mb-5">
             <ul class="list-group">
                 {% for item in cart_items %}
                 <li class="list-group-item">
@@ -47,7 +47,7 @@
             </div>
             <div class="text-center mb-5 mt-4">
                 <!-- fix dodgy button -->
-                <a class="btn metal linear p-2 cart-btn" href="">Pay Now</a>
+                <a class="btn pay-now metal linear" href="">Pay Now</a>
             </div>
         </div>
     </div>

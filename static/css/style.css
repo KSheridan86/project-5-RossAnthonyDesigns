@@ -58,10 +58,9 @@ ul {
     height: 3rem;
     width: 5rem;
 }
-
-.btn2 {
-    height: 3rem;
+.info-btn {
     width: 5rem;
+    height: 2.6rem;
 }
 
 .btn-header {
@@ -92,6 +91,11 @@ ul {
 .newsletter {
     width: 8rem;
     height: 3rem;
+}
+
+.pay-now {
+    width: 6rem;
+    height: 2.6rem;
 }
 
 .empty-cart {

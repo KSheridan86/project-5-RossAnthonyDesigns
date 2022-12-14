@@ -159,6 +159,16 @@ ul {
     object-fit: cover;
 }
 
+.sort-btn {
+    margin-bottom: -1rem;
+    z-index: 10;
+}
+
+.product-description {
+    width: 15rem;
+    height: 5rem;
+}
+
 
 /* Single Item Page */
 
@@ -227,12 +237,13 @@ ul {
 .cart-img {
     height: 4rem;
     margin-right: 1rem;
-    border-radius: 50%;
+    border-radius: 5%;
 }
 
 .cart-box {
-    height: 47vh;
-    width: 80vw;
+    height: 100%;
+    width: 90vw;
+    object-fit: cover;
 }
 
 .remove-item {
@@ -260,10 +271,14 @@ ul {
 }
 
 .list-group-item {
-    height: 20vh;
+    height: 25vh;
 }
 
 .squeeze-up {
+    margin-top: -4rem;
+}
+
+.cost {
     margin-top: -4rem;
 }
 
@@ -394,7 +409,6 @@ ul {
 
 @media (min-width:768px) and (max-width: 968px) {
     .cart-box {
-        height: 47vh;
         width: 60vw;
     }
 
@@ -442,6 +456,10 @@ ul {
         height: 4rem;
         margin-top: 1rem;
     }
+    .remove-item {
+        margin-left: 14.6rem;
+        margin-top: -4rem;
+    }
 }
 
 @media (min-width: 968px) {
@@ -449,9 +467,9 @@ ul {
         width: 65%;
     }
 
-    .cart-box {
-        height: 47vh;
-        width: 60vw;
+    .remove-item {
+        margin-left: 14.6rem;
+        margin-top: -0rem;
     }
 
     .bag {
@@ -496,13 +514,15 @@ ul {
         height: 4rem;
         margin-top: 1rem;
     }
+    .cart-box {
+        width: 60%;
+    }
 }
 
 
 /* temporary fix until media queries are finalized */
 @media (min-width: 1240px) {
     .cart-box {
-        height: 65vh;
         width: 50vw;
     }
 
@@ -550,6 +570,12 @@ ul {
 
     .artist-blurb {
         font-size: 1.25rem;
+    }
+    .list-group-item {
+        height: 35vh;
+    }
+    .cart-box {
+        width: 60%;
     }
 }
 

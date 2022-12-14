@@ -19,7 +19,7 @@
 
     <!-- fix inline styles -->
 
-    <div class="d-flex justify-content-center mt-2 mb-5" style="height: 100vh;">
+    <div class="d-flex justify-content-center mt-2 mb-5" >
 
         <div class="cart-box p-3 mb-md-5 mb-5">
             <ul class="list-group">
@@ -27,8 +27,7 @@
                 <li class="list-group-item">
                     <div class="mt-2">
                         <a href="./item.html"><img class="cart-img" src="{{ item.product.image.url }}"></a>
-                        <span class="cart-item-text">€{{item.product.price|floatformat:0}}</span>
-                        <span class="cart-item-text"> - {{item.product.title}}</span>
+                        <span class="cart-item-text">{{item.product.title}}</span>
 
                         <form class="remove-item" action="{% url 'delete_item_from_cart' item.product.id %}"
                             method="POST">
@@ -40,12 +39,13 @@
                             <input type="hidden" name="redirect_url" value="{{ request.path }}">
                         </form>
                     </div>
+                    
 
 
-                    <div class="container">
-                        <div class="row justify-content-end">
-                            <p class="mt-3">Quantity - {{ item.quantity }}</p>
-                            <span class="col-2 squeeze-up">
+                    <div class="container g-0">
+                        <div class="row justify-content-start">
+                            <p class="mt-3 mb-5">Quantity - {{ item.quantity }}</p>
+                            <span class="col-2 col-md-1 squeeze-up">
                                 <form action="{% url 'subtract_from_cart' item.product.id %}" method="POST">
                                     {% csrf_token %}
                                     <input type="hidden" name="quantity" value="{{item.quantity}}">
@@ -56,7 +56,7 @@
                                     <input type="hidden" name="redirect_url" value="{{ request.path }}">
                                 </form>
                             </span>
-                            <span class="col-2 squeeze-up">
+                            <span class="col-2 col-md-1 squeeze-up">
                                 <form action="{% url 'add_to_cart' item.product.id %}" method="POST">
                                     {% csrf_token %}
                                     <input type="hidden" name="quantity" value="1">
@@ -67,12 +67,23 @@
                                     <input type="hidden" name="redirect_url" value="{{ request.path }}">
                                 </form>
                             </span>
+                            
                         </div>
+                        
+                    </div>
+                    <div class="text-end cost">
+                        <span class="cart-item-text">Cost - €{{item.product.price|floatformat:0}}</span>
                     </div>
                 </li>
                 {% endfor %}
             </ul>
             <!-- Add running total + Shipping + Complete purchase button -->
+            <a href="{% url 'delete_cart' %}" class="btn rounded-0" style="float: left;">
+                <span class="icon">
+                    <i class="fa fa-trash-o"></i>
+                </span>
+                <span class="text-uppercase">Clear Cart</span>
+            </a>
             <div class="text-end mt-2">
                 <span class="cart-item-text">Total - €{{ total|floatformat:0 }}</span>
             </div>

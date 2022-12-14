@@ -90,7 +90,7 @@
                     <img class="featured-image" src="{{piece.image.url}}">
                 </a>
                 <h2 class="mt-3 metal-light" style="height: 3rem;">{{piece.title}}</h2>
-                <p>{{piece.description}}</p>
+                <p class="product-description mx-auto">{{piece.description}}</p>
                 <h4>€{{piece.price|floatformat:0}}</h4>
                 <a href="{% url 'single_item' piece.id %}" class="btn info-btn metal linear">Info</a>
                 <div class="border-bottom border-2 mt-4"></div>

@@ -248,8 +248,8 @@ ul {
 
 .remove-item {
     height: 2rem;
-    margin-left: 14.6rem;
-    margin-top: -3.2rem;
+    margin-left: 17.5rem;
+    margin-top: -4rem;
     float: right;
 }
 
@@ -276,10 +276,17 @@ ul {
 
 .squeeze-up {
     margin-top: -4rem;
+    margin-right: -1.5rem;
+}
+.squeeze-in {
+    margin-top: -2.4rem;
+    margin-left: 1rem;
+    margin-right: -2rem;
 }
 
 .cost {
     margin-top: -4rem;
+    margin-left: 1rem;
 }
 
 
@@ -289,7 +296,7 @@ ul {
     background: url("/media/cloud-forest.jpg");
     text-align: center;
     width: 100%;
-    height: 140vh;
+    height: 160vh;
     background-size: cover;
     background-attachment: fixed;
     position: relative;
@@ -457,8 +464,15 @@ ul {
         margin-top: 1rem;
     }
     .remove-item {
-        margin-left: 14.6rem;
-        margin-top: -4rem;
+        margin-right: -2rem;
+        margin-top: -5rem;
+    }
+    .squeeze-up {
+        margin-right: 0.25rem;
+    }
+    .squeeze-in {
+        margin-left: .5rem;
+        margin-right: -1rem;
     }
 }
 
@@ -468,8 +482,8 @@ ul {
     }
 
     .remove-item {
-        margin-left: 14.6rem;
-        margin-top: -0rem;
+        margin-right: -2rem;
+        margin-top: -1rem;
     }
 
     .bag {
@@ -517,6 +531,9 @@ ul {
     .cart-box {
         width: 60%;
     }
+    .list-group-item {
+        height: 20vh;
+    }
 }
 
 
@@ -554,7 +571,7 @@ ul {
     }
 
     .header {
-        height: 120vh;
+        height: 110vh;
     }
 
     .header-artist-carousel {
@@ -571,11 +588,24 @@ ul {
     .artist-blurb {
         font-size: 1.25rem;
     }
+    .cart-box {
+        width: 50%;
+    }
     .list-group-item {
         height: 35vh;
     }
-    .cart-box {
-        width: 60%;
+    /* .featured-image-item {
+        height: 80%;
+        width: 80%;
+    } */
+}
+
+@media (min-width: 1800px) {
+    .list-group-item {
+        height: 15vh;
+    }
+    .lg-screen {
+        height: 60vh;
     }
 }
 

@@ -18,9 +18,9 @@
     {% if cart_items %}
 
     <!-- fix inline styles -->
-    
-    <div class="d-flex justify-content-center mt-2 mb-5" style="height: 60vh;">
-        
+
+    <div class="d-flex justify-content-center mt-2 mb-5" style="height: 100vh;">
+
         <div class="cart-box p-3 mb-md-5 mb-5">
             <ul class="list-group">
                 {% for item in cart_items %}
@@ -29,20 +29,45 @@
                         <a href="./item.html"><img class="cart-img" src="{{ item.product.image.url }}"></a>
                         <span class="cart-item-text">€{{item.product.price|floatformat:0}}</span>
                         <span class="cart-item-text"> - {{item.product.title}}</span>
-                        <span><a href="{% url 'delete_cart' %}"><img class="remove-item" src="/media/cross.png"></a></span>
-                    </div>
-                    <div class="text-end">
-                        <form action="{% url 'add_to_cart' item.product.id %}" method="POST">
+
+                        <form class="remove-item" action="{% url 'delete_item_from_cart' item.product.id %}"
+                            method="POST">
                             {% csrf_token %}
-                            <p class="mt-3">Quantity - {{ item.quantity }}</p>
-
-                            <input class="form-control qty_input w-25" type="number" name="quantity" value="1" min="1" max="99"
-                                data-item_id="{{ piece.id }}" id="id_qty_{{ piece.id }}">
-
-                            <br>
-                            <input type="submit" class="cart-btn metal linear mb-2 mt-2" value="Update Cart">
+                            <button type="submit" class="remove-item-button">
+                                <img class="remove-item-button" src="/media/cross.png" alt="submit" />
+                            </button>
+                            <input type="submit" class="remove-item-button" value="">
                             <input type="hidden" name="redirect_url" value="{{ request.path }}">
                         </form>
+                    </div>
+
+
+                    <div class="container">
+                        <div class="row justify-content-end">
+                            <p class="mt-3">Quantity - {{ item.quantity }}</p>
+                            <span class="col-2 squeeze-up">
+                                <form action="{% url 'subtract_from_cart' item.product.id %}" method="POST">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="quantity" value="{{item.quantity}}">
+                                    <br>
+                                    <button type="submit" class="item-quantity-button">
+                                        <img class="item-quantity-button" src="/media/minus.png" alt="submit" />
+                                    </button>
+                                    <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                                </form>
+                            </span>
+                            <span class="col-2 squeeze-up">
+                                <form action="{% url 'add_to_cart' item.product.id %}" method="POST">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="quantity" value="1">
+                                    <br>
+                                    <button type="submit" class="item-quantity-button">
+                                        <img class="item-quantity-button" src="/media/add.png" alt="submit" />
+                                    </button>
+                                    <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                                </form>
+                            </span>
+                        </div>
                     </div>
                 </li>
                 {% endfor %}
@@ -63,8 +88,8 @@
             </div>
         </div>
     </div>
-   
-    
+
+
     {% else %}
     <h3 class="text-center mt-3">Your Cart is Empty</h3>
     <div class="text-center mb-5">

@@ -36,16 +36,16 @@
                 <form action="{% url 'add_to_cart' piece.id %}" method="POST">
                     {% csrf_token %}
                     <p class="mt-3"><strong>Quantity:</strong></p>
-                    <!-- <button class="decrement-qty btn rounded-0" data-item_id="{{ piece.id }}"
+                    <button class="decrement-qty btn rounded-0" data-item_id="{{ piece.id }}"
                         id="decrement-qty_{{ piece.id }}">
                             <i class="fas fa-minus"></i>
-                    </button> -->
+                    </button>
                     <input class="form-control qty_input w-25" type="number" name="quantity" value="1" min="1" max="99"
                         data-item_id="{{ piece.id }}" id="id_qty_{{ piece.id }}">
-                    <!-- <button class="increment-qty btn rounded-0" data-item_id="{{ piece.id }}"
+                    <button class="increment-qty btn rounded-0" data-item_id="{{ piece.id }}"
                         id="increment-qty_{{ piece.id }}">
                             <i class="fas fa-plus"></i>
-                    </button> -->
+                    </button>
                     <br>
                     <input type="submit" class="cart-btn metal linear mb-2 mt-2" value="Add to Cart">
                     <input type="hidden" name="redirect_url" value="{{ request.path }}">

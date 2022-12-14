@@ -237,9 +237,34 @@ ul {
 
 .remove-item {
     height: 2rem;
-    margin-left: 1rem;
-    margin-top: .9rem;
+    margin-left: 14.6rem;
+    margin-top: -3.2rem;
     float: right;
+}
+
+.remove-item-button {
+    height: 2rem;
+    width: 2rem;
+    border: none;
+    border-radius: 50%;
+    background: url(/media/cross.png) no-repeat;
+}
+
+.item-quantity-button {
+    height: 1.25rem;
+    width: 1.25rem;
+    border: none;
+    border-radius: 50%;
+    background-color: white;
+    /* margin-left: .1rem; */
+}
+
+.list-group-item {
+    height: 20vh;
+}
+
+.squeeze-up {
+    margin-top: -4rem;
 }
 
 

@@ -43,6 +43,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Oswald&family=Playfair+Display:wght@500&display=swap"
         rel="stylesheet">
 </head>
+
 <body>
 
     <!-- Navbar -->
@@ -69,9 +70,9 @@
                 </div>
             </a>
 
-            <button class="navbar-toggler border border-dark border-4 rounded" type="button"
-                data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler border border-dark border-4 rounded" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
@@ -89,7 +90,8 @@
                         <a class="nav-link {% if page == 'shop' %} active {% endif %}" href="{% url 'shop' %}">Shop</a>
                     </li>
                     <li class="nav-item h4 me-2 me-lg-5" id="active-link">
-                        <a class="nav-link {% if page == 'artist' %} active {% endif %}" href="{% url 'artist' %}">Artist</a>
+                        <a class="nav-link {% if page == 'artist' %} active {% endif %}"
+                            href="{% url 'artist' %}">Artist</a>
                     </li>
                     <li class="nav-item h4 me-2 me-lg-5">
                         <a class="nav-link" href="#footer">Contact</a>
@@ -137,11 +139,19 @@
     </nav>
 
     {% if messages %}
-    <div class="messages-container"></div>
+    <div class="d-flex align-items-center justify-content-center" id="msg-box">
+        {% for message in messages %}
+        <div
+            class="messages-container d-flex align-items-center justify-content-center border border-dark border-2 rounded">
+            {{message}} <button class="close-btn position-absolute top-0 end-0">X</button>
+        </div>
+        {% endfor %}
+    </div>
     {% endif %}
 
+
     {% block content %}
-    
+
     {% endblock content %}
 
     <!-- Footer -->
@@ -218,7 +228,7 @@
 
         <div class="header-footer">
             <div class="overlay">
-                
+
                 <div class="text-start p-4 copyright">
                     Designed & Built by ChimpTech.ie <br>© 2022 ChimpTech <br>
                     <!-- <img src="/media/chimp-tech.png" class="chimp-avatar"> -->
@@ -234,8 +244,8 @@
 
         <div class="container-fluid">
             <div class="row justify-content-end">
-                <div class="col-3 col-md-2 col-lg-1"><a href="#"><img class="top-btn"
-                            src="/media/back-to-top.png"></a></div>
+                <div class="col-3 col-md-2 col-lg-1"><a href="#"><img class="top-btn" src="/media/back-to-top.png"></a>
+                </div>
             </div>
         </div>
 

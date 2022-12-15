@@ -8,6 +8,26 @@ body {
     background-color: whitesmoke;
 }
 
+.messages-container {
+    background-color: rgb(111, 140, 162);
+    color: black;
+    box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.2);
+    height: 10vh;
+    width: 80%;
+    position: fixed;
+    margin-top: 5rem;
+    z-index: 50;
+}
+.close-btn {
+    height: 1.5rem;
+    width: 1.5rem;
+    border: none;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0);
+    color: black;
+    text-align: center;
+}
+
 a {
     text-decoration: none;
     color: inherit;
@@ -15,7 +35,7 @@ a {
 
 nav {
     background-image: linear-gradient(320deg, #ff85436b 0%, #6f8ca2 40%);
-    background-color: #6f8ca2;
+    background-color: rgb(111, 140, 162);
 }
 
 ul {
@@ -394,16 +414,6 @@ ul {
         transform: translate3d(0, 1rem, 0);
     }
 }
-
-/* 
-.login input {
-    border:0;
-    background-color: whitesmoke;
-}
-
-.form-control {
-    background-color: whitesmoke;
-} */
 
 
 /* media queries */

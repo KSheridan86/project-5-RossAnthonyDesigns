@@ -1,6 +1,7 @@
 // Code to hide the back to top button until the user scrolls down
 let topBtn = document.querySelector('.top-btn');
 
+
 function backToTop() {
     if (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600) {
         topBtn.style.display = "block";
@@ -23,6 +24,18 @@ function reveal() {
             reveals[i].classList.remove("active");
         }
     }
+}
+
+
+// Code to close the message boxes automatically and allow you to close them manually
+let closealert = document.querySelector('.close-btn');
+let msgBox = document.querySelector('#msg-box');
+if (closealert) {
+    closealert.addEventListener('click', () =>
+        msgBox.classList.add('d-none'));
+    setTimeout(() => {
+        msgBox.classList.add('d-none');
+    }, 2500);
 }
 
 

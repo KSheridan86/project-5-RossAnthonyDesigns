@@ -64,4 +64,3 @@ class OrderLineItem(models.Model):
 
     def __str__(self):
         return self.order.order_number
-

@@ -1,7 +1,5 @@
 // Code to hide the back to top button until the user scrolls down
 let topBtn = document.querySelector('.top-btn');
-
-
 function backToTop() {
     if (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600) {
         topBtn.style.display = "block";

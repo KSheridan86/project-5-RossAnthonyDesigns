@@ -16,42 +16,62 @@
     </a>
     <div class="container">
         <div class="lg-screen row justify-content-center mt-2 mb-5">
-
-            <div class="col-10 cart-box p-3 mb-md-5 mb-5">
+            <div class="col-10 col-lg-6 cart-box p-3 mb-md-5 mb-5">
                 <form class="login mb-2 text-center" method="POST" action="{% url 'checkout' %}" id="payment-form">
-                    <h4>Contact & Delivery</4>
-                        {% csrf_token %}
-                        {% for field in form %}
-                        <div class="form-group come-in mt-3 mb-3">
-                            {{field}}
-                        </div>
-                        {% endfor %}
-                        <h4>Payment Details</4>
-                            <div class="form-group come-in mt-3 mb-3">
-                                <!-- A stripe card element will go here -->
-                                <div id="card-element">Card</div>
+                    <h4>Contact & Delivery</h4>
+                    {% csrf_token %}
 
-                                <!-- Used to display errors -->
-                                <div class="text-danger" id="card-errors" role="alert">Errors</div>
-                            </div>
-                            <!-- Submit section -->
-                            <div class="submit-button">
-                                <a href="{% url 'view_cart' %}" class="btn rounded-0" style="margin-left: -5.25rem;">
-                                    <span class="icon">
-                                        <i class="fas fa-chevron-left"></i>
-                                    </span>
-                                    <span class="text-uppercase">Adjust Cart</span>
-                                </a>
+                    {% for field in form %}
+                    <div class="form-group come-in mt-3 mb-3">
+                        {{field}}
+                    </div>
+                    {% endfor %}
 
-                                <button id="submit-button" class="btn-header mt-3 metal linear" type="submit">Pay Now <i
-                                        class="fas fa-lock"></i></button>
-                                <p class="text-danger mt-5"><i class="fas fa-exclamation-circle"></i><small>Your card will be charged <strong>€{{grand_total|floatformat:2}}</strong></small></p>
-                            </div>
+                    <h4>Payment Details</h4>
+                    <div class="form-group come-in mt-3 mb-3">
+                        <!-- A stripe card element will go here -->
+                        <div class="rounded text-muted" id="card-element">Card</div>
+
+                        <!-- Used to display errors -->
+                        <div class="text-danger" id="card-errors" role="alert">Errors</div>
+                    </div>
+
+                    <!-- Submit section -->
+                    <!-- fix inline styles -->
+                    <div class="submit-button">
+
+                        <a href="{% url 'view_cart' %}" class="btn rounded-0" style="margin-left: -5.25rem;">
+                            <span class="icon">
+                                <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="text-uppercase">Adjust Cart</span>
+                        </a>
+
+                        <button id="submit-button" class="btn-header mt-3 metal linear" type="submit">Pay Now
+                            <i class="fas fa-lock"></i>
+                        </button>
+
+                        <p class="text-danger mt-5">
+                            <i class="fas fa-exclamation-circle"></i>
+                            <small>Your card will be charged
+                                <strong>€{{grand_total|floatformat:2}}</strong>
+                            </small>
+                        </p>
+
+                    </div>
                 </form>
             </div>
         </div>
-
     </div>
 </main>
 
 {% endblock content %}
+
+{% block postload_js %}
+
+{{ block.super }}
+
+{{ stripe_public_key|json_script:'id_stripe_public_key' }}
+{{ client_secret|json_script:'id_client_secret' }}
+<script src="/static/js/stripe_elements.js"></script>
+{% endblock postload_js %}

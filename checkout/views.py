@@ -31,7 +31,6 @@ def checkout(request):
             for item_id, quantity in cart.items():
                 try:
                     product = Sculpture.objects.get(id=item_id)
-
                     order_line_item = OrderLineItem(
                         order=order,
                         product=product,
@@ -45,8 +44,6 @@ def checkout(request):
                     )
                     order.delete()
                     return redirect(reverse('view_cart'))
-            #  probably not needed
-            request.session['save_info'] = 'save_info' in request.POST
             return redirect(
                 reverse('checkout_success', args=[order.order_number]))
         else:
@@ -69,7 +66,6 @@ def checkout(request):
             currency=settings.STRIPE_CURRENCY,
         )
 
-    print(intent)
     order_form = OrderForm()
 
     if not stripe_public_key:
@@ -84,8 +80,6 @@ def checkout(request):
 
 
 def checkout_success(request, order_number):
-    #  probably not needed
-    save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)
     messages.success(request, f'Order successfully processed! \
                                 Your order number is {order_number}. \

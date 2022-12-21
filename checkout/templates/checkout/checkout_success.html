@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+<main>
+        
+    <!-- Order succesful  -->
+    <div class="d-flex justify-content-center">
+        <img class="error-pic mt-5" src="/media/success.png">
+    </div>
+
+    <h1 class="text-center mt-5"><b>Congratulations</b><br><br>Your order was successful<br>We will email you
+        details of your order soon.</h1>
+    <div class="d-flex justify-content-center mt-4">
+
+        <div class="delete-box p-3 text-center ">
+            <a href="{% url 'home' %}"><button type="submit" class="btn-header metal linear mt-2">Home</button></a>
+        </div>
+
+    </div>
+
+</main>
+
+{% endblock %}

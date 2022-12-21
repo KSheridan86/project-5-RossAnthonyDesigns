@@ -44,7 +44,7 @@ class Order(models.Model):
 
 
 class OrderLineItem(models.Model):
-    Order = models.ForeignKey(
+    order = models.ForeignKey(
         Order, null=False, blank=False,
         on_delete=models.CASCADE, related_name='lineitems')
     product = models.ForeignKey(

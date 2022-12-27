@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'sculptures.apps.SculpturesConfig',
     'cart.apps.CartConfig',
     'checkout.apps.CheckoutConfig',
+    'users.apps.UsersConfig',
 ]
 
 MIDDLEWARE = [

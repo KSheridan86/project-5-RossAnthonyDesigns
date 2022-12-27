@@ -74,7 +74,7 @@
 
                     </div>
                     <div class="text-start cost">
-                        <span class="cart-item-text">Price <br>€{{item.product.price|floatformat:0}}</span>
+                        <span class="cart-item-text">Price <br>€{{item.product.price|floatformat:2}}</span>
                     </div>
                 </li>
                 {% endfor %}
@@ -87,13 +87,13 @@
                 <span class="text-uppercase">Clear Cart</span>
             </a>
             <div class="text-end mt-2">
-                <span class="cart-item-text">Total - €{{ total|floatformat:0 }}</span>
+                <span class="cart-item-text">Total - €{{ total|floatformat:2 }}</span>
             </div>
             <div class="text-end mt-2">
-                <span class="cart-item-text">Delivery cost - €{{ delivery|floatformat:0 }}</span>
+                <span class="cart-item-text">Delivery cost - €{{ delivery|floatformat:2 }}</span>
             </div>
             <div class="text-end mt-2">
-                <span class="cart-item-text">Grand Total - €{{ grand_total|floatformat:0 }}</span>
+                <span class="cart-item-text">Grand Total - €{{ grand_total|floatformat:2 }}</span>
             </div>
             <div class="text-center mb-5 mt-4">
                 <!-- fix dodgy button -->

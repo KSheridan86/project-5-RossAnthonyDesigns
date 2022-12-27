@@ -10,6 +10,8 @@
         </span>
         <span class="text-uppercase">Keep Shopping</span>
     </a>
+    <a class="btn" style="background-color: black; color: white; margin-top: 2rem;" href="{% url 'edit_sculpture' piece.id %}">Edit</a>
+    <a class="btn" style="background-color: black; color: white; margin-top: 2rem;" href="{% url 'delete_sculpture' piece.id %}">Delete</a>
     <div class="container text-center p-4 mt-3">
         <div class="row justify-content-center justify-content-xl-evenly come-in">
             <div class="col-12 col-md-8 col-lg6 col-xl-5 come-in">

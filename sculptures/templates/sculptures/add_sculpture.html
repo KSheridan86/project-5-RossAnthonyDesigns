@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+<main>
+
+    <!-- Add Sculpture form -->
+    <h1 class="text-center mt-3 text-decoration-underline">Add Sculpture</h1>
+    <a href="{% url 'shop' %}" class="btn rounded-0" style="margin-top: -5rem;">
+        <span class="icon">
+            <i class="fas fa-chevron-left"></i>
+        </span>
+        <span class="text-uppercase">Back</span>
+    </a>
+    <div class="container">
+        <div class="lg-screen row justify-content-center mt-2 mb-5">
+            <div class="col-10 col-lg-6 cart-box p-3 mb-md-5 mb-5">
+                <form class="login mb-2 text-center" method="POST" enctype="multipart/form-data" action="{% url 'add_sculpture' %}">
+                    <h4>Input product details below</h4>
+                    {% csrf_token %}
+
+                    {% for field in form %}
+                    <div class="form-group come-in mt-3 mb-3">
+                        {{field}}
+                    </div>
+                    {% endfor %}
+
+                    <button type="submit" class="btn metal linear">Save</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</main>
+
+{% endblock content %}

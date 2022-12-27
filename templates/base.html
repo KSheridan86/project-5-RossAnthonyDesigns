@@ -171,13 +171,16 @@
                         <h5>Keep up to date with upcoming events and special offers<br>Sign up to our Newsletter here...
                     </div>
                     <div class="form-group container mt-4 mb-4 text-center">
+                        <label for="name" class="sr-only">Name</label>
+                        <input type="text" class="form-control w-75" name="name" id="name" placeholder="Enter your Name...">
                         <label for="email" class="sr-only">Email</label>
-                        <input type="email" class="form-control w-75" id="email" placeholder="Enter your Email...">
+                        <input type="email" class="form-control w-75 mt-2" name="email" id="email" placeholder="Enter your Email...">
                         <br>
+                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
                         <button type="submit" class="btn mt-4 mb-4 metal linear newsletter">Sign Up</button>
+                        
                     </div>
                 </form>
-                <a class="btn metal linear" href="{% url 'newsletter' %}">Join</a>
 
                 <!-- Social media -->
                 <section
@@ -220,8 +223,11 @@
                     <h5 class="text-uppercase mb-4 mt-3">Contact</h6>
                         <p><i class="fas fa-home me-3"></i> Mullingar, Ireland</p>
                         <p>
-                            <i class="fas fa-envelope me-3"></i>
-                            forged.nature.irl@gmail.com
+                            <a href = "mailto: forged.nature.irl@gmail.com">
+                                <i class="fas fa-envelope me-3"></i>
+                                forged.nature.irl@gmail.com
+                            </a>
+                            
                         </p>
                         <p><i class="fas fa-phone me-3"></i> + 353 (0) 83 128 6632</p>
                 </div>

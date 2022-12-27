@@ -3,13 +3,15 @@ from .forms import UpdateNewsletter
 
 
 def newsletter(request):
-    form = UpdateNewsletter()
     if request.method == 'POST':
+        name = request.POST['name']
+        email = request.POST['email']
+        redirect_url = request.POST['redirect_url']
+
         form = UpdateNewsletter(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('home')
-    context = {
-        'form': form
-    }
-    return render(request, 'users/newsletter.html', context)
+        newsletter = form.save(commit=False)
+        newsletter.name = name
+        newsletter.email = email
+        newsletter.save()
+
+        return redirect(redirect_url)

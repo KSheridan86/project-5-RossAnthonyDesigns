@@ -48,7 +48,9 @@ def checkout(request):
                 reverse('checkout_success', args=[order.order_number]))
         else:
             messages.error(
-                request, 'Something has gone wrong with your order, Double check your details.')
+                request,
+                'Something has gone wrong with your order,\
+                    Double check your details.')
 
     else:
         cart = request.session.get('cart', {})

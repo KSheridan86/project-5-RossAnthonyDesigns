@@ -10,7 +10,7 @@ class Newsletter(models.Model):
     email = models.EmailField(max_length=500, blank=True, null=True)
 
     class Meta:
-        ordering = ['created_on']
+        ordering = ['-created_on']
 
     def __str__(self):
         return str(self.email)

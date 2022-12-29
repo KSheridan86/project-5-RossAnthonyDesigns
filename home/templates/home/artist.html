@@ -19,12 +19,11 @@
                         data-bs-ride="carousel">
                         <div class="carousel-inner come-in-border">
                             <div class="carousel-item active" data-bs-interval="10000">
-                                <img src="/media/artist.jpg" class="pic shadow-4-strong d-block w-100"
-                                    alt="...">
+                                <img src="/media/artist.jpg" class="pic shadow-4-strong d-block w-100" alt="...">
                             </div>
                             <div class="carousel-item" data-bs-interval="2000">
-                                <img src="/media/ross&maia-square.jpg"
-                                    class="pic shadow-4-strong d-block w-100" alt="...">
+                                <img src="/media/ross&maia-square.jpg" class="pic shadow-4-strong d-block w-100"
+                                    alt="...">
                             </div>
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"
@@ -116,35 +115,34 @@
                 </div>
 
             </div>
-
+    <!-- Contact form -->
             <div class="col-lg-6 text-center p-4 mt-5">
-                <form>
-                    <p class="artist-title border-bottom border-2">Want to work together?</p>
-                    <p class="artist-blurb">Got an idea for a piece you would like to commission?<br>Want a stall
-                        set up
-                        at your event?<br>Or
+                <form method="POST" action="{% url 'message' %}">
+                    {% csrf_token %}
+                    <p>Got an idea for a piece you would like to commission?<br>Want a stall set up at your event?<br>Or
                         maybe
                         you just want to say hello!<br>Whatever it is I would love to hear from you.</p>
                     <div class="form-group">
                         <label for="name"></label>
-                        <input type="text" class="form-control" id="name" aria-describedby="nameHelp"
-                            placeholder="Enter your name">
+                        <input type="text" class="form-control" id="name" name="name" aria-describedby="nameHelp"
+                            placeholder="Enter your name...">
                     </div>
 
                     <div class="form-group mt-3">
-                        <label for="exampleInputEmail1"></label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                            placeholder="Enter your email">
+                        <label for="email"></label>
+                        <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp"
+                            placeholder="Enter your email...">
                     </div>
                     <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
                         else.
                     </small>
 
                     <div class="form-group mt-3">
-                        <label for="exampleFormControlTextarea1"></label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"
-                            placeholder="Enter your message"></textarea>
+                        <label for="message"></label>
+                        <textarea class="form-control" id="message" name="message" rows="5"
+                            placeholder="Enter your message..."></textarea>
                     </div>
+                    <input type="hidden" name="redirect_url" value="{{ request.path }}">
                     <button type="submit" class="btn metal linear mt-3">Send</button>
                 </form>
             </div>
@@ -154,30 +152,32 @@
     <!-- Contact form -->
     <h1 class="p-2 text-center metal-light d-lg-none contact-me">Contact Me</h1>
     <div class="contact-form text-center p-4 mt-0 d-lg-none">
-        <form>
+        <form method="POST" action="{% url 'message' %}">
+            {% csrf_token %}
             <p>Got an idea for a piece you would like to commission?<br>Want a stall set up at your event?<br>Or
                 maybe
                 you just want to say hello!<br>Whatever it is I would love to hear from you.</p>
             <div class="form-group">
                 <label for="name"></label>
-                <input type="text" class="form-control" id="name" aria-describedby="nameHelp"
-                    placeholder="Enter your name">
+                <input type="text" class="form-control" id="name" name="name" aria-describedby="nameHelp"
+                    placeholder="Enter your name...">
             </div>
 
             <div class="form-group mt-3">
-                <label for="exampleInputEmail1"></label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                    placeholder="Enter your email">
+                <label for="email"></label>
+                <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp"
+                    placeholder="Enter your email...">
             </div>
             <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
                 else.
             </small>
 
             <div class="form-group mt-3">
-                <label for="exampleFormControlTextarea1"></label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"
-                    placeholder="Enter your message"></textarea>
+                <label for="message"></label>
+                <textarea class="form-control" id="message" name="message" rows="5"
+                    placeholder="Enter your message..."></textarea>
             </div>
+            <input type="hidden" name="redirect_url" value="{{ request.path }}">
             <button type="submit" class="btn metal linear mt-3">Send</button>
         </form>
     </div>

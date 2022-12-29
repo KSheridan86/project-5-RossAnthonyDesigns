@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from .forms import UpdateNewsletter, MessageForm
-from .models import Newsletter, Message
+from .forms import UpdateNewsletter, MessageForm, ReviewForm
+from .models import Newsletter, Message, Review
 
 
 def newsletter(request):
@@ -50,3 +50,38 @@ def message(request):
             request, "Please make sure to fill out your Details \
                 before leaving a message.")
         return redirect(redirect_url)
+
+
+def leave_review(request):
+    form = ReviewForm()
+    try:
+        if request.method == 'POST':
+            form = ReviewForm(request.POST)
+            if form.is_valid():
+                form.save()
+                messages.success(
+                    request, "Review saved, Thank you for your feedback.")
+                return redirect('home')
+    except ValueError:
+        messages.error(
+            request,
+            "Whoops! something has gone wrong, we'll get right on to it.")
+    context = {
+        'form': form,
+    }
+    return render(request, 'users/leave_review.html', context)
+
+
+
+def add_sculpture(request):
+    form = AddSculpture()
+    if request.method == 'POST':
+        form = AddSculpture(request.POST, request.FILES)
+        if form.is_valid():
+            new_sculpture = form.save(commit=False)
+            new_sculpture.save()
+            return redirect('shop')
+    context = {
+        'form': form,
+    }
+    return render(request, 'sculptures/add_sculpture.html', context)

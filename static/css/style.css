@@ -161,6 +161,10 @@ ul {
     object-fit: cover;
 }
 
+.accordion-button:not(.collapsed) {
+    background-color: #6f8ca2;
+    color: black;
+}
 
 /* Shop Page */
 

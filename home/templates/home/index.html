@@ -86,7 +86,9 @@
 
     font-family: 'Teko', sans-serif;
      -->
+     {% if user.is_authenticated %}
 <a class="btn" style="background-color: black;" href="{% url 'add_sculpture' %}">Add</a>
+     {% endif %}
 
 <div class="container text-center mt-4 mb-5">
     <div class="row justify-content-center">
@@ -105,5 +107,100 @@
         </div>
         {% endfor %}
     </div>
+    <div class="row justify-content-center mt-5">
+        <h1 class="p-3 mt-2 text-decoration-underline metal-light" style="font-family: 'Teko', sans-serif; font-size: 2.5rem;">Testimonials</h1>
+        <div class="accordion col-10 col-md-8 col-lg-6 mt-2 fade-in" id="accordionExample">
+
+            {% for review in testimonials.review1 %}
+            {% if review.public == True %}
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    {{review.name}}
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    {{review.review}}
+                </div>
+              </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+
+            {% for review in testimonials.review2 %}
+            {% if review.public == True %}
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    {{review.name}}
+                </button>
+              </h2>
+              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    {{review.review}}
+                </div>
+              </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+
+            {% for review in testimonials.review3 %}
+            {% if review.public == True %}
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    {{review.name}}
+                </button>
+              </h2>
+              <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    {{review.review}}
+                </div>
+              </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+
+            {% for review in testimonials.review4 %}
+            {% if review.public == True %}
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                    {{review.name}}
+                </button>
+              </h2>
+              <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    {{review.review}}
+                </div>
+              </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+
+            {% for review in testimonials.review5 %}
+            {% if review.public == True %}
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                    {{review.name}}
+                </button>
+              </h2>
+              <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    {{review.review}}
+                </div>
+              </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+            
+          </div>
+    </div>
+    {% if user.is_authenticated %}
+    <!-- style button -->
+    <a href="{% url 'leave_review' %}" class="btn btn-header text-uppercase metal linear p-2 mt-2">Review</a>
+    {% endif %}
 </div>
 {% endblock content %}

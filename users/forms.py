@@ -1,6 +1,6 @@
 from django.forms import ModelForm
 from django import forms
-from .models import Newsletter, Message
+from .models import Newsletter, Message, Review
 
 
 class UpdateNewsletter(ModelForm):
@@ -34,3 +34,18 @@ class MessageForm(ModelForm):
         self.fields['message'].widget.attrs.update(
             {'class': 'form-control',
              'placeholder': 'Enter your Message...'})
+
+
+class ReviewForm(ModelForm):
+    class Meta:
+        model = Review
+        fields = ['name', 'review']
+
+    def __init__(self, *args, **kwargs):
+        super(ReviewForm, self).__init__(*args, **kwargs)
+        self.fields['name'].widget.attrs.update(
+            {'class': 'form-control',
+             'placeholder': 'Enter your Name...'})
+        self.fields['review'].widget.attrs.update(
+            {'class': 'form-control',
+             'placeholder': 'Enter your review...'})

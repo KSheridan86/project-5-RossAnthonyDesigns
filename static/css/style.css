@@ -35,6 +35,10 @@ a {
     color: inherit;
 }
 
+#logo {
+    font-size: 2.5rem;
+}
+
 nav {
     background-image: linear-gradient(320deg, #ff85436b 0%, #6f8ca2 40%);
     background-color: rgb(111, 140, 162);
@@ -54,6 +58,7 @@ ul {
     width: 2rem;
     opacity: .8;
 }
+/* is this needed?? */
 .chimp-avatar {
     height: 3rem;
     width: 3rem;
@@ -126,7 +131,7 @@ ul {
 }
 
 .social {
-    font-size: 2rem;
+    font-size: 2.5rem;
 }
 
 .error-pic {
@@ -737,14 +742,29 @@ ul {
 }
 
 
-/* fix for cool hovwer effect later */
+/* fix for cool hover effect later */
 .noHover{
     pointer-events: none;
 }
 
 
 /* fix this, it's highlighting the nav links, not wanted. */
-a:hover {
-    color: #fd5e086b !important;
+#animate-nav li:hover {
     text-decoration: none;
+    animation-name: hero-zoom;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes hero-zoom {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.2);
+    }
+}
+
+a .featured-image:hover {
+    color: #fd5e086b !important;
 }

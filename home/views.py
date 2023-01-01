@@ -16,7 +16,8 @@ def index(request):
         if review.public is True:
             vetted_testimonials.append(review)
 
-    while div_number_to_pass_down < vetted_testimonials.__len__() and div_number_to_pass_down < review_limit_of_5:
+    while div_number_to_pass_down < vetted_testimonials.__len__(
+                ) and div_number_to_pass_down < review_limit_of_5:
         vetted_testimonials[
             div_number_to_pass_down
             ].number = numbered_testimonial_divs[div_number_to_pass_down]

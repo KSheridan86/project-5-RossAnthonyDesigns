@@ -166,6 +166,12 @@ ul {
     color: black;
 }
 
+.review-btn {
+    width: 8rem;
+    height: 3rem;
+    line-height: 2rem;
+}
+
 /* Shop Page */
 
 .featured-image-shop {
@@ -302,7 +308,6 @@ ul {
     margin-top: -4rem;
     margin-left: 1rem;
 }
-
 
 /* Header Image behind carousels and footer*/
 

@@ -134,7 +134,7 @@
     </div>
     {% if user.is_authenticated %}
     <!-- style button -->
-    <a href="{% url 'leave_review' %}" class="btn btn-header text-uppercase metal linear p-2 mt-2">Review</a>
+    <a href="{% url 'leave_review' %}" class="btn review-btn text-uppercase metal linear mt-2">Review</a>
     {% else %}
     <h5 class="mt-3 text-muted">Please <a href="/accounts/login/"><strong>Sign in</strong></a> or <a href="/accounts/signup/"><strong>Register</strong></a> to leave a review...</h5>
 

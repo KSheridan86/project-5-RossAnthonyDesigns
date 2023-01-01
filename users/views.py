@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from .forms import UpdateNewsletter, MessageForm, ReviewForm
 from .models import Newsletter, Message, Review
 
@@ -10,10 +11,12 @@ def newsletter(request):
             name = request.POST['name']
             email = request.POST['email']
             redirect_url = request.POST['redirect_url']
-            already_signed_up = Newsletter.objects.values_list('email', flat=True)
+            already_signed_up = Newsletter.objects.values_list(
+                'email', flat=True)
 
             if email in already_signed_up:
-                messages.error(request, "This email address is already signed up!")
+                messages.error(
+                    request, "This email address is already signed up!")
             else:
                 form = UpdateNewsletter(request.POST)
                 newsletter = form.save(commit=False)
@@ -52,6 +55,7 @@ def message(request):
         return redirect(redirect_url)
 
 
+@login_required(login_url='/accounts/login/')
 def leave_review(request):
     form = ReviewForm()
     try:
@@ -62,6 +66,8 @@ def leave_review(request):
                 messages.success(
                     request, "Review saved, Thank you for your feedback.")
                 return redirect('home')
+            else:
+                messages.error(request, "Please fill in the form...")
     except ValueError:
         messages.error(
             request,
@@ -70,18 +76,3 @@ def leave_review(request):
         'form': form,
     }
     return render(request, 'users/leave_review.html', context)
-
-
-
-def add_sculpture(request):
-    form = AddSculpture()
-    if request.method == 'POST':
-        form = AddSculpture(request.POST, request.FILES)
-        if form.is_valid():
-            new_sculpture = form.save(commit=False)
-            new_sculpture.save()
-            return redirect('shop')
-    context = {
-        'form': form,
-    }
-    return render(request, 'sculptures/add_sculpture.html', context)

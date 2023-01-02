@@ -53,11 +53,9 @@
     <nav class="navbar navbar-expand-md">
         <div class="container-fluid">
 
-            <a id="logo" class="navbar-brand p-3" href="{% url 'home' %}" style="font-family: 'Teko', sans-serif;">
-                Forged<img class="avatar" src="/media/anvil.png">Nature
-            </a>
+            
 
-            <a href="{% url 'view_cart' %}" class="mt-3 d-md-none">
+            <a href="{% url 'view_cart' %}" class="mt-3 d-md-none me-auto">
                 <div class="text-center">
                     <div>
                         <i class="fa-solid fa-cart-shopping bag mx-auto"></i>
@@ -71,8 +69,11 @@
                     </p>
                 </div>
             </a>
+            <a id="logo" class="navbar-brand me-auto" href="{% url 'home' %}" style="font-family: 'Teko', sans-serif;">
+                Forged<img class="avatar" src="/media/anvil.png">Nature
+            </a>
 
-            <button class="navbar-toggler border border-dark border-4 rounded" type="button" data-bs-toggle="collapse"
+            <button class="navbar-toggler border border-dark border-2" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>

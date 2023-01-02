@@ -5,9 +5,15 @@
     decrement.addEventListener('click', subtract);
     let quantity = document.querySelector('.qty_input');
 
+    // Work here, add available&quantity to models
+    let availableQuantity = document.querySelector('.available-quantity');
+    if(availableQuantity) {
+        console.log(availableQuantity.value)
+    }
+
     function add(e) {
         e.preventDefault();
-        if (quantity.valueAsNumber < 10) {
+        if (quantity.valueAsNumber < availableQuantity.value) {
             quantity.valueAsNumber++
         }
     }

@@ -8,6 +8,7 @@ from .models import OrderLineItem, Order
 import stripe
 
 
+# add try except block
 def checkout(request):
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
@@ -87,8 +88,25 @@ def checkout_success(request, order_number):
                                 A confirmation email will been sent to \
                                 {order.email}.')
 
-    if 'cart' in request.session:
-        del request.session['cart']
+    cart = request.session.get('cart', {})
+    alter_product = []
+    product_object = []
+    alter_quantity = []
+    number = 0
+
+    for item_id, quantity in cart.items():
+        alter_product.append(item_id)
+        alter_quantity.append(quantity)
+
+    for item in alter_product:
+        product_object.append(Sculpture.objects.get(id=item))
+
+    for item in product_object:
+        item.quantity = item.quantity - alter_quantity[number]
+        item.save()
+        number += 1
+
+    del request.session['cart']
     context = {
         'order': order,
     }

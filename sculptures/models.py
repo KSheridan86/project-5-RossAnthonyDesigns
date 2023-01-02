@@ -10,6 +10,8 @@ class Sculpture(models.Model):
     description = models.TextField()
     price = models.DecimalField(max_digits=6, decimal_places=2)
     image = CloudinaryField('image', default='placeholder')
+    available = models.BooleanField(default=False)
+    quantity = models.DecimalField(max_digits=3, decimal_places=0, default=0)
     created_on = models.DateTimeField(auto_now_add=True)
 
     class Meta:

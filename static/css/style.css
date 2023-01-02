@@ -1,5 +1,4 @@
 
-
 /* Universal Styles */
 
 * {
@@ -194,6 +193,25 @@ ul {
     width: 15rem;
     height: 5rem;
 }
+
+.number-input {
+    border: none;
+    background-color: whitesmoke;
+    font-weight: bolder;
+    width: 20px;
+}
+
+
+/* Remove standard increment & decrement from number inputs */
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none; 
+    margin: 0; 
+}
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+    }
 
 
 /* Single Item Page */

@@ -33,6 +33,12 @@ def newsletter(request):
         return redirect(redirect_url)
 
 
+def delete_newsletter(request, pk):
+    to_delete = Newsletter.objects.get(id=pk)
+    to_delete.delete()
+    return redirect('dashboard')
+
+
 def message(request):
     try:
         if request.method == 'POST':
@@ -76,3 +82,69 @@ def leave_review(request):
         'form': form,
     }
     return render(request, 'users/leave_review.html', context)
+
+
+def view_message(request, pk):
+    message = Message.objects.get(id=pk)
+    context = {
+        'message': message
+    }
+    return render(request, 'users/message.html', context)
+
+
+def delete_message(request, pk):
+    message = Message.objects.get(id=pk)
+    message.delete()
+    return redirect('dashboard')
+
+
+def view_review(request, pk):
+    review = Review.objects.get(id=pk)
+    form = ReviewForm(instance=review)
+    try:
+        if request.method == 'POST':
+            form = ReviewForm(request.POST, instance=review)
+            if form.is_valid():
+                form.save()
+                messages.success(
+                    request, "Review saved.")
+                return redirect('dashboard')
+            else:
+                messages.error(request, "Please fill in the form...")
+    except ValueError:
+        messages.error(
+            request,
+            "Whoops! something has gone wrong, we'll get right on to it.")
+    context = {
+        'review': review,
+        'form': form
+    }
+    return render(request, 'users/review.html', context)
+
+
+def delete_review(request, pk):
+    review = Review.objects.get(id=pk)
+    review.delete()
+    return redirect('dashboard')
+
+
+def edit_review(request):
+    form = ReviewForm()
+    try:
+        if request.method == 'POST':
+            form = ReviewForm(request.POST)
+            if form.is_valid():
+                form.save()
+                messages.success(
+                    request, "Review saved.")
+                return redirect('dashboard')
+            else:
+                messages.error(request, "Please fill in the form...")
+    except ValueError:
+        messages.error(
+            request,
+            "Whoops! something has gone wrong, we'll get right on to it.")
+    context = {
+        'form': form,
+    }
+    return render(request, 'users/review.html', context)

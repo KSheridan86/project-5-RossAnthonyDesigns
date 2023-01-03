@@ -7,7 +7,7 @@ class AddSculpture(ModelForm):
     class Meta:
         model = Sculpture
         fields = ['title', 'description',
-                  'price', 'image']
+                  'price', 'image', 'quantity', 'available']
 
     def __init__(self, *args, **kwargs):
         super(AddSculpture, self).__init__(*args, **kwargs)
@@ -23,3 +23,8 @@ class AddSculpture(ModelForm):
         self.fields['image'].widget.attrs.update(
             {'class': 'form-control',
              'placeholder': 'Add Image if Available...'})
+        self.fields['quantity'].widget.attrs.update(
+            {'class': 'form-control',
+             'placeholder': 'Quantity available...'})
+        self.fields['available'].widget.attrs.update(
+            {'placeholder': 'Available or Not?'})

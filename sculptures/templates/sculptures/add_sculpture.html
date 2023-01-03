@@ -8,7 +8,7 @@
 
     <!-- Add Sculpture form -->
     <h1 class="text-center mt-3 text-decoration-underline">Add Sculpture</h1>
-    <a href="{% url 'shop' %}" class="btn rounded-0" style="margin-top: -5rem;">
+    <a href="{% url 'dashboard' %}" class="btn rounded-0" style="margin-top: -5rem;">
         <span class="icon">
             <i class="fas fa-chevron-left"></i>
         </span>
@@ -26,6 +26,7 @@
                         {{field}}
                     </div>
                     {% endfor %}
+                    <p>Tick if product is available for delivery now</p>
 
                     <button type="submit" class="btn metal linear">Save</button>
 

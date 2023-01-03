@@ -53,8 +53,6 @@
     <nav class="navbar navbar-expand-md">
         <div class="container-fluid">
 
-            
-
             <a href="{% url 'view_cart' %}" class="mt-3 d-md-none me-auto">
                 <div class="text-center">
                     <div>
@@ -69,9 +67,18 @@
                     </p>
                 </div>
             </a>
+            
             <a id="logo" class="navbar-brand me-auto" href="{% url 'home' %}" style="font-family: 'Teko', sans-serif;">
                 Forged<img class="avatar" src="/media/anvil.png">Nature
             </a>
+
+            {% if request.user.is_superuser %}
+                <li class="navbar-nav h2 d-flex d-md-none me-2">
+                    <a class="nav-link active" href="{% url 'dashboard' %}">
+                        <i class="fa fa-cogs" aria-hidden="true"></i>
+                    </a>
+                </li>
+            {% endif %}
 
             <button class="navbar-toggler border border-dark border-2" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -81,11 +88,6 @@
 
             <div class="collapse navbar-collapse text-center" id="navbarSupportedContent">
                 <ul class="navbar-nav mb-0 mx-auto mb-lg-0" id="animate-nav">
-                    {% if request.user.is_superuser %}
-                    <!-- <li class="nav-item h4 me-2 me-lg-5">
-                        <a class="nav-link active" href="{% url 'home' %}">Product Management</a>
-                    </li> -->
-                    {% endif %}
                     <li class="nav-item h4 me-2 me-lg-5" id="active-link">
                         <a class="nav-link {% if page == 'home' %} active {% endif %}" href="{% url 'home' %}">Home</a>
                     </li>
@@ -111,6 +113,12 @@
 
                 </ul>
                 {% if request.user.is_authenticated %}
+                    {% if request.user.is_superuser %}
+                    <li class="navbar-nav h2 d-none d-md-flex">
+                        <a class="nav-link active" href="{% url 'dashboard' %}"><i class="fa fa-cogs" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    {% endif %}
                 <li class="navbar-nav h4 mx-4 d-none d-md-flex">
                     <a class="metal linear sign-in-btn p-2" href="{% url 'account_logout' %}">Log out</a>
                 </li>
@@ -128,7 +136,7 @@
                     </div>
                     <p>
                         {% if grand_total %}
-                        €{{ grand_total|floatformat:0 }}
+                        €{{ grand_total|floatformat:2 }}
                         {% else %}
                         €0.00
                         {% endif %}
@@ -136,8 +144,6 @@
                 </div>
             </a>
 
-
-            <!-- <a href="./cart.html"><i class="fa-solid fa-cart-shopping bag d-none d-md-block"></i></a> -->
         </div>
     </nav>
 
@@ -158,7 +164,6 @@
     {% endblock content %}
 
     <!-- Footer -->
-
 
     <footer class="text-center text-lg-start text-muted border-top border-5 mt-5" id="footer">
 
@@ -182,7 +187,6 @@
                         <br>
                         <input type="hidden" name="redirect_url" value="{{ request.path }}">
                         <button type="submit" class="btn mt-4 mb-4 metal linear newsletter">Sign Up</button>
-
                     </div>
                 </form>
 
@@ -215,13 +219,13 @@
                 <div
                     class="col-md-4 col-lg-5 col-xl-3 mx-auto mb-4 text-center footer-borders-about footer-borders-4x4">
                     <h5 class="text-uppercase mb-4 mt-3">
-                        RossAnthonyDesigns
-                        </h6>
-                        <p>
-                            Forged Nature is a small craft business based in Co. Westmeath.
-                            Specializing in hand forged, nature inspired items for display in home or garden.
-                            With products ranging from a simple Butterfly to life size predatory Barn Owls.
-                        </p>
+                        ForgedNature
+                    </h5>
+                    <p>
+                        Forged Nature is a small craft business based in Co. Westmeath.
+                        Specializing in hand forged, nature inspired items for display in home or garden.
+                        With products ranging from a simple Butterfly to life size predatory Barn Owls.
+                    </p>
                 </div>
 
                 <!-- Contact Info -->
@@ -233,21 +237,20 @@
                                 <i class="fas fa-envelope me-3"></i>
                                 forged.nature.irl@gmail.com
                             </a>
-
                         </p>
-                        <p><i class="fas fa-phone me-3"></i> + 353 (0) 83 128 6632</p>
+                        <p>
+                            <i class="fas fa-phone me-3"></i>
+                            <a href="tel:+353831286632"> + 353 (0) 83 128 6632</a>
+                        </p>
                 </div>
             </div>
         </div>
         </section>
 
-
         <div class="header-footer">
             <div class="overlay">
-
                 <div class="text-start p-4 copyright">
                     Designed & Built by ChimpTech.ie <br>© 2022 ChimpTech <br>
-                    <!-- <img src="/media/chimp-tech.png" class="chimp-avatar"> -->
                 </div>
                 <!-- {% if request.user.is_superuser %}
                 <div class="">

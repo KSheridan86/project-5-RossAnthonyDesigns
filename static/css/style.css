@@ -211,6 +211,7 @@ input[type=number]::-webkit-outer-spin-button {
 /* Firefox */
 input[type=number] {
     -moz-appearance: textfield;
+    appearance: textfield;
     }
 
 
@@ -330,6 +331,23 @@ input[type=number] {
 .cost {
     margin-top: -4rem;
     margin-left: 1rem;
+}
+
+/* Dashboard page */
+
+.dash-box {
+    overflow-y: scroll; 
+    overflow-x: hidden;
+    height: 50vh;
+    background-color: white;
+}
+
+.dashboard-title {
+    background-color: #6f8ca2;
+    width: 100vw;
+    height: 3rem;
+    margin-left: -1rem;
+    margin-top: -1rem;
 }
 
 /* Header Image behind carousels and footer*/

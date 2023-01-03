@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<a href="{% url 'dashboard' %}" class="btn rounded-0 mt-3" style="margin-top: -5rem;">
+    <span class="icon">
+        <i class="fas fa-chevron-left"></i>
+    </span>
+    <span class="text-uppercase">Back</span>
+</a>
+<div class="container">
+    
+    <div class="row justify-content-center">
+        
+        <div class="col-10 col-md-8 col-lg-5 p-2">
+            
+            <h2 class="text-center border-bottom border-4 mb-2">New Review</h2>
+            <div class="border-bottom border-4 mb-2">
+                <h5>From:</h5>
+                <h5 class="text-capitalize text-center">{{review.name}}</h5>
+            </div>
+            
+            <div class="border-bottom border-4">
+                <h5>Subject:</h5>
+                <h6 class="mt-3 text-center p-2">{{review.review}}</h6>
+            </div>
+            <div class="border-bottom border-4">
+                <h5>Visible to the Public:</h5>
+                <h6 class="mt-3 text-center p-2">{{review.public}}</h6>
+            </div>
+            <form class="login mb-2 text-center" method="POST" enctype="multipart/form-data" action="{% url 'view_review' review.id %}">
+                {% if review.public == True %}
+                <h4>Hide Review?</h4>
+                <h6 class="text-center text-danger mt-4">**Warning, Untick box below and press save to hide review.**</h6>
+
+                {% else %}
+                <h4>Make Review Public?</h4>
+                <h6 class="text-center text-danger mt-4">**Warning, Tick box below and press save to make review public.**</h6>
+
+                {% endif %}
+                {% csrf_token %}
+                <div class="d-none">
+                    {{form.name}}
+                </div>
+                <div class="d-none">
+                    {{form.review}}
+                </div>
+                {{form.public}}
+                <br>
+                <button type="submit" class="btn metal linear mt-3">Save</button>
+            </form>
+            <h6 class="text-center text-danger mt-4">**Warning, Click X to delete this review, This can't be undone.**</h6>
+
+            <div class="text-center mt-4">
+                <a href="{% url 'delete_review' review.id %}">
+                    <i class="fa-sharp fa-solid fa-circle-xmark fs-2 mx-5"></i>
+                </a>
+            </div>           
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock content %}

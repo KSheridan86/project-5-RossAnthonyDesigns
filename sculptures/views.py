@@ -68,7 +68,7 @@ def edit_sculpture(request, pk):
         if form.is_valid():
             new_sculpture = form.save(commit=False)
             new_sculpture.save()
-            return redirect('shop')
+            return redirect('dashboard')
     context = {
         'form': form,
         'piece': piece
@@ -81,7 +81,7 @@ def delete_sculpture(request, pk):
     piece = Sculpture.objects.get(id=pk)
     if request.method == 'POST':
         piece.delete()
-        return redirect('shop')
+        return redirect('dashboard')
     context = {
         'piece': piece
     }

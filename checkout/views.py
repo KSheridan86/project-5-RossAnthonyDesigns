@@ -12,46 +12,48 @@ import stripe
 def checkout(request):
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
-
-    if request.method == 'POST':
-        cart = request.session.get('cart', {})
-        form_data = {
-            'full_name': request.POST['full_name'],
-            'email': request.POST['email'],
-            'phone_number': request.POST['phone_number'],
-            'country': 'Ireland',
-            'postcode': request.POST['postcode'],
-            'town_or_city': request.POST['town_or_city'],
-            'street_address1': request.POST['street_address1'],
-            'street_address2': request.POST['street_address2'],
-            'county': request.POST['county'],
-        }
-        order_form = OrderForm(form_data)
-        if order_form.is_valid():
-            order = order_form.save()
-            for item_id, quantity in cart.items():
-                try:
-                    product = Sculpture.objects.get(id=item_id)
-                    order_line_item = OrderLineItem(
-                        order=order,
-                        product=product,
-                        quantity=quantity
-                    )
-                    order_line_item.save()
-                except Sculpture.DoesNotExist:
-                    messages.error(request, (
-                        'Something has gone wrong with your cart'
-                        'Please call us for assistance')
-                    )
-                    order.delete()
-                    return redirect(reverse('view_cart'))
-            return redirect(
-                reverse('checkout_success', args=[order.order_number]))
-        else:
-            messages.error(
-                request,
-                'Something has gone wrong with your order,\
-                    Double check your details.')
+    try:
+        if request.method == 'POST':
+            cart = request.session.get('cart', {})
+            form_data = {
+                'full_name': request.POST['full_name'],
+                'email': request.POST['email'],
+                'phone_number': request.POST['phone_number'],
+                'country': 'Ireland',
+                'postcode': request.POST['postcode'],
+                'town_or_city': request.POST['town_or_city'],
+                'street_address1': request.POST['street_address1'],
+                'street_address2': request.POST['street_address2'],
+                'county': request.POST['county'],
+            }
+            order_form = OrderForm(form_data)
+            if order_form.is_valid():
+                order = order_form.save()
+                for item_id, quantity in cart.items():
+                    try:
+                        product = Sculpture.objects.get(id=item_id)
+                        order_line_item = OrderLineItem(
+                            order=order,
+                            product=product,
+                            quantity=quantity
+                        )
+                        order_line_item.save()
+                    except Sculpture.DoesNotExist:
+                        messages.error(request, (
+                            'Something has gone wrong with your cart'
+                            'Please call us for assistance')
+                        )
+                        order.delete()
+                        return redirect(reverse('view_cart'))
+                return redirect(
+                    reverse('checkout_success', args=[order.order_number]))
+            else:
+                messages.error(
+                    request,
+                    'Something has gone wrong with your order,\
+                        Double check your details.')
+    except ValueError:
+        message.error(request, 'Wait!')
 
     else:
         cart = request.session.get('cart', {})
@@ -89,17 +91,13 @@ def checkout_success(request, order_number):
                                 {order.email}.')
 
     cart = request.session.get('cart', {})
-    alter_product = []
-    product_object = []
     alter_quantity = []
+    product_object = []
     number = 0
 
     for item_id, quantity in cart.items():
-        alter_product.append(item_id)
+        product_object.append(Sculpture.objects.get(id=item_id))
         alter_quantity.append(quantity)
-
-    for item in alter_product:
-        product_object.append(Sculpture.objects.get(id=item))
 
     for item in product_object:
         item.quantity = item.quantity - alter_quantity[number]

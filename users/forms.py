@@ -39,7 +39,7 @@ class MessageForm(ModelForm):
 class ReviewForm(ModelForm):
     class Meta:
         model = Review
-        fields = ['name', 'review']
+        fields = ['name', 'review', 'public']
 
     def __init__(self, *args, **kwargs):
         super(ReviewForm, self).__init__(*args, **kwargs)

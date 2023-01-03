@@ -12,7 +12,6 @@
             <div class="text-center blur mx-auto mt-lg-4 rounded">
                 <h1 class="p-3 metal-light">The Man Behind the Art</h1>
             </div>
-
             <div class="container-fluid g-0 mt-2 mt-lg-4">
                 <div class="row justify-content-center">
                     <div id="carouselExampleDark" class="col-12 col-md-8 col-lg-5 g-0 carousel carousel-dark slide"
@@ -37,10 +36,8 @@
                             <span class="visually-hidden">Next</span>
                         </button>
                     </div>
-
                 </div>
             </div>
-
         </div>
     </div>
 
@@ -113,15 +110,20 @@
                         <br>
                     </p>
                 </div>
-
             </div>
-    <!-- Contact form -->
+            <!-- Contact form -->
             <div class="col-lg-6 text-center p-4 mt-5">
                 <form method="POST" action="{% url 'message' %}">
                     {% csrf_token %}
-                    <p>Got an idea for a piece you would like to commission?<br>Want a stall set up at your event?<br>Or
-                        maybe
-                        you just want to say hello!<br>Whatever it is I would love to hear from you.</p>
+                    <p>
+                        Got an idea for a piece you would like to commission?
+                        <br>
+                        Want a stall set up at your event?
+                        <br>
+                        Or maybe you just want to say hello!
+                        <br>
+                        Whatever it is I would love to hear from you.
+                    </p>
                     <div class="form-group">
                         <label for="name"></label>
                         <input type="text" class="form-control" id="name" name="name" aria-describedby="nameHelp"
@@ -133,14 +135,15 @@
                         <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp"
                             placeholder="Enter your email...">
                     </div>
-                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
-                        else.
+                    <small id="emailHelp" class="form-text text-muted">
+                        We'll never share your email with anyone else.
                     </small>
 
                     <div class="form-group mt-3">
                         <label for="message"></label>
                         <textarea class="form-control" id="message" name="message" rows="5"
-                            placeholder="Enter your message..."></textarea>
+                            placeholder="Enter your message...">
+                        </textarea>
                     </div>
                     <input type="hidden" name="redirect_url" value="{{ request.path }}">
                     <button type="submit" class="btn metal linear mt-3">Send</button>
@@ -154,9 +157,15 @@
     <div class="contact-form text-center p-4 mt-0 d-lg-none">
         <form method="POST" action="{% url 'message' %}">
             {% csrf_token %}
-            <p>Got an idea for a piece you would like to commission?<br>Want a stall set up at your event?<br>Or
-                maybe
-                you just want to say hello!<br>Whatever it is I would love to hear from you.</p>
+            <p>
+                Got an idea for a piece you would like to commission?
+                <br>
+                Want a stall set up at your event?
+                <br>
+                Or maybe you just want to say hello!
+                <br>
+                Whatever it is I would love to hear from you.
+            </p>
             <div class="form-group">
                 <label for="name"></label>
                 <input type="text" class="form-control" id="name" name="name" aria-describedby="nameHelp"
@@ -168,8 +177,8 @@
                 <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp"
                     placeholder="Enter your email...">
             </div>
-            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
-                else.
+            <small id="emailHelp" class="form-text text-muted">
+                We'll never share your email with anyone else.
             </small>
 
             <div class="form-group mt-3">

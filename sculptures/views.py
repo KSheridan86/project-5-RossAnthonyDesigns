@@ -44,7 +44,7 @@ def single_item(request, pk):
     return render(request, 'sculptures/single-item.html', context)
 
 
-@login_required(login_url='/accounts/login/')
+@login_required(login_url='account_login')
 def add_sculpture(request):
     form = AddSculpture()
     if request.method == 'POST':
@@ -59,7 +59,7 @@ def add_sculpture(request):
     return render(request, 'sculptures/add_sculpture.html', context)
 
 
-@login_required(login_url='/accounts/login/')
+@login_required(login_url='account_login')
 def edit_sculpture(request, pk):
     piece = Sculpture.objects.get(id=pk)
     form = AddSculpture(instance=piece)
@@ -76,7 +76,7 @@ def edit_sculpture(request, pk):
     return render(request, 'sculptures/edit_sculpture.html', context)
 
 
-@login_required(login_url='/accounts/login/')
+@login_required(login_url='account_login')
 def delete_sculpture(request, pk):
     piece = Sculpture.objects.get(id=pk)
     if request.method == 'POST':

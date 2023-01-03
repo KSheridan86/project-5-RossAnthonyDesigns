@@ -21,11 +21,16 @@
                     <h4>Leave Review Below</h4>
                     {% csrf_token %}
 
-                    {% for field in form %}
                     <div class="form-group come-in mt-3 mb-3">
-                        {{field}}
+                        {{form.name}}
                     </div>
-                    {% endfor %}
+                    <div class="form-group come-in mt-3 mb-3">
+                        {{form.review}}
+                    </div>
+                    <div class="d-none">
+                        {{form.public}}
+                    </div>
+                    
 
                     <button type="submit" class="btn metal linear">Save</button>
 

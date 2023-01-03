@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
 from sculptures.models import Sculpture
 from users.models import Newsletter, Message, Review
 from users.models import Review
@@ -40,11 +41,15 @@ def artist(request):
     return render(request, 'home/artist.html', context)
 
 
+@login_required(login_url='account_login')
 def dashboard(request):
-    sculptures = Sculpture.objects.all()
-    reviews = Review.objects.all()
-    newsletter = Newsletter.objects.all()
-    message = Message.objects.all()
+    if request.user.is_superuser:
+        sculptures = Sculpture.objects.all()
+        reviews = Review.objects.all()
+        newsletter = Newsletter.objects.all()
+        message = Message.objects.all()
+    else:
+        return redirect('account_login')
     context = {
         'reviews': reviews,
         'sculptures': sculptures,

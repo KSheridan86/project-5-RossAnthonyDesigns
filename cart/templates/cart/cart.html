@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block content %}
-
+<!-- This whole page needs a second pass, very messy -->
 
 <main>
 
@@ -34,7 +34,8 @@
                             method="POST">
                             {% csrf_token %}
                             <button type="submit" class="remove-item-button">
-                                <img class="remove-item-button" src="/media/cross.png" alt="submit" />
+                                <!-- <img class="remove-item-button" src="/media/cross.png" alt="submit" /> -->
+                                <i class="fa-sharp fa-solid fa-circle-xmark fs-2"></i>
                             </button>
                             <input type="submit" class="remove-item-button" value="">
                             <input type="hidden" name="redirect_url" value="{{ request.path }}">
@@ -51,7 +52,7 @@
                                     <input type="hidden" name="quantity" value="{{item.quantity}}">
                                     <br>
                                     <button type="submit" class="item-quantity-button">
-                                        <img class="item-quantity-button" src="/media/minus.png" alt="submit" />
+                                        <i class="fas fa-minus"></i>
                                     </button>
                                     <input type="hidden" name="redirect_url" value="{{ request.path }}">
                                 </form>
@@ -65,7 +66,7 @@
                                     <input type="hidden" name="quantity" value="1">
                                     <br>
                                     <button type="submit" class="item-quantity-button">
-                                        <img class="item-quantity-button" src="/media/add.png" alt="submit" />
+                                        <i class="fas fa-plus"></i>
                                     </button>
                                     <input type="hidden" name="redirect_url" value="{{ request.path }}">
                                 </form>

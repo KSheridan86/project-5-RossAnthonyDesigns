@@ -7,9 +7,6 @@
 
     // Work here, add available&quantity to models
     let availableQuantity = document.querySelector('.available-quantity');
-    if(availableQuantity) {
-        console.log(availableQuantity.value)
-    }
 
     function add(e) {
         e.preventDefault();

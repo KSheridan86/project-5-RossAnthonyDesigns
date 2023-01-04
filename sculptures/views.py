@@ -80,6 +80,11 @@ def add_sculpture(request):
 
 @login_required(login_url='account_login')
 def edit_sculpture(request, pk):
+    """
+    Post method edits product in the database
+    User needs to be logged in and a superuser.
+    Get method displays the edit sculpture form.
+    """
     piece = get_object_or_404(Sculpture, id=pk)
     form = AddSculpture(instance=piece)
     try:
@@ -104,13 +109,18 @@ def edit_sculpture(request, pk):
 
 @login_required(login_url='account_login')
 def delete_sculpture(request, pk):
+    """
+    Post method deletes product from the database
+    User needs to be logged in and a superuser.
+    Get method displays the delete warning message.
+    """
     piece = get_object_or_404(Sculpture, id=pk)
     try:
         if request.method == 'POST' and request.user.is_superuser:
             piece.delete()
             messages.success(request, 'Product deleted successfully!')
             return redirect('dashboard')
-    except ValueError:
+    except RuntimeError:
         messages.error(
             request,
             'Whoops, looks like you might not be authorised\

@@ -6,6 +6,11 @@ from users.models import Review
 
 
 def index(request):
+    """
+    Displays the home page with featured sculptures,
+    Sorts testimonials by public visibility,
+    Page variable is used for the active link in the navbar.
+    """
     page = 'home'
     sculptures = Sculpture.objects.all()[0:3]
     all_testimonials = Review.objects.all()
@@ -34,6 +39,10 @@ def index(request):
 
 
 def artist(request):
+    """
+    Displays the artist page,
+    Page variable is used for the active link in the navbar.
+    """
     page = 'artist'
     context = {
         'page': page,
@@ -43,13 +52,24 @@ def artist(request):
 
 @login_required(login_url='account_login')
 def dashboard(request):
-    if request.user.is_superuser:
-        sculptures = Sculpture.objects.all()
-        reviews = Review.objects.all()
-        newsletter = Newsletter.objects.all()
-        message = Message.objects.all()
-    else:
-        return redirect('account_login')
+    """
+    User needs to be logged in and a superuser.
+    If so the admin dashboard page is loaded,
+    All site Crud functionality is available here.
+    """
+    try:
+        if request.user.is_superuser:
+            sculptures = Sculpture.objects.all()
+            reviews = Review.objects.all()
+            newsletter = Newsletter.objects.all()
+            message = Message.objects.all()
+        else:
+            return redirect('account_login')
+    except RuntimeError:
+        messages.error(
+            request,
+            'Whoops, looks like you might not be authorised\
+                to access this page.')
     context = {
         'reviews': reviews,
         'sculptures': sculptures,

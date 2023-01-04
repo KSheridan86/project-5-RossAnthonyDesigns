@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .forms import UpdateNewsletter, MessageForm, ReviewForm
@@ -6,6 +6,11 @@ from .models import Newsletter, Message, Review
 
 
 def newsletter(request):
+    """
+    Allows user to sign up for a newsletter,
+    Checks if the email is already in the database,
+    Aborts process and informs user if so.
+    """
     try:
         if request.method == 'POST':
             name = request.POST['name']
@@ -34,12 +39,16 @@ def newsletter(request):
 
 
 def delete_newsletter(request, pk):
-    to_delete = Newsletter.objects.get(id=pk)
+    """Allows admin to delete name from newsletter"""
+    to_delete = get_object_or_404(Newsletter, id=pk)
     to_delete.delete()
     return redirect('dashboard')
 
 
 def message(request):
+    """
+    Allows user to send a private message to the site admin.
+    """
     try:
         if request.method == 'POST':
             redirect_url = request.POST['redirect_url']
@@ -61,8 +70,12 @@ def message(request):
         return redirect(redirect_url)
 
 
-@login_required(login_url='/accounts/login/')
+@login_required(login_url='account_login')
 def leave_review(request):
+    """
+    User can submit a product review,
+    They must be logged in to do so.
+    """
     form = ReviewForm()
     try:
         if request.method == 'POST':
@@ -84,25 +97,53 @@ def leave_review(request):
     return render(request, 'users/leave_review.html', context)
 
 
+@login_required(login_url='account_login')
 def view_message(request, pk):
-    message = Message.objects.get(id=pk)
+    """
+    Admin can view recieved private messages,
+    login & superuser required.
+    """
+    try:
+        if request.user.is_superuser:
+            message = get_object_or_404(Message, id=pk)
+        else:
+            return redirect('home')
+    except ValueError:
+        messages.error(
+            request, "Whoops, looks like you're not authorised to be here!")
     context = {
         'message': message
     }
     return render(request, 'users/message.html', context)
 
 
+@login_required(login_url='account_login')
 def delete_message(request, pk):
-    message = Message.objects.get(id=pk)
-    message.delete()
-    return redirect('dashboard')
+    """
+    Admin can delete private messages,
+    login & superuser required.
+    """
+    try:
+        if request.user.is_superuser:
+            message = get_object_or_404(Message, id=pk)
+            message.delete()
+            return redirect('dashboard')
+        else:
+            return redirect('home')
+    except RuntimeError:
+        messages.error(
+            request, "Whoops, looks like you're not authorised to be here!")
 
 
+@login_required(login_url='account_login')
 def view_review(request, pk):
-    review = Review.objects.get(id=pk)
+    """
+    Admin can see and update visibility of customer reviews.
+    """
+    review = get_object_or_404(Review, id=pk)
     form = ReviewForm(instance=review)
     try:
-        if request.method == 'POST':
+        if request.method == 'POST' and request.user.is_superuser:
             form = ReviewForm(request.POST, instance=review)
             if form.is_valid():
                 form.save()
@@ -122,29 +163,17 @@ def view_review(request, pk):
     return render(request, 'users/review.html', context)
 
 
+@login_required(login_url='account_login')
 def delete_review(request, pk):
-    review = Review.objects.get(id=pk)
-    review.delete()
-    return redirect('dashboard')
-
-
-def edit_review(request):
-    form = ReviewForm()
+    """
+    Admin can delete customer reviews,
+    Required to be logged in and a superuser.
+    """
     try:
-        if request.method == 'POST':
-            form = ReviewForm(request.POST)
-            if form.is_valid():
-                form.save()
-                messages.success(
-                    request, "Review saved.")
-                return redirect('dashboard')
-            else:
-                messages.error(request, "Please fill in the form...")
-    except ValueError:
+        if request.user.is_superuser:
+            review = get_object_or_404(Review, id=pk)
+            review.delete()
+            return redirect('dashboard')
+    except RuntimeError:
         messages.error(
-            request,
-            "Whoops! something has gone wrong, we'll get right on to it.")
-    context = {
-        'form': form,
-    }
-    return render(request, 'users/review.html', context)
+            request, "Whoops, looks like you're not authorised to be here!")

@@ -8,8 +8,12 @@ from .models import OrderLineItem, Order
 import stripe
 
 
-# add try except block
+# add try except block/ask chris about this one
 def checkout(request):
+    """
+    Checkout function, creates users order and calls stripe payments,
+    Sends details through to the checkout_success view.
+    """
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
     try:
@@ -31,7 +35,7 @@ def checkout(request):
                 order = order_form.save()
                 for item_id, quantity in cart.items():
                     try:
-                        product = Sculpture.objects.get(id=item_id)
+                        product = get_object_or_404(Sculpture, id=item_id)
                         order_line_item = OrderLineItem(
                             order=order,
                             product=product,
@@ -84,9 +88,12 @@ def checkout(request):
 
 
 def checkout_success(request, order_number):
+    """
+    Calls the order confirmation page,
+    Updates stock quantity after successful purchase.
+    """
     order = get_object_or_404(Order, order_number=order_number)
     messages.success(request, f'Order successfully processed! \
-                                Your order number is {order_number}. \
                                 A confirmation email will been sent to \
                                 {order.email}.')
 
@@ -95,14 +102,18 @@ def checkout_success(request, order_number):
     product_object = []
     number = 0
 
-    for item_id, quantity in cart.items():
-        product_object.append(Sculpture.objects.get(id=item_id))
-        alter_quantity.append(quantity)
+    try:
+        for item_id, quantity in cart.items():
+            product_object.append(Sculpture.objects.get(id=item_id))
+            alter_quantity.append(quantity)
 
-    for item in product_object:
-        item.quantity = item.quantity - alter_quantity[number]
-        item.save()
-        number += 1
+        for item in product_object:
+            item.quantity = item.quantity - alter_quantity[number]
+            item.save()
+            number += 1
+    except ValueError:
+        messages.error(
+            request, "Whoops, we've had a problem reaching our database.")
 
     del request.session['cart']
     context = {

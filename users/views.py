@@ -38,11 +38,24 @@ def newsletter(request):
         return redirect(redirect_url)
 
 
+@login_required(login_url='account_login')
 def delete_newsletter(request, pk):
-    """Allows admin to delete name from newsletter"""
-    to_delete = get_object_or_404(Newsletter, id=pk)
-    to_delete.delete()
-    return redirect('dashboard')
+    """
+    Delete name & email from newsletter,
+    Need to be logged in and a superuser to perform this action.
+    """
+    try:
+        if request.user.is_superuser:
+            to_delete = get_object_or_404(Newsletter, id=pk)
+            to_delete.delete()
+            return redirect('dashboard')
+        else:
+            messages.error(request, 'Maybe try logging in first?')
+            return redirect('account_login')
+    except RuntimeError:
+        messages.error(
+            request,
+            "Whoops, looks like you're not permitted to perform this action")
 
 
 def message(request):

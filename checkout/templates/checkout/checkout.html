@@ -7,6 +7,7 @@
 <main>
 
     <!-- Checkout -->
+    <!-- fix inline styles -->
     <h1 class="text-center mt-3 text-decoration-underline">Checkout</h1>
     <a href="{% url 'shop' %}" class="btn rounded-0" style="margin-top: -5rem;">
         <span class="icon">
@@ -77,9 +78,7 @@
 {% endblock content %}
 
 {% block postload_js %}
-
 {{ block.super }}
-
 {{ stripe_public_key|json_script:'id_stripe_public_key' }}
 {{ client_secret|json_script:'id_client_secret' }}
 <script src="/static/js/stripe_elements.js"></script>

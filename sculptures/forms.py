@@ -23,8 +23,9 @@ class AddSculpture(ModelForm):
         self.fields['image'].widget.attrs.update(
             {'class': 'form-control',
              'placeholder': 'Add Image if Available...'})
+        self.fields['image'].help_text = ''
         self.fields['quantity'].widget.attrs.update(
             {'class': 'form-control',
-             'placeholder': 'Quantity available...'})
+             'placeholder': 'Quantity currently available...'})
         self.fields['available'].widget.attrs.update(
             {'placeholder': 'Available or Not?'})

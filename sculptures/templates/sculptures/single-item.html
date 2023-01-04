@@ -19,7 +19,6 @@
             </div>
 
             <div class="col-12 col-lg-6 col-xl-4">
-
                 <h1 class="mt-4">{{piece.title}}</h1>
                 <h5 class="mb-4 mt-3">{{piece.description}}</h5>
                 <p>Painstakingly crafted and hand forged over incredible heat these Owls are built to withstand
@@ -41,7 +40,6 @@
                         id="decrement-qty_{{ piece.id }}">
                         <i class="fas fa-minus"></i>
                     </button>
-                    <!-- work here/add available&quantity to models/ -->
                     <input class="available-quantity" type="hidden" name="available-quantity" value="{{ piece.quantity }}">
 
                     <input onKeyDown="return false" class="number-input qty_input" type="number" name="quantity" value="1" min="1" max="99"
@@ -67,7 +65,6 @@
                     <br>and estimated delivery times.
                 </p>
                 {% endif %}
-
             </div>
         </div>
     </div>
@@ -77,10 +74,7 @@
         </span>
         <span class="text-uppercase">Keep Shopping</span>
     </a>
-
 </main>
-<script src="/static/js/quantity_input_script.js">
-
-</script>
+<script src="/static/js/quantity_input_script.js"></script>
 
 {% endblock content %}

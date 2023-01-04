@@ -7,6 +7,7 @@
 <main>
 
     <!-- Cart -->
+    <!-- fix inline styles -->
     <h1 class="text-center mt-3 text-decoration-underline">Shopping Cart</h1>
     <a href="{% url 'shop' %}" class="btn rounded-0" style="margin-top: -5rem;">
         <span class="icon">
@@ -79,7 +80,7 @@
                 </li>
                 {% endfor %}
             </ul>
-            <!-- Add running total + Shipping + Complete purchase button -->
+            <!-- fix inline styles -->
             <a href="{% url 'delete_cart' %}" class="btn rounded-0" style="float: left;">
                 <span class="icon">
                     <i class="fa fa-trash-o"></i>

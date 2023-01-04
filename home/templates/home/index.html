@@ -86,22 +86,16 @@
 </div>
 
 <!-- Main content -->
-<!-- Sort out fonts??
-    font-family: 'Bangers', cursive;
-
-    font-family: 'Special Elite', cursive;
-
-    font-family: 'Teko', sans-serif;
--->
 <main>
     <div class="container text-center mt-4 mb-5">
         <!-- Featured products -->
+        <!-- fix inline styles -->
         <div class="row justify-content-center">
             <h1 class="p-3 mt-2 text-decoration-underline metal-light"
-                style="font-family: 'Teko', sans-serif; font-size: 2.5rem;">Featured Products</h1>
+                style="font-family: 'Teko', sans-serif; font-size: 4rem;">Featured Products</h1>
 
             {% for piece in sculptures %}
-            <div class="col-12 col-md-6 col-lg-4 col-xl-4 p-4 mb-5 mt-4 fade-in">
+            <div class="col-12 col-md-6 col-lg-4 col-xl-4 p-4 mb-5 mt-3 fade-in">
                 <a href="{% url 'single_item' piece.id %}">
                     <img class="featured-image" src="{{piece.image.url}}">
                 </a>
@@ -115,8 +109,8 @@
         </div>
         <!-- Customer Testimonials -->
         <div class="row justify-content-center mt-5">
-            <h1 class="p-3 mt-2 text-decoration-underline metal-light"
-                style="font-family: 'Teko', sans-serif; font-size: 2.5rem;">
+            <h1 class="p-3 mt-1 text-decoration-underline metal-light"
+                style="font-family: 'Teko', sans-serif; font-size: 4rem;">
                 Testimonials
             </h1>
             <div class="accordion col-10 col-md-8 col-lg-6 mt-2 fade-in" id="accordionExample">

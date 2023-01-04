@@ -3,10 +3,10 @@
 
 {% block content %}
 
-
 <main>
 
     <!-- Add Sculpture form -->
+    <!-- fix inline styles -->
     <h1 class="text-center mt-3 text-decoration-underline">Edit Sculpture</h1>
     <a href="{% url 'dashboard' %}" class="btn rounded-0" style="margin-top: -5rem;">
         <span class="icon">
@@ -23,13 +23,19 @@
 
                     {% for field in form %}
                     <div class="form-group come-in mt-3 mb-3">
+                        {{field.label}}
+                        <br>
                         {{field}}
                         <br>
                     </div>
                     {% endfor %}
+                    {% if piece.available == True %}
+                    <h6 class="text-center text-danger mb-4">**Warning, Tick box above and press save to set product as <strong class="text-decoration-underline">unavailable</strong> for delivery.**</h6>
+                    {% else %}
+                    <h6 class="text-center text-danger mb-4">**Warning, Tick box above and press save to set product as <strong class="text-decoration-underline">available</strong> for delivery.**</h6>
+                    {% endif %}
 
                     <button type="submit" class="btn metal linear">Save</button>
-
                 </form>
             </div>
         </div>

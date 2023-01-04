@@ -44,7 +44,12 @@ def single_item(request, pk):
     """
     Gets an individual product page or returns a 404 page
     """
-    piece = get_object_or_404(Sculpture, id=pk)
+    try:
+        piece = get_object_or_404(Sculpture, id=pk)
+    except RuntimeError:
+        messages.error(
+            request,
+            "Whoops, something has gone wrong, we'll get right on to it")
     context = {
         'piece': piece
     }
@@ -63,8 +68,7 @@ def add_sculpture(request):
         if request.method == 'POST' and request.user.is_superuser:
             form = AddSculpture(request.POST, request.FILES)
             if form.is_valid():
-                new_sculpture = form.save(commit=False)
-                new_sculpture.save()
+                form.save()
                 messages.success(request, 'Product added successfully!')
                 return redirect('dashboard')
     except ValueError:
@@ -91,8 +95,7 @@ def edit_sculpture(request, pk):
         if request.method == 'POST' and request.user.is_superuser:
             form = AddSculpture(request.POST, request.FILES, instance=piece)
             if form.is_valid():
-                new_sculpture = form.save(commit=False)
-                new_sculpture.save()
+                form.save()
                 messages.success(request, 'Product edited successfully!')
                 return redirect('dashboard')
     except ValueError:

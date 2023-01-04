@@ -9,14 +9,10 @@
     <span class="text-uppercase">Back</span>
 </a>
 <div class="container text-center mt-5 mb-5">
-    
     <div class="row justify-content-center">
         <div class="col-10">
-
             <h1>Delete Product</h1>
-
             <p>Are you sure you want to Delete {{piece.title}}?</p>
-
             <form method="post" action="{% url 'delete_sculpture' piece.id %}">
                 {% csrf_token %}
                 <button class="btn mt-3 metal linear" type="submit">Delete?</button>

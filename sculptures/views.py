@@ -1,10 +1,15 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 from .models import Sculpture
 from .forms import AddSculpture
 
 
 def shop(request):
+    """
+    Displays the shop page, and allows sorting by price.
+    Page variable is used for the active link in the navbar.
+    """
     page = 'shop'
     sculptures = Sculpture.objects.all()
 
@@ -36,8 +41,10 @@ def shop(request):
 
 
 def single_item(request, pk):
-    piece = Sculpture.objects.get(id=pk)
-
+    """
+    Gets an individual product page or returns a 404 page
+    """
+    piece = get_object_or_404(Sculpture, id=pk)
     context = {
         'piece': piece
     }
@@ -46,13 +53,25 @@ def single_item(request, pk):
 
 @login_required(login_url='account_login')
 def add_sculpture(request):
+    """
+    Post method adds product to the database
+    User needs to be logged in and a superuser.
+    Get method displays the add sculpture form.
+    """
     form = AddSculpture()
-    if request.method == 'POST':
-        form = AddSculpture(request.POST, request.FILES)
-        if form.is_valid():
-            new_sculpture = form.save(commit=False)
-            new_sculpture.save()
-            return redirect('shop')
+    try:
+        if request.method == 'POST' and request.user.is_superuser:
+            form = AddSculpture(request.POST, request.FILES)
+            if form.is_valid():
+                new_sculpture = form.save(commit=False)
+                new_sculpture.save()
+                messages.success(request, 'Product added successfully!')
+                return redirect('dashboard')
+    except ValueError:
+        messages.error(
+            request,
+            'Whoops, looks like you might not be authorised\
+                to view this page.')
     context = {
         'form': form,
     }
@@ -61,14 +80,21 @@ def add_sculpture(request):
 
 @login_required(login_url='account_login')
 def edit_sculpture(request, pk):
-    piece = Sculpture.objects.get(id=pk)
+    piece = get_object_or_404(Sculpture, id=pk)
     form = AddSculpture(instance=piece)
-    if request.method == 'POST':
-        form = AddSculpture(request.POST, request.FILES, instance=piece)
-        if form.is_valid():
-            new_sculpture = form.save(commit=False)
-            new_sculpture.save()
-            return redirect('dashboard')
+    try:
+        if request.method == 'POST' and request.user.is_superuser:
+            form = AddSculpture(request.POST, request.FILES, instance=piece)
+            if form.is_valid():
+                new_sculpture = form.save(commit=False)
+                new_sculpture.save()
+                messages.success(request, 'Product edited successfully!')
+                return redirect('dashboard')
+    except ValueError:
+        messages.error(
+            request,
+            'Whoops, looks like you might not be authorised\
+                to perform this action.')
     context = {
         'form': form,
         'piece': piece
@@ -78,10 +104,17 @@ def edit_sculpture(request, pk):
 
 @login_required(login_url='account_login')
 def delete_sculpture(request, pk):
-    piece = Sculpture.objects.get(id=pk)
-    if request.method == 'POST':
-        piece.delete()
-        return redirect('dashboard')
+    piece = get_object_or_404(Sculpture, id=pk)
+    try:
+        if request.method == 'POST' and request.user.is_superuser:
+            piece.delete()
+            messages.success(request, 'Product deleted successfully!')
+            return redirect('dashboard')
+    except ValueError:
+        messages.error(
+            request,
+            'Whoops, looks like you might not be authorised\
+                to perform this action.')
     context = {
         'piece': piece
     }

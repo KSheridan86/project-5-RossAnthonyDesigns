@@ -111,8 +111,7 @@ ul {
 
 .form-control {
     display: inline;
-    border: 1px solid black;
-    width: 55vw;
+    border: 1px solid black
 }
 
 .newsletter {
@@ -521,7 +520,7 @@ input[type=number] {
     }
 
     .form-control {
-        width: 45%;
+        width: 65%;
     }
 
     .footer-borders-about {
@@ -572,7 +571,7 @@ input[type=number] {
 
 @media (min-width: 968px) {
     .form-control {
-        width: 40%;
+        width: 65%;
     }
 
     .remove-item {
@@ -642,7 +641,7 @@ input[type=number] {
     }
 
     .form-control {
-        width: 35%;
+        width: 55%;
     }
 
     .cart-img {

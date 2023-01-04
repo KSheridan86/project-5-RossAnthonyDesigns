@@ -2,14 +2,14 @@
 {% load static %}
 
 {% block content %}
-
+<a href="{% url 'dashboard' %}" class="btn rounded-0">
+    <span class="icon">
+        <i class="fas fa-chevron-left"></i>
+    </span>
+    <span class="text-uppercase">Back</span>
+</a>
 <div class="container text-center mt-5 mb-5">
-    <a href="{% url 'dashboard' %}" class="btn rounded-0" style="margin-top: -5rem;">
-        <span class="icon">
-            <i class="fas fa-chevron-left"></i>
-        </span>
-        <span class="text-uppercase">Back</span>
-    </a>
+    
     <div class="row justify-content-center">
         <div class="col-10">
 

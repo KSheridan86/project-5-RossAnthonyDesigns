@@ -292,18 +292,16 @@ input[type=number] {
 }
 
 .remove-item {
-    height: 2rem;
-    margin-left: 17.5rem;
-    margin-top: -4rem;
-    float: right;
+    margin-top: 0rem;
 }
 
 .remove-item-button {
-    height: 2rem;
-    width: 2rem;
+    height: 3rem;
+    width: 3rem;
+    margin-right: 0rem;
     border: none;
-    border-radius: 50%;
-    background: url(/media/cross.png) no-repeat;
+   
+    background-color: rgb(212, 212, 212, 0);
 }
 
 .item-quantity-button {
@@ -315,7 +313,7 @@ input[type=number] {
 }
 
 .list-group-item {
-    height: 25vh;
+    height: 20vh;
 }
 
 .squeeze-up {
@@ -332,6 +330,10 @@ input[type=number] {
     margin-top: -4rem;
     margin-left: 1rem;
 }
+
+/* .cart-quantity {
+    font-size: 2rem;
+} */
 
 /* Dashboard page */
 
@@ -497,6 +499,11 @@ input[type=number] {
 }
 
 /* media queries */
+@media (max-width: 345px) {
+    .list-group-item {
+        height: 22vh;
+    }
+}
 
 @media (max-width: 766px) {
     .nav-item {
@@ -553,10 +560,10 @@ input[type=number] {
         height: 4rem;
         margin-top: 1rem;
     }
-    .remove-item {
+    /* .remove-item {
         margin-right: -2rem;
         margin-top: -5rem;
-    }
+    } */
     .squeeze-up {
         margin-right: 0.25rem;
     }
@@ -572,11 +579,6 @@ input[type=number] {
 @media (min-width: 968px) {
     .form-control {
         width: 65%;
-    }
-
-    .remove-item {
-        margin-right: -2rem;
-        margin-top: -1rem;
     }
 
     .bag {
@@ -651,10 +653,6 @@ input[type=number] {
         margin-top: 1rem;
     }
 
-    .remove-item {
-        height: 3rem;
-    }
-
     .cart-item-text {
         font-size: 1.75rem;
     }
@@ -694,6 +692,9 @@ input[type=number] {
     .messages-container {
         width: 30vw;
         margin-top: 7rem;
+    }
+    .list-group-item {
+        height: 28vh;
     }
 }
 
@@ -803,4 +804,8 @@ input[type=number] {
 
 a .featured-image:hover {
     color: #fd5e086b !important;
+}
+
+.up {
+    margin-top: -1rem;
 }

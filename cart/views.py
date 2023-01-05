@@ -20,8 +20,17 @@ def add_to_cart(request, item_id):
     cart = request.session.get('cart', {})
     try:
         if item_id in list(cart.keys()):
-            cart[item_id] += quantity
+            if piece.quantity >= cart[item_id] + quantity:
+                cart[item_id] += quantity
+                messages.success(
+                    request, f'{piece} succesfully added to Cart!')
+            else:
+                messages.error(
+                    request,
+                    f'Sorry, only {piece.quantity}\
+                        of these are curently available.')
         else:
+            messages.error(request, 'no more available')
             cart[item_id] = quantity
     except RuntimeError:
         messages.error(
@@ -29,7 +38,6 @@ def add_to_cart(request, item_id):
             "Whoops, We've encountered a problem, we'll get straight onto it,\
                 in the meantime you could always try again??")
 
-    messages.success(request, f'{piece} succesfully added to Cart!')
     request.session['cart'] = cart
     return redirect(redirect_url)
 

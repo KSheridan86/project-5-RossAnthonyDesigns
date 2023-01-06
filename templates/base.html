@@ -30,7 +30,7 @@
 
     <title>RossAnthonyDesigns {% block extra_title %}{% endblock extra_title %}</title>
 
-    <link rel="icon" type="image/png" href="/media/anvil.png">
+    <link rel="icon" type="image/png" href="{% static 'images/anvil.png' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -59,7 +59,7 @@
             </a>
 
             <a id="logo" class="navbar-brand me-auto" href="{% url 'home' %}">
-                Forged<img class="avatar" src="/media/anvil.png">Nature
+                Forged<img class="avatar" src="{% static 'images/anvil.png' %}">Nature
             </a>
 
             {% if request.user.is_superuser %}
@@ -256,7 +256,7 @@
             <div class="row justify-content-end">
                 <div class="col-3 col-md-2 col-lg-1">
                     <a href="#">
-                        <img class="top-btn" src="/media/back-to-top.png">
+                        <img class="top-btn" src="{% static 'images/back-to-top.png' %}">
                     </a>
                 </div>
             </div>

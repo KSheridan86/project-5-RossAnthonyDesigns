@@ -30,8 +30,9 @@ def add_to_cart(request, item_id):
                     f'Sorry, only {piece.quantity}\
                         of these are curently available.')
         else:
-            messages.error(request, 'no more available')
             cart[item_id] = quantity
+            messages.success(
+                    request, f'{piece} succesfully added to Cart!')
     except RuntimeError:
         messages.error(
             request,

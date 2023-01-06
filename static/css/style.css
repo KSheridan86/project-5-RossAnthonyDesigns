@@ -35,6 +35,7 @@ a {
 }
 
 #logo {
+    font-family: 'Teko', sans-serif;
     font-size: 2.5rem;
 }
 
@@ -57,12 +58,10 @@ ul {
     width: 2rem;
     opacity: .8;
 }
-/* is this needed?? */
-.chimp-avatar {
-    height: 3rem;
-    width: 3rem;
-    margin-left: 8rem;
-    margin-top: -2rem;
+
+.section-header {
+    font-family: 'Teko', sans-serif;
+    font-size: 4rem;
 }
 
 .bag {
@@ -300,7 +299,6 @@ input[type=number] {
     width: 3rem;
     margin-right: 0rem;
     border: none;
-   
     background-color: rgb(212, 212, 212, 0);
 }
 
@@ -330,10 +328,14 @@ input[type=number] {
     margin-top: -4rem;
     margin-left: 1rem;
 }
+.clear-cart-btn {
+    float: left;
+}
 
-/* .cart-quantity {
-    font-size: 2rem;
-} */
+.adjust-cart-btn {
+    margin-left: -5.25rem;
+    margin-top: -2rem;
+}
 
 /* Dashboard page */
 

@@ -19,8 +19,6 @@
 
     {% if cart_items %}
 
-    <!-- fix inline styles -->
-
     <div class="lg-screen d-flex justify-content-center mt-2 mb-5">
 
         <div class="cart-box p-3 mb-md-5 mb-5">
@@ -85,9 +83,8 @@
                 </li>
                 {% endfor %}
             </ul>
-
-            <!-- fix inline styles -->
-            <a href="{% url 'delete_cart' %}" class="btn rounded-0" style="float: left;">
+            <!-- Cart totals and clear cart button -->
+            <a href="{% url 'delete_cart' %}" class="btn rounded-0 clear-cart-btn">
                 <span class="icon">
                     <i class="fa fa-trash-o"></i>
                 </span>

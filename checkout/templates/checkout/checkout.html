@@ -13,51 +13,114 @@
         </span>
         <span class="text-uppercase">Keep Shopping</span>
     </a>
+    <a href="{% url 'view_cart' %}" class="btn rounded-0 back-to-cart-btn">
+        <span class="text-uppercase">Adjust Cart   </span>
+        <span class="icon">
+            <i class="fas fa-chevron-right"></i>
+        </span>
+        
+    </a>
     <h1 class="text-center mt-3 text-decoration-underline">Checkout</h1>
-    
+    {% if cart_items %}
+<div class="container mx-auto">
+    <div class="row justify-content-center">
+        <ul class="col-10 col-md-8 col-lg-6">
+            {% for item in cart_items %}
+            <li class="recap-box border border-2 rounded p-2">
+                <div class="container">
+                    <div class="row d-flex align-items-center">
+                        <div class="col-4">
+                            <a href="{% url 'single_item' item.product.id %}"><img class="cart-img-recap"
+                                    src="{{ item.product.image.url }}"></a>
+                        </div>
+                        <div class="col-4">
+                            <span>{{item.product.title}}:</span>
+                            <span class="text-center"> €{{item.product.price|floatformat:2}}</span>
+                        </div>
+                        <div class="col-4 mt-3">
+                            <p>Quantity: {{item.quantity}}</p>
+                        </div>
+                        
+                    </div>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+ 
+</div>
+
+    {% endif %}
+
     <div class="container">
         <div class="lg-screen row justify-content-center mt-2 mb-5">
-            <div class="col-10 col-lg-6 cart-box p-3 mb-md-5 mb-5">
-                <form class="login mb-2 text-center" method="POST" action="{% url 'checkout' %}" id="payment-form">
-                    <h4>Contact & Delivery</h4>
-                    {% csrf_token %}
-
-                    {% for field in form %}
-                    <div class="form-group come-in mt-3 mb-3">
-                        {{field}}
+            <div class="col-12 col-md-8 col-lg-10 p-3 mb-md-5 mb-5">
+                <form class="mb-2 text-center row justify-content-center" method="POST" action="{% url 'checkout' %}"
+                    id="payment-form">
+                    <div class="col-10 col-lg-6">
+                        <h4>Contact Details</h4>
+                        {% csrf_token %}
+                        <div class="form-group come-in mt-3 mb-3">
+                            {{form.full_name}}
+                        </div>
+                        <div class="form-group come-in mt-3 mb-3">
+                            {{form.email}}
+                        </div>
+                        <div class="form-group come-in mt-3 mb-5">
+                            {{form.phone_number}}
+                        </div>
+                        <small class="form-text text-muted">
+                            **If you require delivery outside of the Republic of Ireland<br>please
+                            <strong class="text-uppercase"><a href="{% url 'artist' %}">Contact me</a></strong> for
+                            assistance
+                            and delivery costs.**
+                        </small>
                     </div>
-                    {% endfor %}
-                    <small class="form-text text-muted">
-                        **If you require delivery outside of the Republic of Ireland<br>please get in touch for assistance
-                        and delivery costs.**
-                    </small>
 
-                    <h4 class="mt-2">Payment Details</h4>
-                    <div class="row justify-content-center">
-                        <div class="col-12 col-md-7">
-                            <div class="form-group come-in mt-3 mb-3">
-                                <!-- A stripe card element will go here -->
-                                <div class="rounded text-muted" id="card-element">Card</div>
+                    <div class="col-10 col-lg-6 mt-3">
+                        <h4>Delivery Information</h4>
+                        {% csrf_token %}
+                        <div class="form-group come-in mt-3 mb-3">
+                            {{form.street_address1}}
+                        </div>
+                        <div class="form-group come-in mt-3 mb-3">
+                            {{form.street_address2}}
+                        </div>
+                        <div class="form-group come-in mt-3 mb-3">
+                            {{form.town_or_city}}
+                        </div>
+                        <div class="form-group come-in mt-3 mb-3">
+                            {{form.county}}
+                        </div>
+                        <div class="form-group come-in mt-3 mb-3">
+                            {{form.postcode}}
+                        </div>
 
-                                <!-- Used to display errors -->
-                                <div class="text-danger mt-2" id="card-errors" role="alert"></div>
-                            </div>
+                    </div>
+
+
+
+
+
+                    <h4 class="mt-4">Payment Details</h4>
+
+                    <div class="col-10 col-md-8 col-lg-6">
+                        <div class="form-group come-in mt-3 mb-3">
+                            <!-- A stripe card element will go here -->
+                            <div class="rounded text-muted" id="card-element">Card</div>
+
+                            <!-- Used to display errors -->
+                            <div class="text-danger mt-2" id="card-errors" role="alert"></div>
                         </div>
                     </div>
+
 
 
                     <!-- Submit section -->
                     <!-- fix inline styles -->
                     <div class="submit-button">
 
-                        <a href="{% url 'view_cart' %}" class="btn rounded-0 adjust-cart-btn">
-                            <span class="icon">
-                                <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="text-uppercase">Adjust Cart</span>
-                        </a>
-
-                        <button id="submit-button" class="btn-header mt-3 metal linear" type="submit">Pay Now
+                        <button id="submit-button" class="btn newsletter mt-3 metal linear" type="submit">Pay Now
                             <i class="fas fa-lock"></i>
                         </button>
 

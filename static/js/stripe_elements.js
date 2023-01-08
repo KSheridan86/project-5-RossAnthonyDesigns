@@ -55,7 +55,7 @@ form.addEventListener('submit', function (event) {
         payment_method: {
             card: card,
             billing_details: {
-                name: 'Bigus Dickus'
+                name: ''
             }
         }
     }).then(function (result) {

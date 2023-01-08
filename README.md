@@ -1,9 +1,9 @@
-# RossAnthonyDesigns
+# RossAnthonyDesigns - ForgedNature
 
-## Recipe Sharing app
+## E-Commerce store for a local sculptor
 ------------------------------------
 
-![alt text](./docs/landingpage.png)
+![alt text](./docs/forged_nature_responsive.png)
 
 Live site available [here](https://rossanthonydesigns.herokuapp.com/). 
 
@@ -30,11 +30,23 @@ Live site available [here](https://rossanthonydesigns.herokuapp.com/).
 ## Description
 ---------------------------------------
 
-Taste of India is a website built in Django using Python, JavaScript, CSS/Bootstrap and HTML. It centers around the very popular Indian cuisine. It enables users to create and share recipes with other users from around the world. It is targetted towards users who enjoy their food and would like to share their recipes with others. Users have the ability to create recipes, and their own profile. They can upload images for use on their recipe or on their profile, link their personal accounts and websites, leave comments on recipes and private message other users.
+RossAnthonyDesigns - ForgedNature is a fully functional E-Commerce store built in Django using Python, JavaScript, CSS, Bootstrap5, HTML and it incorporates stripe payments.
+The site provides role based permissions for users to interact with a central dataset. It includes user authentication and Full CRUD functionality for products.
 
-This is the fourth project for the Code Institute Diploma in Software Development.
+Forged Nature is a small craft business based in Co. Westmeath.
+Specializing in hand forged, nature inspired items for display in home or garden.
+With products ranging from a simple Butterfly to life size predatory Barn Owls.
 
-The site provides role based permissions for users to interact with a central dataset. It includes user authentication and Full CRUD functionality for Recipes and User Profiles.
+This version has been built for project 5 of the Code Institute Diploma in Software Development and therefore doesn't accept real payments and any orders made won't be fulfilled.
+
+If you would like to test the payment functionality please feel free to do so by entering the card details below when prompted to do so:
+
+`Card number: 4242 4242 4242 4242  Exp: any future date eg. 11/26 Cvn: any 3 digits eg 123`
+
+
+But a fully operational live site will be released soon under the url: www.rossanthonydesigns.ie
+
+
 
 -------
 ## Design
@@ -49,28 +61,41 @@ The home page provides the user with a clear understanding as to the purpose of 
 ![Home Page Wireframe](./docs/landingpage-wireframe.jpg)
 
 
-Recipes Page:
+Shop Page:
 
-Users have the ability to create recipes to share with other users. The emphasis of the design is to provide a clear recipe layout that can adapt to any size device. Clearly seperating general information, ingredients and steps.
-Users will have the ability to search for recipes based on a search query of their choice. To aid in the discovery of different recipes, each recipe will be displayed in the form of a summary card from which the user can access the full recipe details.
+Users have the ability to view information on available products and add them to a cart for purchase. The emphasis of the design is to provide a clear layout that can adapt to any size device.
 
-![Recipes Wireframe](./docs/recipes-wireframe.jpg)
+Users will have the ability to order products by price, Asc & Desc. To aid in the user experience users have the ability to open up a seperate page on each item for sale.
+
+![Shop Wireframe](./docs/recipes-wireframe.jpg)
 
 
-Profile Page:
+Artist Page:
 
-Users also have the ability to create a personal profile. From this profile users can access the recipes they have created. They can also control the information they share with other users.
+Users can view a page dedicated to the artist himself, this page includeds basic information and photos aswell as a contact form used for basic communication or requests for commissions.
 
-![User Profile Wireframe](./docs/user-profile-wireframe.jpg)
+![Artist Wireframe](./docs/user-profile-wireframe.jpg)
+
+
+Cart Page:
+
+Users can view a cart with their chosen items, it includes a total price for items in the cart, delivery cost and grand total (price + delivery)
+
+![Cart Wireframe](./docs/user-profile-wireframe.jpg)
+
+
+Checkout Page:
+
+The checkout page will include a summary of items in the cart and all relevant information needed for a successful order ie. Contact Details, Delivery Details & Payment Details.
+
+![Checkout Wireframe](./docs/user-profile-wireframe.jpg)
 
 
 Wireframes were also produced for each major page for both mobile and tablet devices. With the intention of the site being fully responsive so that no matter the device size the user is viewing the site on, it will display accordingly.
 
 
-* [Single-Recipe page wireframe](./docs/single-recipe-wireframe.jpg)
-* [Profiles page wireframe](./docs/profiles-wireframe.jpg)
-* [Inbox page wireframe](./docs/inbox-wireframe.jpg)
-* [Message page wireframe](./docs/message-wireframe.jpg)
+* [Order confirmation wireframe](./docs/single-recipe-wireframe.jpg)
+* [404 page wireframe](./docs/profiles-wireframe.jpg)
 * [Form page wireframe](./docs/formpage-wireframe.jpg)
 * [Delete page wireframe](./docs/delete-object-wireframe.jpg)
 
@@ -78,7 +103,7 @@ Wireframes were also produced for each major page for both mobile and tablet dev
 [Back to the Top](#table-of-contents)
 #### Database Schema
 
-Several custom models were predicted to be required when building the site. A Profile Model was included. In order for the users to create Recipes a custom recipe model was required, which would be linked to the User Profile through using the profile as a foreign key. The database schema was drawn out by hand.
+Several custom models were predicted to be required when building the site. On top of the standard Sculpture/Order models these included a Newsletter signup Model a Message Model and a customer Review model. The database schema was drawn out by hand.
 
 ![Database Schema Diagram](./docs/database-schema.jpg)
 
@@ -86,26 +111,29 @@ Once I was happy with the overall structure of the site, and the layout of the w
 
 These colours were:
 
-Light Mustard/Yellow: #e1a052
+Grey/Blue: #6f8ca2
 
-Light Green: #6e9d6c
+Dusty Orange: #ff85436b
+
+Whitesmoke: #f5f5f5
+
+And Bootstraps Text-Muted class for sligtly greyed out text.
 
 
 [Back to the Top](#table-of-contents)
 
 ## UX
-*  Taste of India is intended to be a friendly community site for users to create and share their own recipes with others. Users will also be able to find recipes created by other users from around the world. The graphical elements and overall design of the site provide the user with a fun and enjoyable environment.
+*  RossAnthonyDesigns was designed to be a friendly and informative site for users to easily browse and find products they would be interested in purchasing. The graphical elements and overall design of the site provide the user with a fun and enjoyable environment.
 
 ### The Sites Ideal User
-* Food lover looking to share their favourite recipes with others
-* Someone looking to expand their recipe knowledge
-* Someone looking for inspiration for new things to try
+* Someone looking to purchase or commission a Sculpture
+* Someone looking for inspiration for a crafty project
 
 ### Site Goals
 
-* To provide users with a place to find recipes
-* To provide users with a place to share their own recipes
-* To provide users with a place to discover new meals
+* To provide the site owner with a place to sell his work.
+* To provide the site owner with a place to showcase his work and expand his digital presence.
+* To provide users with an enjoyable and easy to use site for making purchases.
 
 [Back to the Top](#table-of-contents)
 
@@ -113,80 +141,89 @@ Light Green: #6e9d6c
 
 The plan for this project was carried out using the Agile Methodology in Github. User Stories were created using issues on git hub. Each user story explicitly explains the purpose of the issues. Each user story is segmented into acceptance criteria and tasks. It was prioritised using GitHub labels with different colors.
 
-8 Epics were created which were then further developed into 29 User Stories. The details on each epic, along with the user stories linked to each one can be found in the project kanban board [here](https://github.com/users/KSheridan86/projects/4)
+9 Epics were created which were then further developed into 29 User Stories. The details on each epic, along with the user stories linked to each one can be found in the project kanban board [here](https://github.com/users/KSheridan86/projects/4)
 
-From the Epics, 29 User stories were developed. Each story was assigned a classification of Must-Have, Should-Have, Could-Have or Won't Have. Each story was also assigned user story points, based on my best estimation for the time/difficulty of completing each story. In practice some of these tasks were completed much quicker than anticipated and others took a little longer but overall the development went smoother than anticipated and the project was completed ahead of schedule. A number of these stories were chosen to be left out of the project as it was already quite big (I.E password reset or social media login) I was aware that as I approached the next project, PP5 - ECommerce these would be explained in more detail and I would get a chance to implement them properly.
+From the Epics, 29 User stories were developed. Each story was assigned a classification of Must-Have, Should-Have, Could-Have or Won't Have. Each story was also assigned user story points, based on my best estimation for the time/difficulty of completing each story. In practice some of these tasks were completed much quicker than anticipated and others took a little longer but overall the development went smoother than anticipated and the project was completed ahead of schedule. A number of these stories were chosen to be left out of the project as it was already quite big (I.E social media login).
 
 ### Epics
 
-1. User Profile [#1](https://github.com/KSheridan86/project-4-TasteOfIndia/issues/1)
-2. Sign in/out [#2](https://github.com/KSheridan86/project-4-TasteOfIndia/issues/2)
-3. Recipes [#3](https://github.com/KSheridan86/project-4-TasteOfIndia/issues/3)
-4. Recipe Interaction [#4](https://github.com/KSheridan86/project-4-TasteOfIndia/issues/4)
-5. Search Recipes [#5](https://github.com/KSheridan86/project-4-TasteOfIndia/issues/5)
-6. Landing page [#6](https://github.com/KSheridan86/project-4-TasteOfIndia/issues/6)
-7. Messaging [#7](https://github.com/KSheridan86/project-4-TasteOfIndia/issues/7)
-8. Authorisation [#8](https://github.com/KSheridan86/project-4-TasteOfIndia/issues/8)
+1. Sign in/out [#1](https://github.com/KSheridan86/project-5-RossAnthonyDesigns/issues/1)
+2. Landing page/Frontend Templates [#2](https://github.com/KSheridan86/project-5-RossAnthonyDesigns/issues/2)
+3. View Products/Admin CRUD functionalikty [#3](https://github.com/KSheridan86/project-5-RossAnthonyDesigns/issues/3)
+4. Shopping Cart [#4](https://github.com/KSheridan86/project-5-RossAnthonyDesigns/issues/4)
+5. User Feedback [#5](https://github.com/KSheridan86/project-5-RossAnthonyDesigns/issues/5)
+6. Payments [#6](https://github.com/KSheridan86/project-5-RossAnthonyDesigns/issues/6)
+7. User Profile [#7](https://github.com/KSheridan86/project-5-RossAnthonyDesigns/issues/7)
+8. Contact Artist/Social links [#8](https://github.com/KSheridan86/project-5-RossAnthonyDesigns/issues/8)
+9. Customer Reviews [#9](https://github.com/KSheridan86/project-5-RossAnthonyDesigns/issues/8)
 
 ### User Stories
 
 These are the user stories that were completed within the projects first release, by Epic.
 
-- User Profile
-	*  Create a User Account - As a User, I would like to be able to create an account, so that I can create and save recipes
-	*  Users can view their profile - As a User, I would like to be able to see the details in my user profile, so that I can see what  information other users can see about me
-	*  Users can edit their profile - As a User, I would like to be able to edit my profile, so that I can keep the information upto date
-	*  Users can delete their account - As a User, I can delete my account, so that I can remove my details and recipes at my request
 
-- User sign in or sign out
-	*  User Account Login / Logout - As a User, I would like to be able to login or logout of my account, so that I can keep my account secure
-	*  Features restricted to signed in users - As a Site Owner, I would like to restrict some features of the site to registered users, so that it encourages people to sign up to the site
-
-- User recipes
-	*  Create a Recipe - As a User, I would like to be able to share my own recipes, with family and friends so they can teach them to their own children and have fun experiences together baking
-	*  View Recipes - As a User, I can access the recipes on the site.
-	*  Update a recipe - As a user, I can update a recipe that I have created, so that I can correct any mistakes I may have made
-	*  Delete a recipe - As a user, I can delete a recipe that I have created, so that I can remove it from the site
-
-- Recipe Interaction
-	*  Leave Comments - As a User I can leave comments/feedback on Recipes I like/don't like
-	*  Respond to Comments - as a user I can respond to comments left on my or others Users Recipes
-
-- Recipe searching
-	*  Recipe Searching - As a User, I would like to be able to find Recipes, so that I can increase the variety of meals we consume.
-	*  Recipe Search - Advanced - As a User, I would like to be able to search the Recipes by title, ingredients or author, so that I can find the ones that match my fancy at that point in time
+- User Sign in or Sign out
+	*  User Account Login / Logout - As a User, I would like to be able to login or logout of my account, so that I can avail of the sites full functionality
+	*  Receive Welcome Emails - As a user I would like to receive a welcome email upon signing up
+    *  Reset password Functionality - As a user I would like to be able to reset my password to keep my account safe
+    *  Visibly logged in or out - As a user I would like to knowe if I am logged in or not
 
 - Landing page
 	*  As a User I would like to be brought to the landing page upon first visiting the site so that I can see what options are available to me
-    *  As a User from the landing page I should have the option to view the Recipes or the Users
-    *  As a User on the landing page I should be easily able to Log in or Register for an account
+    *  As a User from the landing page I should clearly be able to see and navigate the navbar
+    *  As a User on the landing page I should be easily able to go straight to the shop and purchase an item
 
-- Messaging
-    *  As a User I would like to be able to send private messages to other Users
-    *  As a User I would like to be able to reply to received private messages
-    *  As a User I should be able to delete received private messages
-    *  As a User access to my inbox should be easy and straight forward
+- View Products, Admin CRUD
+    *  As a user I should be easily able to see a list of products available.
+    *  As a user I should be able to click on any item to see more information about it.
+    *  As an Admin I can add products to the database
+    *  As an admin I can edit products in the database
+    *  As an admin I can delete products from the database
 
-- Authorisation
-	*  As the site developer I would like to restrict Recipe CRUD functionality to logged in Users
-    *  As the site developer I would like to restrict User Crud functionality to logged in Users 
+- Shopping Cart
+    *  As a user I can easily view the contents of my Cart
+    *  As a user I can easily add/edit/delete the contents of my Cart
+    *  As a user I can easily identify the total cost of my Cart
 
+- User Feedback/Confirmation
+    *  As a user I receive prompt feedback concerning my actib=vity on the site
+    *  As a user I can see a order confirmation message
+    *  As a user I receive an order confirmation email
+
+- Payment Feature
+    *  As a user I can visit a payment screen
+    *  As a user I can input my credit/debit card details
+
+- User Profile
+    *  As a user I can sign in/create a profile so that I can avail of the sites full functionality ie. leave customer reviews
+
+- Contact Artist/Social links
+    *  As a user I can signup to a Newsletter
+    *  As a user I can fill out a contact form
+    *  As a user I can clearly see contact information
+    *  As a user I can easily find social media links and when pressed they take me to the correct site
+
+- Customer Reviews
+    *  As a user I can clearly see reviews left by past customers
+    *  As a user who is logged in I can easily leave a review
 
 [Back to the Top](#table-of-contents)
-
 
 ## Features
 
 **Features planned:**
-* User Profile - Create, Read, Update and Delete.
-* Recipes - Users can create, read, update and delete their own recipes.
-* Other Users Recipes - Users can read and comment on other users recipes.
-* Profiles - Users can read other users profiles.
+* User Profile - Create an account to leave customer reviews.
 * Users can login to their account.
 * Users can logout of their account.
-* Users need to be registered and logged in to access recipe creation and account editing.
-* Users can send each other private messages.
-* Responsive Design - the site needs to be fully responsive to cover the wide variety of devices users may use to access a recipe site.
+* Users can sign up to a Newsletter
+* Users can easily contact the site owner by filling in a contact form
+* Users can easily see the products available by navigating to the shop page
+* Logged in users can leave reviews of past purchases
+* Users can add/edit/delete items in a shopping cart
+* Users can finalize their purchase by inputting their card details and recieve order confirmation
+* Users can view information about the artist
+* Products - Admin can create, read, update and delete their own products.
+* Responsive Design - the site needs to be fully responsive to cover the wide variety of devices users may use to access an E-Commerce site.
 
 
 #### Home page

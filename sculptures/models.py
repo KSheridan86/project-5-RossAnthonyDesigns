@@ -8,6 +8,7 @@ class Sculpture(models.Model):
         default=uuid.uuid4, unique=True, primary_key=True, editable=False)
     title = models.CharField(max_length=200, unique=True)
     description = models.TextField()
+    detailed_description = models.TextField()
     price = models.DecimalField(max_digits=6, decimal_places=2)
     image = CloudinaryField('image', default='placeholder')
     available = models.BooleanField(default=False)

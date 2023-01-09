@@ -39,7 +39,7 @@ With products ranging from a simple Butterfly to life size predatory Barn Owls.
 
 This version has been built for project 5 of the Code Institute Diploma in Software Development and therefore doesn't accept real payments and any orders made won't be fulfilled.
 
-If you would like to test the payment functionality please feel free to do so by entering the card details below when prompted to do so:
+If you would like to test the payment functionality please feel free to do so by entering the card details below when prompted:
 
 `Card number: 4242 4242 4242 4242  Exp: any future date eg. 11/26 Cvn: any 3 digits eg 123`
 
@@ -56,42 +56,56 @@ But a fully operational live site will be released soon under the url: www.rossa
 ---
 Home page: 
 
-The home page provides the user with a clear understanding as to the purpose of the site. The welcome message is clearly visable to the user when they first arrive at the site regardless of the device they are using.
+The home page provides the user with a clear understanding as to the purpose of the site. 
 
-![Home Page Wireframe](./docs/landingpage-wireframe.jpg)
+The welcome message is clearly visable to the user when they first arrive at the site regardless of the device they are using.
+
+![Home Page Wireframe](./docs/home-page.png)
 
 
 Shop Page:
 
-Users have the ability to view information on available products and add them to a cart for purchase. The emphasis of the design is to provide a clear layout that can adapt to any size device.
+Users have the ability to view information on available products and add them to a cart for purchase. 
 
-Users will have the ability to order products by price, Asc & Desc. To aid in the user experience users have the ability to open up a seperate page on each item for sale.
+The emphasis of the design is to provide a clear layout that can adapt to any size device.
 
-![Shop Wireframe](./docs/recipes-wireframe.jpg)
+Users will have the ability to order products by price, Asc & Desc. 
+
+To aid in the user experience users have the ability to open up a seperate page on each item for sale.
+
+![Shop Wireframe](./docs/shop.png)
 
 
 Artist Page:
 
-Users can view a page dedicated to the artist himself, this page includeds basic information and photos aswell as a contact form used for basic communication or requests for commissions.
+Users can view a page dedicated to the artist himself, this page includeds basic information and photos 
 
-![Artist Wireframe](./docs/user-profile-wireframe.jpg)
+aswell as a contact form used for basic communication or requests for commissions.
+
+![Artist Wireframe](./docs/artist-page.png)
 
 
 Cart Page:
 
-Users can view a cart with their chosen items, it includes a total price for items in the cart, delivery cost and grand total (price + delivery)
+Users can view a cart with their chosen items, it includes a total price for items in the cart, 
 
-![Cart Wireframe](./docs/user-profile-wireframe.jpg)
+delivery cost and grand total (price + delivery)
+
+![Cart Wireframe](./docs/cart.png)
 
 
 Checkout Page:
 
 The checkout page will include a summary of items in the cart and all relevant information needed for a successful order ie. Contact Details, Delivery Details & Payment Details.
 
-![Checkout Wireframe](./docs/user-profile-wireframe.jpg)
+![Checkout Wireframe](./docs/checkout.png)
 
 
-Wireframes were also produced for each major page for both mobile and tablet devices. With the intention of the site being fully responsive so that no matter the device size the user is viewing the site on, it will display accordingly.
+Wireframes were also produced for each major page for both mobile and tablet devices. 
+
+With the intention of the site being fully responsive so that no matter the device size 
+
+the user is viewing the site on, it will display accordingly.
 
 
 * [Order confirmation wireframe](./docs/single-recipe-wireframe.jpg)
@@ -279,8 +293,8 @@ There are several items of functionality that I would like to add in the future.
 The key areas I would like to add to the site in the future are:
 
 * The ability for users to login via social networks such as google or facebook
-* Forgot/reset password functionality
-* Welcome emails
+* Other payment options ie. Paypal
+
 
 
 [Back to the Top](#table-of-contents)

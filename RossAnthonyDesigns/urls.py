@@ -17,4 +17,4 @@ urlpatterns = [
         settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 handler404 = 'RossAnthonyDesigns.views.handler404'
-handler500 = 'RossAnthonyDesigns.views.handler404'
+handler500 = 'RossAnthonyDesigns.views.handler500'

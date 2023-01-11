@@ -52,7 +52,7 @@ But a fully operational live site will be released soon under the url: www.rossa
 ## Design
 -------
 
-#### Wireframe mock-ups
+### Wireframe mock-ups
 ---
 Home page: 
 
@@ -60,7 +60,7 @@ The home page provides the user with a clear understanding as to the purpose of 
 
 The welcome message is clearly visable to the user when they first arrive at the site regardless of the device they are using.
 
-![Home Page Wireframe](./docs/)
+![Home Page Wireframe](./docs/home-wireframe.jpg)
 
 
 Shop Page:
@@ -73,7 +73,7 @@ Users will have the ability to order products by price, Asc & Desc.
 
 To aid in the user experience users have the ability to open up a seperate page on each item for sale.
 
-![Shop Wireframe](./docs/)
+![Shop Wireframe](./docs/shop-wireframe.jpg)
 
 
 Artist Page:
@@ -82,7 +82,7 @@ Users can view a page dedicated to the artist himself, this page includeds basic
 
 aswell as a contact form used for basic communication or requests for commissions.
 
-![Artist Wireframe](./docs/)
+![Artist Wireframe](./docs/artist-wireframe.jpg)
 
 
 Cart Page:
@@ -91,14 +91,14 @@ Users can view a cart with their chosen items, it includes a total price for ite
 
 delivery cost and grand total (price + delivery)
 
-![Cart Wireframe](./docs/)
+![Cart Wireframe](./docs/cart-wireframe.jpg)
 
 
 Checkout Page:
 
 The checkout page will include a summary of items in the cart and all relevant information needed for a successful order ie. Contact Details, Delivery Details & Payment Details.
 
-![Checkout Wireframe](./docs/)
+![Checkout Wireframe](./docs/checkout-wireframe.jpg)
 
 
 Site Footer:
@@ -115,10 +115,10 @@ With the intention of the site being fully responsive so that no matter the devi
 the user is viewing the site on, it will display accordingly.
 
 
-* [Order confirmation wireframe](./docs/)
-* [404 page wireframe](./docs/)
-* [Form page wireframe](./docs/)
-* [Delete page wireframe](./docs/)
+* [Individual product wireframe](./docs/single-item-wireframe.jpg)
+* [Form page wireframe](./docs/forms-wireframe.jpg)
+* [Error/Delete/Success page wireframe](./docs/error-success-wireframe.jpg)
+* [Dashboard wireframe](./docs/dashboard-wireframe.jpg)
 
 
 [Back to the Top](#table-of-contents)
@@ -760,6 +760,8 @@ To resolve this I insured that if an empty input box was submitted then the curr
     * Jinja/Django templating language was utilised to insert data from the database into the sites pages. It was also utilised to perform queries on different datasets.
 * HTML
     * HTML was used as the base language for the templates created for the site.
+* Stripe
+    * Stripe was used to allow the store to accept card payments.
 
 #### Packages Used
 
@@ -821,10 +823,10 @@ To deploy the project through Heroku I followed these steps:
 #### Forking the repository
 By forking the GitHub Repository you can make a copy of the original repository to view or change without it effecting the original repository
 This can be done by
-    * Log into GitHub or create an account.
-    * Locate the repository at https://github.com/KSheridan86/project-5-RossAnthonyDesigns .
-    * At the top of the repository, on the right side of the page, select "Fork" from the buttons available.
-    * A copy of the repository should now be created in your own repository.
+* Log into GitHub or create an account.
+* Locate the repository at https://github.com/KSheridan86/project-5-RossAnthonyDesigns .
+* At the top of the repository, on the right side of the page, select "Fork" from the buttons available.
+* A copy of the repository should now be created in your own repository.
 
 #### Create a clone of this repository
 Creating a clone enables you to make a copy of the repository at that point in time - this lets you run a copy of the project locally:
@@ -845,11 +847,13 @@ This can be done by:
 
 All Images used across the site were sourced from either pexels.com, bbcgoodfood.com or (in the case of the user profiles created) freely available images of the subjects.
 The Black Icons used across the site were sourced from a number of locations, attributions below.
-- The map of India, (<a href="https://www.flaticon.com/free-icons/india" title="india icons">India icons created by Anditii Creative - Flaticon</a>) 
-- Picture of a Donkey, (<a href="https://www.flaticon.com/free-icons/donkey" title="donkey icons">Donkey icons created by PLANBSTUDIO - Flaticon</a>)
-- Taj-Mahal (<a href="https://www.flaticon.com/free-icons/taj-mahal" title="taj mahal icons">Taj mahal icons created by Freepik - Flaticon</a>)
-- Envelope, This was sourced from Font awesome.
-- Social media links were all sourced from Font Awesome.
+
+- The Anvil Icon, (<a href="https://www.flaticon.com/free-icons/anvil" title="anvil icons">Anvil icons created by Agung Rama - Flaticon</a>) 
+- The Back to Top Icon (<a href="https://www.flaticon.com/free-icons/double-arrow" title="double arrow icons">Double arrow icons created by Rahul Kaklotar - Flaticon</a>)
+- All other small images including Social media links were sourced from Font Awesome.
+- Error 404 Icon (<a href="https://www.flaticon.com/free-icons/error-404" title="error 404 icons">Error 404 icons created by Freepik - Flaticon</a>)
+- Server Error Icon (<a href="https://www.flaticon.com/free-icons/error" title="error icons">Error icons created by Pixel perfect - Flaticon</a>)
+- Tick Icon (<a href="https://www.flaticon.com/free-icons/tick" title="tick icons">Tick icons created by kliwir art - Flaticon</a>)
 
 I relied heavily on the Code institute course work, particularly the Django walk through projects.
 Further research was done by building walk through projects available freely on youtube and Dennis Ivy's Django/Python course on Udemy.

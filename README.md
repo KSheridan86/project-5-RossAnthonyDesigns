@@ -5,7 +5,7 @@
 
 ![alt text](./docs/forged_nature_responsive.png)
 
-Live site available [here](https://rossanthonydesigns.herokuapp.com/). 
+### Live site available [here](https://rossanthonydesigns.herokuapp.com/). 
 
 
 -----
@@ -46,7 +46,7 @@ If you would like to test the payment functionality please feel free to do so by
 
 But a fully operational live site will be released soon under the url: www.rossanthonydesigns.ie
 
-
+[Back to the Top](#table-of-contents)
 
 -------
 ## Design
@@ -60,7 +60,7 @@ The home page provides the user with a clear understanding as to the purpose of 
 
 The welcome message is clearly visable to the user when they first arrive at the site regardless of the device they are using.
 
-![Home Page Wireframe](./docs/home-page.png)
+![Home Page Wireframe](./docs/)
 
 
 Shop Page:
@@ -73,7 +73,7 @@ Users will have the ability to order products by price, Asc & Desc.
 
 To aid in the user experience users have the ability to open up a seperate page on each item for sale.
 
-![Shop Wireframe](./docs/shop.png)
+![Shop Wireframe](./docs/)
 
 
 Artist Page:
@@ -82,7 +82,7 @@ Users can view a page dedicated to the artist himself, this page includeds basic
 
 aswell as a contact form used for basic communication or requests for commissions.
 
-![Artist Wireframe](./docs/artist-page.png)
+![Artist Wireframe](./docs/)
 
 
 Cart Page:
@@ -91,14 +91,21 @@ Users can view a cart with their chosen items, it includes a total price for ite
 
 delivery cost and grand total (price + delivery)
 
-![Cart Wireframe](./docs/cart.png)
+![Cart Wireframe](./docs/)
 
 
 Checkout Page:
 
 The checkout page will include a summary of items in the cart and all relevant information needed for a successful order ie. Contact Details, Delivery Details & Payment Details.
 
-![Checkout Wireframe](./docs/checkout.png)
+![Checkout Wireframe](./docs/)
+
+
+Site Footer:
+
+The Footer is responsive and universal across the site, it includes a newsletter signup form, contact information and social media links.
+
+![Footer Wireframe](./docs/footer-wireframe.jpg)
 
 
 Wireframes were also produced for each major page for both mobile and tablet devices. 
@@ -108,14 +115,16 @@ With the intention of the site being fully responsive so that no matter the devi
 the user is viewing the site on, it will display accordingly.
 
 
-* [Order confirmation wireframe](./docs/single-recipe-wireframe.jpg)
-* [404 page wireframe](./docs/profiles-wireframe.jpg)
-* [Form page wireframe](./docs/formpage-wireframe.jpg)
-* [Delete page wireframe](./docs/delete-object-wireframe.jpg)
+* [Order confirmation wireframe](./docs/)
+* [404 page wireframe](./docs/)
+* [Form page wireframe](./docs/)
+* [Delete page wireframe](./docs/)
 
 
 [Back to the Top](#table-of-contents)
-#### Database Schema
+
+---
+## Database Schema
 
 Several custom models were predicted to be required when building the site. On top of the standard Sculpture/Order models these included a Newsletter signup Model a Message Model and a customer Review model. The database schema was drawn out by hand.
 
@@ -135,6 +144,8 @@ And Bootstraps Text-Muted class for sligtly greyed out text.
 
 
 [Back to the Top](#table-of-contents)
+
+---
 
 ## UX
 *  RossAnthonyDesigns was designed to be a friendly and informative site for users to easily browse and find products they would be interested in purchasing. The graphical elements and overall design of the site provide the user with a fun and enjoyable environment.
@@ -223,6 +234,8 @@ These are the user stories that were completed within the projects first release
 
 [Back to the Top](#table-of-contents)
 
+---
+
 ## Features
 
 **Features planned:**
@@ -240,19 +253,16 @@ These are the user stories that were completed within the projects first release
 * Responsive Design - the site needs to be fully responsive to cover the wide variety of devices users may use to access an E-Commerce site.
 
 
+---
 #### Home page
 A welcoming homepage was built to welcome the user to the site and clearly convey the sites purpose. The call to action for the user to search for recipes is at the top of the main page, with a large, hero like welcome message appearing just below. At the bottom of the page a clear comparison showing users the benefits of signing up to the site is displayed.
 
-![Home Page](./docs/landingpage.png)
+![Home Page](./docs/home-page.png)
 
 #### Navigation Bar
 The main navigation bar appears at the top of the page, clearly displaying the main navigational links users would require.
 
-![Nav Bar](./docs/loggedout-navbar.png)
-
-A secondary user menu is available to users who are logged into the site.
-
-![logged in user nav bar](./docs/loggedin-navbar.png)
+![Nav Bar](./docs/menu.png)
 
 
 #### Footer
@@ -260,32 +270,33 @@ A common footer is utilised throughout the site.
 The name is tongue in cheek and a reference to the working Burros I witnessed on a road trip across the American South-West.
 This is a domain owned by myself and one day will host all of my projects.
 
-![footer](./docs/footer.png)
+![footer](./docs/desktop-footer.png)
 
-#### Recipe/User Search
-Users have the ability to search the database of recipes against the recipe title, ingredients and the author of the recipes username and the Users by their username/name.
 
-![Recipe search](./docs/search-bar.png)
+#### Other Pages/Features
+[Artist Page](./docs/artist-page.png)
 
-#### Recipe Cards
-Search results appear in the form of recipe summary cards. The cards show the user the title of the recipe, the featured image of the recipe, and the author of the recipe. This allows the users to quickly identify the recipes they would like to look at in more detail.
+[Shop](./docs/shop.png)
 
-##### Standard Recipe Card
-![Standard Recipe Card](./docs/recipe-card.png)
+[Cart](./docs/cart.png)
 
-#### User Profile
-Users have the ability to create a profile. The user profile page provides the profile owner with quick access to edit and delete functionality.
+[Checkout](./docs/checkout.png)
 
-![Owner Profile Page](./docs/user-profile.png)
+[Featured Products](./docs/featured-products.png)
 
-Users can also access their own recipes easily.
+[Newsletter Signup](./docs/newsletter-signup.png)
 
-![Easy Access to view/edit own recipes](./docs/recipe-crud.png)
+[Register](./docs/register.png)
 
-#### Edit Profile Page
-Users have the ability to edit their profiles on the site. The edit profile page is clearly laid out.
+[Sign In](./docs/sign-in.png)
 
-![Edit profile page](./docs/edit-profile.png)
+* *All form pages follow the same design*
+
+[Site Admin](./docs/Site-Admin.png)
+
+[Individual Product Page](./docs/single-item.png)
+
+[Testimonials](./docs/testimonials.png)
 
 
 ## Future Enhancements
@@ -298,6 +309,8 @@ The key areas I would like to add to the site in the future are:
 
 
 [Back to the Top](#table-of-contents)
+
+---
 
 ## Testing
 
@@ -768,7 +781,7 @@ To resolve this I insured that if an empty input box was submitted then the curr
 
 ## Deployment
 
-The site was deployed via Heroku, and the live link can be found here - [TasteOfIndia](https://pp4tasteofindia.herokuapp.com/)
+The site was deployed via Heroku, and the live link can be found here - [Forged Nature](https://rossanthonydesigns.herokuapp.com/)
 
 ### Project Deployment
 
@@ -809,14 +822,14 @@ To deploy the project through Heroku I followed these steps:
 By forking the GitHub Repository you can make a copy of the original repository to view or change without it effecting the original repository
 This can be done by
     * Log into GitHub or create an account.
-    * Locate the repository at https://github.com/KSheridan86/project-4-TasteOfIndia .
+    * Locate the repository at https://github.com/KSheridan86/project-5-RossAnthonyDesigns .
     * At the top of the repository, on the right side of the page, select "Fork" from the buttons available.
     * A copy of the repository should now be created in your own repository.
 
 #### Create a clone of this repository
 Creating a clone enables you to make a copy of the repository at that point in time - this lets you run a copy of the project locally:
 This can be done by:
-* Navigate to https://github.com/KSheridan86/project-4-TasteOfIndia
+* Navigate to https://github.com/KSheridan86/project-5-RossAnthonyDesigns
 * click on the arrow on the green code button at the top of the list of files
 * select the clone by https option and copy the URL it provides to the clipboard
 * navigate to your code editor of choice and within the terminal change the directory to the location you want to clone the repository to.
@@ -848,14 +861,14 @@ Further research was done by building walk through projects available freely on 
 I would like to acknowledge the help and support given by my mentor Chris Quinn, he is never short of good ideas. 
 All of the students in my own study group aswell as all the students in the wider Code Institute Slack channels. My cohort Facilitator [Kasia](https://github.com/bezebee) and all of the staff at Code Institute. The sense of comraderie among all of these individuals has helped me to feel at home on my journey to a new career in programming.
 
-On top of all these wonderful people I can't forget to thank my wife Rebecca for her help and understanding, without which none of this would be possible.
+On top of all these wonderful people I can't forget to thank my wife Rebecca for her help and understanding (and cups of tea!), without which none of this would be possible.
 
 -----
 
 
 ## Author Info
 
-Ken Sheridan, Junior Full Stack Software Developer.
+Ken Sheridan, Full Stack Software Developer.
 - [GitHub](https://github.com/KSheridan86)
 - [Linkedin](https://www.linkedin.com/in/kensheridan86/)
 

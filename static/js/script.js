@@ -33,7 +33,7 @@ if (closealert) {
         msgBox.classList.add('d-none'));
     setTimeout(() => {
         msgBox.classList.add('d-none');
-    }, 2500);
+    }, 3500);
 }
 
 

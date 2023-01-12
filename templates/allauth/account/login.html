@@ -34,7 +34,7 @@
         <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
         {% endif %}
 
-        <a class="button" href="{% url 'account_reset_password' %}">{% trans "Forgot Password??" %}<br></a>
+        <a class="button" href="{% url 'account_reset_password' %}" aria-label="reset password button">{% trans "Forgot Password??" %}<br></a>
         <button class="btn mt-3 metal linear" type="submit">{% trans "Sign In" %}</button>
 
       </form>
@@ -59,7 +59,7 @@
 
       {% else %}
       <p>{% blocktrans %}If you have not yet created an account,<br> then please
-        <a href="{{ signup_url }}"><b class="text-uppercase text-decoration-underline">sign up</b></a>
+        <a href="{{ signup_url }}" aria-label="link to register an account"><b class="text-uppercase text-decoration-underline">sign up</b></a>
         first.{% endblocktrans %}</p>
       {% endif %}
 

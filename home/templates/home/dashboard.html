@@ -16,7 +16,7 @@
                 <div class="row mx-auto border-bottom">
                     <div class="col-10 mt-3 text-capitalize">{{person.name}} -- {{person.email}}</div>
                     <div class="col-2">
-                        <a href="{% url 'delete_newsletter' person.id %}" class="remove-item-button mb-3 fs-2">
+                        <a href="{% url 'delete_newsletter' person.id %}" aria-label="delete user from newsletter" class="remove-item-button mb-3 fs-2">
                             <i class="fa-sharp fa-solid fa-circle-xmark"></i>
                         </a>
                     </div>
@@ -31,13 +31,13 @@
                 {% for item in message %}
                 <div class="row mx-auto border-bottom">
                     <div class="col-10 mt-3">
-                        <a href="{% url 'view_message' item.id %}">
+                        <a href="{% url 'view_message' item.id %}" aria-label="view private message link">
                             <i class="fa-solid fa-right-to-bracket"></i>
                             -{{item.name}} -- {{item.message|slice:35}}......
                         </a>
                     </div>
                     <div class="col-2">
-                        <a href="{% url 'delete_message' item.id %}" class="remove-item-button mb-3 fs-2">
+                        <a href="{% url 'delete_message' item.id %}" class="remove-item-button mb-3 fs-2" aria-label="delete private message">
                             <i class="fa-sharp fa-solid fa-circle-xmark"></i>
                         </a>
                     </div>
@@ -49,7 +49,7 @@
             <div class="col-10 col-lg-5 border border-dark border-4 rounded dash-box p-2 justify-content-center">
                 <h5 class="dashboard-title p-3 fw-bold">Products:</h5>
                 <div class="text-center border-bottom">
-                    <a class="btn review-btn metal linear mb-2" href="{% url 'add_sculpture' %}">Add Product</a>
+                    <a class="btn review-btn metal linear mb-2" href="{% url 'add_sculpture' %}" aria-label="add sculpture button">Add Product</a>
                 </div>
 
                 {% for product in sculptures %}
@@ -88,13 +88,13 @@
                 {% for review in reviews %}
                 <div class="row mx-auto border-bottom">
                     <div class="col-10 mt-3">
-                        <a href="{% url 'view_review' review.id %}">
+                        <a href="{% url 'view_review' review.id %}" aria-label="link to view review">
                             <i class="fa-solid fa-right-to-bracket"></i>
                             {{review.name}} -- {{review.review|slice:35}}......
                         </a>
                     </div>
                     <div class="col-2">
-                        <a href="{% url 'delete_review' review.id %}" class="remove-item-button fs-2 mb-3">
+                        <a href="{% url 'delete_review' review.id %}" class="remove-item-button fs-2 mb-3" aria-label="delete review button">
                             <i class="fa-sharp fa-solid fa-circle-xmark"></i>
                         </a>
                     </div>

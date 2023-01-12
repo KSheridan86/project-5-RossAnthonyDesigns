@@ -8,7 +8,7 @@
     <!-- Cart -->
 
     <!-- Back button -->
-    <a href="{% url 'shop' %}" class="btn rounded-0">
+    <a href="{% url 'shop' %}" class="btn rounded-0" aria-label="Shop">
         <span class="icon">
             <i class="fas fa-chevron-left"></i>
         </span>
@@ -29,7 +29,7 @@
                     <div class="container mt-2">
                         <div class="row">
                             <div class="col-12">
-                                <a href="{% url 'single_item' item.product.id %}"><img class="cart-img"
+                                <a href="{% url 'single_item' item.product.id %}" aria-label="single-product"><img class="cart-img"
                                         src="{{ item.product.image.url }}" alt="ecommerce cart icon"></a>
                                 <span class="cart-item-text mx-3">{{item.product.title}}</span>
                                 <span class="cart-item-text"> €{{item.product.price|floatformat:2}}</span>
@@ -84,7 +84,7 @@
                 {% endfor %}
             </ul>
             <!-- Cart totals and clear cart button -->
-            <a href="{% url 'delete_cart' %}" class="btn rounded-0 clear-cart-btn">
+            <a href="{% url 'delete_cart' %}" class="btn rounded-0 clear-cart-btn" aria-label="delete cart link">
                 <span class="icon">
                     <i class="fa fa-trash-o"></i>
                 </span>
@@ -100,7 +100,7 @@
                 <span class="cart-item-text">Grand Total - €{{ grand_total|floatformat:2 }}</span>
             </div>
             <div class="text-center mb-5 mt-4">
-                <a class="btn pay-now metal linear" href="{% url 'checkout' %}">Pay Now</a>
+                <a class="btn pay-now metal linear" href="{% url 'checkout' %}" aria-label="pay now button">Pay Now</a>
             </div>
         </div>
     </div>

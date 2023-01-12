@@ -7,13 +7,13 @@
 <main>
 
     <!-- Checkout -->
-    <a href="{% url 'shop' %}" class="btn rounded-0">
+    <a href="{% url 'shop' %}" class="btn rounded-0" aria-label="shop">
         <span class="icon">
             <i class="fas fa-chevron-left"></i>
         </span>
         <span class="text-uppercase">Keep Shopping</span>
     </a>
-    <a href="{% url 'view_cart' %}" class="btn rounded-0 back-to-cart-btn">
+    <a href="{% url 'view_cart' %}" class="btn rounded-0 back-to-cart-btn" aria-label="view cart button">
         <span class="text-uppercase">Adjust Cart   </span>
         <span class="icon">
             <i class="fas fa-chevron-right"></i>
@@ -30,7 +30,7 @@
                 <div class="container">
                     <div class="row d-flex align-items-center">
                         <div class="col-4">
-                            <a href="{% url 'single_item' item.product.id %}"><img class="cart-img-recap"
+                            <a href="{% url 'single_item' item.product.id %}" aria-label="link to a single item"><img class="cart-img-recap"
                                     src="{{ item.product.image.url }}" alt="metal sculpture image"></a>
                         </div>
                         <div class="col-4">

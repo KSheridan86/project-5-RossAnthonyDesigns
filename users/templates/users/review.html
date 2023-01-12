@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block content %}
-<a href="{% url 'dashboard' %}" class="btn rounded-0 mt-3" style="margin-top: -5rem;">
+<a href="{% url 'dashboard' %}" class="btn rounded-0 mt-3" aria-label="admin dashboard link">
     <span class="icon">
         <i class="fas fa-chevron-left"></i>
     </span>
@@ -50,7 +50,7 @@
             <h6 class="text-center text-danger mt-4">**Warning, Click X to delete this review, This can't be undone.**</h6>
 
             <div class="text-center mt-4">
-                <a href="{% url 'delete_review' review.id %}">
+                <a href="{% url 'delete_review' review.id %}" aria-label="delete review button">
                     <i class="fa-sharp fa-solid fa-circle-xmark fs-2 mx-5"></i>
                 </a>
             </div>           

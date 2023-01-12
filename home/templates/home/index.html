@@ -46,7 +46,7 @@
                                 With products ranging from a simple Butterfly to life size predatory Barn Owls.
                                 <br>
                             </p>
-                            <a href="https://chimera-gallery.com/" target="_blank" rel="noopener">
+                            <a href="https://chimera-gallery.com/" aria-label="link to a gallery website" target="_blank" rel="noopener">
                                 <p class="text-decoration-underline fs-5 gallery-link">
                                     Now on display in
                                     <strong>The Chimera Gallery</strong>
@@ -56,12 +56,12 @@
                         </div>
                     </div>
                     <!-- Call to action buttons laptop -->
-                    <a href="{% url 'shop' %}">
+                    <a href="{% url 'shop' %}" aria-label="shop">
                         <button type="button" class="btn-header me-2 text-uppercase metal linear">
                             View Art
                         </button>
                     </a>
-                    <a href="#footer">
+                    <a href="#footer" aria-label="link to footer contact section">
                         <button type="button" class="btn-header me-2 text-uppercase metal linear">
                             Contact
                         </button>
@@ -79,7 +79,7 @@
                         Specializing in hand forged, nature inspired items for display in home or garden.
                         With products ranging from a simple Butterfly to life size predatory Barn Owls.
                     </p>
-                    <a href="https://chimera-gallery.com/" target="_blank" rel="noopener">
+                    <a href="https://chimera-gallery.com/" target="_blank" rel="noopener" aria-label="link to gallery site">
                         <p class="text-decoration-underline fs-6 gallery-link">
                             Now on display in
                             <strong>The Chimera Gallery</strong>
@@ -88,12 +88,12 @@
                 </div>
             </div>
             <!-- Call to action buttons mobile & tablets -->
-            <a href="{% url 'shop' %}">
+            <a href="{% url 'shop' %}" aria-label="shop">
                 <button type="button" class="btn-header me-2 text-uppercase metal linear mt-4">
                     Shop
                 </button>
             </a>
-            <a href="#footer">
+            <a href="#footer" aria-label="link to footer contact section">
                 <button type="button" class="btn-header me-2 text-uppercase metal linear">
                     Contact
                 </button>
@@ -113,13 +113,15 @@
 
             {% for piece in sculptures %}
             <div class="col-12 col-md-6 col-lg-4 col-xl-4 p-4 mb-5 mt-3 fade-in">
-                <a href="{% url 'single_item' piece.id %}">
+                <a href="{% url 'single_item' piece.id %}" aria-label="single item page">
                     <img class="featured-image" src="{{piece.image.url}}" alt="image of hand forged metal sculpture">
                 </a>
-                <h2 class="mt-3 metal-light" style="height: 3rem;">{{piece.title}}</h2>
+                <h2 class="mt-3 metal-light featured-title">{{piece.title}}</h2>
                 <p class="product-description mx-auto">{{piece.description}}</p>
                 <h4>€{{piece.price|floatformat:0}}</h4>
-                <a href="{% url 'single_item' piece.id %}" class="btn info-btn metal linear">Info</a>
+                <a href="{% url 'single_item' piece.id %}" class="btn info-btn metal linear" aria-label="single item page">
+                    Info
+                </a>
                 <div class="border-bottom border-2 mt-4"></div>
             </div>
             {% endfor %}
@@ -152,14 +154,16 @@
             </div>
         </div>
         {% if user.is_authenticated %}
-        <a href="{% url 'leave_review' %}" class="btn review-btn text-uppercase metal linear mt-2">Review</a>
+        <a href="{% url 'leave_review' %}" class="btn review-btn text-uppercase metal linear mt-2" aria-label="create review button">
+            Review
+        </a>
         {% else %}
         <h5 class="mt-3 text-muted">
             Please
-            <a href="{% url 'account_login' %}">
+            <a href="{% url 'account_login' %}" aria-label="login button">
                 <strong>Sign in</strong>
             </a> or
-            <a href="{% url 'account_signup' %}">
+            <a href="{% url 'account_signup' %}" aria-label="register button">
                 <strong>Register</strong>
             </a>
             to leave a review...

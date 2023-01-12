@@ -48,7 +48,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-md">
         <div class="container-fluid">
-            <a href="{% url 'view_cart' %}" class="mt-3 d-md-none me-auto">
+            <a href="{% url 'view_cart' %}" class="mt-3 d-md-none me-auto" aria-label="view cart button">
                 <div class="text-center">
                     <div>
                         <i class="fa-solid fa-cart-shopping bag mx-auto"></i>
@@ -63,7 +63,7 @@
                 </div>
             </a>
 
-            <a id="logo" class="navbar-brand me-auto" href="{% url 'home' %}">
+            <a id="logo" class="navbar-brand me-auto" href="{% url 'home' %}" aria-label="home page link">
                 Forged<img class="avatar" src="{% static 'images/anvil.png' %}" alt="icon of a hammer and anvil">Nature
             </a>
 
@@ -82,25 +82,25 @@
                     </li>
                     {% endif %}
                     <li class="nav-item h4 me-2 me-lg-5" id="active-link">
-                        <a class="nav-link {% if page == 'home' %} active {% endif %}" href="{% url 'home' %}">Home</a>
+                        <a class="nav-link {% if page == 'home' %} active {% endif %}" href="{% url 'home' %}" aria-label="navbar link">Home</a>
                     </li>
                     <li class="nav-item h4 me-2 me-lg-5" id="active-link">
-                        <a class="nav-link {% if page == 'shop' %} active {% endif %}" href="{% url 'shop' %}">Shop</a>
+                        <a class="nav-link {% if page == 'shop' %} active {% endif %}" href="{% url 'shop' %}" aria-label="navbar link">Shop</a>
                     </li>
                     <li class="nav-item h4 me-2 me-lg-5" id="active-link">
                         <a class="nav-link {% if page == 'artist' %} active {% endif %}"
-                            href="{% url 'artist' %}">Artist</a>
+                            href="{% url 'artist' %}" aria-label="navbar link">Artist</a>
                     </li>
                     <li class="nav-item h4 me-2 me-lg-5">
-                        <a class="nav-link" href="#footer">Contact</a>
+                        <a class="nav-link" href="#footer" aria-label="navbar link">Contact</a>
                     </li>
                     {% if request.user.is_authenticated %}
                     <li class="h4 mb-0 d-md-none me-2 me-lg-5">
-                        <a class="nav-link" href="{% url 'account_logout' %}">Log Out</a>
+                        <a class="nav-link" href="{% url 'account_logout' %}" aria-label="navbar link">Log Out</a>
                     </li>
                     {% else %}
                     <li class="h4 mb-0 d-md-none me-2 me-lg-5">
-                        <a class="nav-link" href="{% url 'account_login' %}">Log In</a>
+                        <a class="nav-link" href="{% url 'account_login' %}" aria-label="navbar link">Log In</a>
                     </li>
                     {% endif %}
 
@@ -114,16 +114,16 @@
                 </li>
                 {% endif %}
                 <li class="navbar-nav h4 mx-4 d-none d-md-flex">
-                    <a class="metal linear sign-in-btn p-2" href="{% url 'account_logout' %}">Log out</a>
+                    <a class="metal linear sign-in-btn p-2" href="{% url 'account_logout' %}" aria-label="navbar link">Log out</a>
                 </li>
                 {% else %}
                 <li class="navbar-nav h4 mx-4 d-none d-md-flex">
-                    <a class="metal linear sign-in-btn p-2" href="{% url 'account_login' %}">Log In</a>
+                    <a class="metal linear sign-in-btn p-2" href="{% url 'account_login' %}" aria-label="sign in button">Log In</a>
                 </li>
                 {% endif %}
             </div>
 
-            <a href="{% url 'view_cart' %}" class="mt-3 d-none d-md-block">
+            <a href="{% url 'view_cart' %}" class="mt-3 d-none d-md-block" aria-label="view cart button">
                 <div class="text-center">
                     <div>
                         <i class="fa-solid fa-cart-shopping bag mx-auto"></i>
@@ -195,15 +195,15 @@
                         </div>
 
                         <div class="col-lg-12 text-center mb-3">
-                            <a href="https://www.facebook.com/forged.nature.irl" target="_blank" rel="noopener"
+                            <a href="https://www.facebook.com/forged.nature.irl" target="_blank" rel="noopener" aria-label="social media link - facebook"
                                 class="social text-reset mx-2 text-decoration-none">
                                 <i class="fa-brands fa-square-facebook"></i>
                             </a>
-                            <a href="https://www.instagram.com/forgednature/" target="_blank" rel="noopener"
+                            <a href="https://www.instagram.com/forgednature/" target="_blank" rel="noopener" aria-label="social media link - instagram"
                                 class="social text-reset mx-2 text-decoration-none">
                                 <i class="fa-brands fa-square-instagram"></i>
                             </a>
-                            <a href="https://www.youtube.com/channel/UCAuzJ1HITkRCdvKTVSM9kIw" target="_blank" rel="noopener"
+                            <a href="https://www.youtube.com/channel/UCAuzJ1HITkRCdvKTVSM9kIw" target="_blank" rel="noopener" aria-label="social media link - youtube"
                                 class="social text-reset mx-2 text-decoration-none">
                                 <i class="fa fa-youtube-square"></i>
                             </a>
@@ -232,14 +232,14 @@
                         Mullingar, Ireland
                     </p>
                     <p>
-                        <a href="mailto: forged.nature.irl@gmail.com">
+                        <a href="mailto: forged.nature.irl@gmail.com" aria-label="send email link">
                             <i class="fas fa-envelope me-3"></i>
                             forged.nature.irl@gmail.com
                         </a>
                     </p>
                     <p>
                         <i class="fas fa-phone me-3"></i>
-                        <a href="tel:+353831286632"> + 353 (0) 83 128 6632</a>
+                        <a href="tel:+353831286632" aria-label="make phone call link"> + 353 (0) 83 128 6632</a>
                     </p>
                 </div>
             </div>
@@ -250,7 +250,7 @@
         <div class="header-footer">
             <div class="overlay">
                 <div class="text-start p-4 copyright">
-                    <a href="https://www.chimptech.ie" target="_blank" rel="noopener">
+                    <a href="https://www.chimptech.ie" target="_blank" rel="noopener" aria-label="link to web design business that built site">
                         Designed & Built by ChimpTech.ie <br>© 2022 ChimpTech <br>
                     </a>
                 </div>
@@ -260,7 +260,7 @@
         <div class="container-fluid">
             <div class="row justify-content-end">
                 <div class="col-3 col-md-2 col-lg-1">
-                    <a href="#">
+                    <a href="#" aria-label="back to top button">
                         <img class="top-btn" src="{% static 'images/back-to-top.png' %}" alt="image of a chevron pointing up">
                     </a>
                 </div>

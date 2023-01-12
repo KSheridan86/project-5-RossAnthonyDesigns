@@ -167,6 +167,9 @@ ul {
     box-shadow: 5px 5px 10px 1px;
     object-fit: cover;
 }
+.featured-title {
+    height: 3rem;
+}
 
 .accordion-button:not(.collapsed) {
     background-color: #6f8ca2;
@@ -185,6 +188,9 @@ ul {
     border-radius: 2.5%;
     box-shadow: 5px 5px 10px 1px;
     object-fit: cover;
+}
+.featured-title-shop {
+    height: 4rem;
 }
 
 .sort-btn {

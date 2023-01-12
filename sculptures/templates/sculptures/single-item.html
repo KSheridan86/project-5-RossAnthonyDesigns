@@ -27,6 +27,8 @@
                 <span class="fs-4">€{{piece.price|floatformat:0}}</span>
                 <span><small><small class="text-danger">Excl del...</small></small></span>
                 <br>
+                <span><small><small class="text-danger">Available Quantity...{{piece.quantity}}</small></small></span>
+                <br>
                 {% if piece.available == True %}
                 {% if piece.quantity > 0 %}
                 <form action="{% url 'add_to_cart' piece.id %}" method="POST">
@@ -36,16 +38,19 @@
                         id="decrement-qty_{{ piece.id }}">
                         <i class="fas fa-minus"></i>
                     </div>
+                    
                     <input class="available-quantity" type="hidden" name="available-quantity"
                         value="{{ piece.quantity }}">
 
                     <input onKeyDown="return false" class="number-input qty_input" type="number" name="quantity"
                         value="1" min="1" max="99" data-item_id="{{ piece.id }}" id="id_qty_{{ piece.id }}">
 
+
                     <div class="increment-qty btn rounded-0" data-item_id="{{ piece.id }}"
                         id="increment-qty_{{ piece.id }}">
                         <i class="fas fa-plus"></i>
                     </div>
+
                     <br>
                     <input type="submit" class="cart-btn metal linear mb-2 mt-2" value="Add to Cart">
                     <input type="hidden" name="redirect_url" value="{{ request.path }}">
@@ -73,6 +78,6 @@
         <span class="text-uppercase">Keep Shopping</span>
     </a>
 </main>
-<script src="/static/js/quantity_input_script.js"></script>
+<script src="{% static 'js/quantity_input_script.js' %}"></script>
 
 {% endblock content %}

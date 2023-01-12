@@ -22,7 +22,6 @@ def add_to_cart(request, item_id):
         if item_id in list(cart.keys()):
             if piece.quantity >= cart[item_id] + quantity:
                 cart[item_id] += quantity
-                print(cart[item_id])
                 messages.success(
                     request, f'{piece} succesfully added to Cart!')
             else:

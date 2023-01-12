@@ -39,12 +39,12 @@ With products ranging from a simple Butterfly to life size predatory Barn Owls.
 
 This version has been built for project 5 of the Code Institute Diploma in Software Development and therefore doesn't accept real payments and any orders made won't be fulfilled.
 
+But a fully operational live site will be released soon under the url: www.rossanthonydesigns.ie
+
 If you would like to test the payment functionality please feel free to do so by entering the card details below when prompted:
 
-`Card number: 4242 4242 4242 4242  Exp: any future date eg. 11/26 Cvn: any 3 digits eg 123`
+`Card number: 4242 4242 4242 4242  Exp: any future date eg. 11/26 CVC: any 3 digits eg 123`
 
-
-But a fully operational live site will be released soon under the url: www.rossanthonydesigns.ie
 
 [Back to the Top](#table-of-contents)
 
@@ -191,7 +191,7 @@ These are the user stories that were completed within the projects first release
 	*  User Account Login / Logout - As a User, I would like to be able to login or logout of my account, so that I can avail of the sites full functionality
 	*  Receive Welcome Emails - As a user I would like to receive a welcome email upon signing up
     *  Reset password Functionality - As a user I would like to be able to reset my password to keep my account safe
-    *  Visibly logged in or out - As a user I would like to knowe if I am logged in or not
+    *  Visibly logged in or out - As a user I would like to know if I am logged in or not
 
 - Landing page
 	*  As a User I would like to be brought to the landing page upon first visiting the site so that I can see what options are available to me
@@ -255,7 +255,7 @@ These are the user stories that were completed within the projects first release
 
 ---
 #### Home page
-A welcoming homepage was built to welcome the user to the site and clearly convey the sites purpose. The call to action for the user to search for recipes is at the top of the main page, with a large, hero like welcome message appearing just below. At the bottom of the page a clear comparison showing users the benefits of signing up to the site is displayed.
+A welcoming homepage was built to welcome the user to the site and clearly convey the sites purpose. The call to action buttons for the user to go straight to the shop or contact the site owner is at the top of the main page, just below a large welcome message.
 
 ![Home Page](./docs/home-page.png)
 
@@ -267,8 +267,7 @@ The main navigation bar appears at the top of the page, clearly displaying the m
 
 #### Footer
 A common footer is utilised throughout the site.
-The name is tongue in cheek and a reference to the working Burros I witnessed on a road trip across the American South-West.
-This is a domain owned by myself and one day will host all of my projects.
+The name ChimpTech.ie is a domain owned by me and in the near future will host my projects and begin to advertise web development services.
 
 ![footer](./docs/desktop-footer.png)
 
@@ -723,16 +722,16 @@ All Tests Passed &#x2611;
 
 ## Bugs
 
-Tags issue:
+Stripe server error:
+I noticed that after the site was deployed to Heroku I could not access the checkout page, I would receive a server error message instead, currently working on a fix for this.
 
-To add Tags to the Recipes I had implemented a check box for users to select which tags were appropriate, this worked in the admin panel but unfortunately would not save the tags when used in the front end by the user.
-When no fix could be found for this I used a different approach.
-The checkbox was replaced with a text box for users to input their chosen tags.
-In the view that handles this functionality I processed the input box so that each tag was separated, capitalized and added to the recipe.
-But the user then had no ability to delete tags.
-I insured that the tags added to the input box would override previous tags and prompted the user to include all relevant tags for the recipe in the input box.
-This resolved most of the problem but I noticed that if the form was submitted with an empty tag input box it would delete all current tags.
-To resolve this I insured that if an empty input box was submitted then the current tags would be prepopulated into the field upon submission therefore giving the user full crud functionality on the tags.
+Cart Error:
+I noticed that even though I limited the amount of items that could be added to the cart to the total quantity available, this could be bypassed by adding items directly from the cart.
+This was fixed in the view by first checking the available stock and only adding items if they were available.
+
+Single-item page error:
+In the single item page when trying to select a quantity to add to the cart I noticed that on each press of the + button items were being added to the cart before the add to cart button was pushed.
+I found that inside the form that handles this functionality if I changed those + and - buttons from button tags to divs the problem resolved, the button was triggering the form as a whole but the div just operates the increment and decrement functionality leaving the user free to add how ever many products they like and then click add to cart. 
 
 
 [Back to the Top](#table-of-contents)
@@ -749,7 +748,7 @@ To resolve this I insured that if an empty input box was submitted then the curr
 * Heroku PostgreSQL
     * Heroku PostgreSQL was used as the database for this project during development and in production.
 * JavaScript
-    * Custom JavaScript was utilised to allow Users to close site messages.
+    * Custom JavaScript was utilised to allow Users to close site messages and increment/decrement cart items.
 * Bootstrap 5
     * Bootstrap was used for general layout and spacing requirements for the site.
 * Font Awesome
@@ -845,15 +844,15 @@ This can be done by:
 
 ## Credits
 
-All Images used across the site were sourced from either pexels.com, bbcgoodfood.com or (in the case of the user profiles created) freely available images of the subjects.
-The Black Icons used across the site were sourced from a number of locations, attributions below.
+All Images used across the site are original and where created just for this project except for the header/footer background which was sourced from pexels.com.
+The Black Icons used across the site were sourced from fontawesome and flaticon.com, attributions below.
 
 - The Anvil Icon, (<a href="https://www.flaticon.com/free-icons/anvil" title="anvil icons">Anvil icons created by Agung Rama - Flaticon</a>) 
 - The Back to Top Icon (<a href="https://www.flaticon.com/free-icons/double-arrow" title="double arrow icons">Double arrow icons created by Rahul Kaklotar - Flaticon</a>)
-- All other small images including Social media links were sourced from Font Awesome.
 - Error 404 Icon (<a href="https://www.flaticon.com/free-icons/error-404" title="error 404 icons">Error 404 icons created by Freepik - Flaticon</a>)
 - Server Error Icon (<a href="https://www.flaticon.com/free-icons/error" title="error icons">Error icons created by Pixel perfect - Flaticon</a>)
 - Tick Icon (<a href="https://www.flaticon.com/free-icons/tick" title="tick icons">Tick icons created by kliwir art - Flaticon</a>)
+- All other small images including Social media links were sourced from Font Awesome.
 
 I relied heavily on the Code institute course work, particularly the Django walk through projects.
 Further research was done by building walk through projects available freely on youtube and Dennis Ivy's Django/Python course on Udemy.

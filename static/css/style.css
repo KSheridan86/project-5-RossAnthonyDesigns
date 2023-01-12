@@ -370,7 +370,7 @@ input[type=number] {
 /* Header Image behind carousels and footer*/
 
 .header {
-    background: url("https://res.cloudinary.com/ken86/image/upload/v1673044338/static/images/cloud-forest.efda6b1002fd.jpg"); 
+    background: url("https://res.cloudinary.com/ken86/image/upload/v1673564547/static/images/hazy-forest-background.5030849929b3.webp"); 
     text-align: center;
     width: 100%;
     height: 140vh;
@@ -395,7 +395,7 @@ input[type=number] {
 }
 
 .header-footer {
-    background: url("https://res.cloudinary.com/ken86/image/upload/v1673044338/static/images/cloud-forest.efda6b1002fd.jpg");
+    background: url("https://res.cloudinary.com/ken86/image/upload/v1673564547/static/images/hazy-forest-background.5030849929b3.webp");
     text-align: center;
     width: 100%;
     height: 15vh;

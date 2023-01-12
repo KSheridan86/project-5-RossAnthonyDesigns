@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://rossanthonydesigns.herokuapp.com/</loc>
+  <lastmod>2023-01-12T22:39:02+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://rossanthonydesigns.herokuapp.com/cart/</loc>
+  <lastmod>2023-01-12T22:39:02+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rossanthonydesigns.herokuapp.com/shop/</loc>
+  <lastmod>2023-01-12T22:39:02+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rossanthonydesigns.herokuapp.com/artist/</loc>
+  <lastmod>2023-01-12T22:39:02+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rossanthonydesigns.herokuapp.com/accounts/login/</loc>
+  <lastmod>2023-01-12T22:39:02+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rossanthonydesigns.herokuapp.com/shop/single_item/c039f74c-30ef-4334-9bb8-42d77d3eed5a/</loc>
+  <lastmod>2023-01-12T22:39:02+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rossanthonydesigns.herokuapp.com/shop/single_item/0c2a7808-599e-47b8-b38b-f188a5dcce86/</loc>
+  <lastmod>2023-01-12T22:39:02+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rossanthonydesigns.herokuapp.com/shop/single_item/38e9f02f-420a-4809-b091-372996a2ed4f/</loc>
+  <lastmod>2023-01-12T22:39:02+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rossanthonydesigns.herokuapp.com/accounts/signup/</loc>
+  <lastmod>2023-01-12T22:39:02+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rossanthonydesigns.herokuapp.com/shop/?sort=price&amp;direction=asc</loc>
+  <lastmod>2023-01-12T22:39:02+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://rossanthonydesigns.herokuapp.com/shop/?sort=price&amp;direction=desc</loc>
+  <lastmod>2023-01-12T22:39:02+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://rossanthonydesigns.herokuapp.com/shop/single_item/8e1e14dd-9825-43e0-ab60-96f7c524f957/</loc>
+  <lastmod>2023-01-12T22:39:02+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://rossanthonydesigns.herokuapp.com/shop/single_item/fb3c734f-b24a-49d9-8916-9aa5f688e61d/</loc>
+  <lastmod>2023-01-12T22:39:02+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://rossanthonydesigns.herokuapp.com/shop/single_item/ec31b0d1-3ea6-4acc-868b-1b727b0b076e/</loc>
+  <lastmod>2023-01-12T22:39:02+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://rossanthonydesigns.herokuapp.com/shop/single_item/71caacf6-a006-449f-8fa3-8e13ceca0e71/</loc>
+  <lastmod>2023-01-12T22:39:02+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://rossanthonydesigns.herokuapp.com/accounts/password/reset/</loc>
+  <lastmod>2023-01-12T22:39:02+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+
+</urlset>

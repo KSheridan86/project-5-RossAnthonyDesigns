@@ -8,6 +8,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Hand made, forged metal Ecommerce store for a local sculptor">
+    <meta name="keywords" content="ecommerce, sculpture, sculptor, crafts, hand-made, hand-forged,
+        metal-work, iron-monger, blacksmith, art, artist, gallery, local, forged, metal, gifts, life-like, hipster, 
+        wildlife, owl, dragonfly, butterfly, skull, ireland, nature, woodland, countryside, strong, robust,
+        sturdy, metal-sculpture, animal-sculpture, owl-sculpture, hammer, anvil">
     {% endblock meta %}
 
     {% block corecss %}
@@ -59,7 +64,7 @@
             </a>
 
             <a id="logo" class="navbar-brand me-auto" href="{% url 'home' %}">
-                Forged<img class="avatar" src="{% static 'images/anvil.png' %}">Nature
+                Forged<img class="avatar" src="{% static 'images/anvil.png' %}" alt="icon of a hammer and anvil">Nature
             </a>
 
             <button class="navbar-toggler border border-dark border-2" type="button" data-bs-toggle="collapse"
@@ -72,7 +77,8 @@
                 <ul class="navbar-nav mb-0 mx-auto mb-lg-0" id="animate-nav">
                     {% if request.user.is_superuser %}
                     <li class="nav-item h4 d-md-none me-2 me-lg-5">
-                        <a class="nav-link {% if page == 'dashboard' %} active {% endif %}" href="{% url 'dashboard' %}">Dashboard</a>
+                        <a class="nav-link {% if page == 'dashboard' %} active {% endif %}"
+                            href="{% url 'dashboard' %}">Dashboard</a>
                     </li>
                     {% endif %}
                     <li class="nav-item h4 me-2 me-lg-5" id="active-link">
@@ -189,15 +195,15 @@
                         </div>
 
                         <div class="col-lg-12 text-center mb-3">
-                            <a href="https://www.facebook.com/forged.nature.irl" target="_blank"
+                            <a href="https://www.facebook.com/forged.nature.irl" target="_blank" rel="noopener"
                                 class="social text-reset mx-2 text-decoration-none">
                                 <i class="fa-brands fa-square-facebook"></i>
                             </a>
-                            <a href="https://www.instagram.com/forgednature/" target="_blank"
+                            <a href="https://www.instagram.com/forgednature/" target="_blank" rel="noopener"
                                 class="social text-reset mx-2 text-decoration-none">
                                 <i class="fa-brands fa-square-instagram"></i>
                             </a>
-                            <a href="https://www.youtube.com/channel/UCAuzJ1HITkRCdvKTVSM9kIw" target="_blank"
+                            <a href="https://www.youtube.com/channel/UCAuzJ1HITkRCdvKTVSM9kIw" target="_blank" rel="noopener"
                                 class="social text-reset mx-2 text-decoration-none">
                                 <i class="fa fa-youtube-square"></i>
                             </a>
@@ -244,7 +250,9 @@
         <div class="header-footer">
             <div class="overlay">
                 <div class="text-start p-4 copyright">
-                    Designed & Built by ChimpTech.ie <br>© 2022 ChimpTech <br>
+                    <a href="https://www.chimptech.ie" target="_blank" rel="noopener">
+                        Designed & Built by ChimpTech.ie <br>© 2022 ChimpTech <br>
+                    </a>
                 </div>
             </div>
         </div>
@@ -253,7 +261,7 @@
             <div class="row justify-content-end">
                 <div class="col-3 col-md-2 col-lg-1">
                     <a href="#">
-                        <img class="top-btn" src="{% static 'images/back-to-top.png' %}">
+                        <img class="top-btn" src="{% static 'images/back-to-top.png' %}" alt="image of a chevron pointing up">
                     </a>
                 </div>
             </div>
@@ -266,4 +274,5 @@
     {% endblock postload_js %}
 
 </body>
+
 </html>

@@ -30,7 +30,7 @@
                         <div class="row">
                             <div class="col-12">
                                 <a href="{% url 'single_item' item.product.id %}"><img class="cart-img"
-                                        src="{{ item.product.image.url }}"></a>
+                                        src="{{ item.product.image.url }}" alt="ecommerce cart icon"></a>
                                 <span class="cart-item-text mx-3">{{item.product.title}}</span>
                                 <span class="cart-item-text"> €{{item.product.price|floatformat:2}}</span>
 

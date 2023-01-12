@@ -526,6 +526,9 @@ input[type=number] {
     .section-header {
         font-size: 2rem;
     }
+    #logo {
+        font-size: 2rem;
+    }
 }
 
 @media (max-width: 766px) {

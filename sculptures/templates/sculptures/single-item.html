@@ -27,8 +27,6 @@
                 <span class="fs-4">€{{piece.price|floatformat:0}}</span>
                 <span><small><small class="text-danger">Excl del...</small></small></span>
                 <br>
-                <span><small><small class="text-danger">Available Quantity...{{piece.quantity}}</small></small></span>
-                <br>
                 {% if piece.available == True %}
                 {% if piece.quantity > 0 %}
                 <form action="{% url 'add_to_cart' piece.id %}" method="POST">
@@ -51,6 +49,8 @@
                         <i class="fas fa-plus"></i>
                     </div>
 
+                    <br>
+                    <span><small><small class="text-muted">We currently have <strong>{{piece.quantity}} </strong>of these in stock</small></small></span>
                     <br>
                     <input type="submit" class="cart-btn metal linear mb-2 mt-2" value="Add to Cart">
                     <input type="hidden" name="redirect_url" value="{{ request.path }}">

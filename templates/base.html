@@ -62,14 +62,6 @@
                 Forged<img class="avatar" src="{% static 'images/anvil.png' %}">Nature
             </a>
 
-            {% if request.user.is_superuser %}
-            <li class="navbar-nav h2 d-flex d-md-none me-2">
-                <a class="nav-link active" href="{% url 'dashboard' %}">
-                    <i class="fa fa-cogs" aria-hidden="true"></i>
-                </a>
-            </li>
-            {% endif %}
-
             <button class="navbar-toggler border border-dark border-2" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -78,6 +70,11 @@
 
             <div class="collapse navbar-collapse text-center" id="navbarSupportedContent">
                 <ul class="navbar-nav mb-0 mx-auto mb-lg-0" id="animate-nav">
+                    {% if request.user.is_superuser %}
+                    <li class="nav-item h4 d-md-none me-2 me-lg-5">
+                        <a class="nav-link {% if page == 'dashboard' %} active {% endif %}" href="{% url 'dashboard' %}">Dashboard</a>
+                    </li>
+                    {% endif %}
                     <li class="nav-item h4 me-2 me-lg-5" id="active-link">
                         <a class="nav-link {% if page == 'home' %} active {% endif %}" href="{% url 'home' %}">Home</a>
                     </li>

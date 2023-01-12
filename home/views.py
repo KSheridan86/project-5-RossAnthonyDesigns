@@ -57,6 +57,7 @@ def dashboard(request):
     If so the admin dashboard page is loaded,
     All site Crud functionality is available here.
     """
+    page = 'dashboard'
     try:
         if request.user.is_superuser:
             sculptures = Sculpture.objects.all()
@@ -74,6 +75,7 @@ def dashboard(request):
         'reviews': reviews,
         'sculptures': sculptures,
         'newsletter': newsletter,
-        'message': message
+        'message': message,
+        'page': page
     }
     return render(request, 'home/dashboard.html', context)

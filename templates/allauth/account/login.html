@@ -9,12 +9,12 @@
 
 <div class="container text-center">
   <div class="row justify-content-center">
-    <div class="col-10 register-box p-3 mb-5 w-75">
+    <div class="col-9 col-md-8 col-lg-6 p-3 mb-5">
       <h1>{% trans "Sign In" %}</h1>
 
       {% get_providers as socialaccount_providers %}
 
-      <form class="login mb-2" method="POST" action="{% url 'account_login' %}">
+      <form class="login mb-4" method="POST" action="{% url 'account_login' %}">
         {% csrf_token %}
 
         <div class="form-group mt-3">

@@ -94,7 +94,9 @@ def leave_review(request):
         if request.method == 'POST':
             form = ReviewForm(request.POST)
             if form.is_valid():
-                form.save()
+                update = form.save(commit=False)
+                update.email = request.user.email
+                update.save()
                 messages.success(
                     request, "Review saved, Thank you for your feedback.")
                 return redirect('home')

@@ -112,7 +112,7 @@
                 </div>
             </div>
             <!-- Contact form -->
-            <div class="col-lg-6 text-center p-4 mt-5">
+            <div class="col-lg-6 text-center p-4 mt-5" id="contact-form">
                 <p class="artist-title border-bottom border-2">Get in Touch</p>
                 <form method="POST" action="{% url 'message' %}">
                     {% csrf_token %}
@@ -155,7 +155,7 @@
 
     <!-- Contact form -->
     <h1 class="p-2 text-center metal-light d-lg-none contact-me">Contact Me</h1>
-    <div class="contact-form text-center p-4 mt-0 d-lg-none">
+    <div class="contact-form text-center p-4 mt-0 d-lg-none" id="contact-form">
         <form method="POST" action="{% url 'message' %}">
             {% csrf_token %}
             <p>

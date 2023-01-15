@@ -4,7 +4,7 @@
 {% block content %}
 
 <main>
-    <a href="{% url 'shop' %}" class="btn rounded-0 d-none d-md-block" aria-label="shop">
+    <a href="{% url 'shop' %}" class="btn rounded-0" aria-label="shop">
         <span class="icon">
             <i class="fas fa-chevron-left"></i>
         </span>
@@ -64,19 +64,13 @@
                 {% else %}
                 <p class="text-muted mt-5">
                     Large items can take upwards of 8 weeks to craft,<br>
-                    Please <a href="{% url 'artist' %}"><strong>Contact</strong></a> me for more information
+                    Please <a href="{% url 'artist' %}#contact-form"><strong>Contact</strong></a> me for more information
                     <br>and estimated delivery times.
                 </p>
                 {% endif %}
             </div>
         </div>
     </div>
-    <a href="{% url 'shop' %}" class="btn rounded-0 d-md-none" aria-label="shop">
-        <span class="icon">
-            <i class="fas fa-chevron-left"></i>
-        </span>
-        <span class="text-uppercase">Keep Shopping</span>
-    </a>
 </main>
 <script src="{% static 'js/quantity_input_script.js' %}"></script>
 

@@ -5,11 +5,18 @@
 {% block head_title %}{% trans "Verify Your E-mail Address" %}{% endblock %}
 
 {% block content %}
+<a href="{% url 'home' %}" class="btn rounded-0" aria-label="home-page">
+    <span class="icon">
+        <i class="fas fa-chevron-left"></i>
+    </span>
+    <span class="text-uppercase">Back</span>
+</a>
 <div class="container text-center mt-4 mb-4 p-3">
     <div class="row justify-content-center">
-        <div class="col-10">
+        <div class="col-10 col-lg-6">
+            <br>
             <h1>{% trans "Verify Your E-mail Address" %}</h1>
-
+            <br>
             <p>{% blocktrans %}We have sent an e-mail to you for verification. Follow the link provided to finalize the
                 signup process. Please contact us if you do not receive it within a few minutes.{% endblocktrans %}</p>
         </div>

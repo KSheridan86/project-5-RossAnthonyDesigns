@@ -733,6 +733,10 @@ Single-item page error:
 In the single item page when trying to select a quantity to add to the cart I noticed that on each press of the + button items were being added to the cart before the add to cart button was pushed.
 I found that inside the form that handles this functionality if I changed those + and - buttons from button tags to divs the problem resolved, the button was triggering the form as a whole but the div just operates the increment and decrement functionality leaving the user free to add how ever many products they like and then click add to cart. 
 
+AllAuth signup:
+The templates for allauth have been changed to suit the style of the site but if the user tries to register for an account with an email that is already in the database there are no warning messages,
+the page just reloads, therefore the user is unsure of what went wrong, given a little more time I would like to try to find a way to customize the allauth views so as to include error messages when this happens.
+
 
 [Back to the Top](#table-of-contents)
 

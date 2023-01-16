@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.conf import settings
+from django.core.mail import send_mail
 from .forms import OrderForm
 from cart.contexts import cart_contents
 from sculptures.models import Sculpture
@@ -101,11 +102,34 @@ def checkout_success(request, order_number):
     alter_quantity = []
     product_object = []
     number = 0
+    email_content = f"Hi {order.full_name},\n\nThank you for your order of: \n"
 
     try:
         for item_id, quantity in cart.items():
             product_object.append(Sculpture.objects.get(id=item_id))
             alter_quantity.append(quantity)
+
+            for item in product_object:
+                email_str = (
+                    "" + str(item.title) + ", "
+                    + "Quantity :" + f"{quantity} \n"
+                    + f"\n"
+                    + f"We will do our best to ship your items "
+                    + f"as soon as possible."
+                    + f"\n"
+                    + f"If you have any questions about your order "
+                    + f"please feel free to get in touch. \n"
+                    + f"\n"
+                    + f"Kind Regards, \n"
+                    + f"The forged Nature Team")
+            email_content = email_content + email_str
+
+        send_mail(
+            "Thank you for you order!",
+            f"{email_content}",
+            settings.EMAIL_HOST_USER,
+            [order.email],
+            fail_silently=False,)
 
         for item in product_object:
             item.quantity = item.quantity - alter_quantity[number]

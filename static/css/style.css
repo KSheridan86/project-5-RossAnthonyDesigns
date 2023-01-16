@@ -259,6 +259,18 @@ input[type=number] {
     background-color: #6f8ca2;
     height: 3.5rem;
 }
+#vid {
+    background-color: whitesmoke;
+}
+#iframe-mobile {
+    height: 20rem;
+    width: 90%;
+}
+#iframe-desktop {
+    height: 40rem;
+    width: 40rem;
+}
+
 
 
 /* 404 page */
@@ -571,7 +583,7 @@ input[type=number] {
     }
 
     .header {
-        height: 130vh;
+        height: 140vh;
     }
 
     .blur {
@@ -588,7 +600,7 @@ input[type=number] {
     }
 
     .header-artist-carousel {
-        height: 100vh;
+        height: 90vh;
     }
 
     .btn-header {
@@ -609,6 +621,9 @@ input[type=number] {
     }
     .section-header {
         font-size: 3rem;
+    }
+    #contact-form {
+        width: 75%
     }
 }
 
@@ -642,7 +657,7 @@ input[type=number] {
     }
 
     .header-artist-carousel {
-        height: 110vh;
+        height: 135vh;
     }
 
     .pic {
@@ -714,7 +729,7 @@ input[type=number] {
     }
 
     .header-artist-carousel {
-        height: 120vh;
+        height: 135vh;
     }
 
     .btn-header {

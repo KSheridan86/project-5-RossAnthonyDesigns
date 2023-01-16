@@ -10,31 +10,13 @@
     <div class="header header-artist-carousel d-none d-md-block">
         <div class="overlay">
             <div class="text-center blur mx-auto mt-lg-4 rounded">
-                <h1 class="p-3 metal-light">The Man Behind the Art</h1>
+                <h1 class="p-3 metal-light mt-2">The Man Behind the Art</h1>
             </div>
             <div class="container-fluid g-0 mt-2 mt-lg-4">
                 <div class="row justify-content-center">
-                    <div id="carouselExampleDark" class="col-12 col-md-8 col-lg-5 g-0 carousel carousel-dark slide"
-                        data-bs-ride="carousel">
-                        <div class="carousel-inner come-in-border">
-                            <div class="carousel-item active" data-bs-interval="10000">
-                                <img src="{% static 'images/artist1.jpg' %}" class="pic shadow-4-strong d-block w-100" alt="artist image">
-                            </div>
-                            <div class="carousel-item" data-bs-interval="2000">
-                                <img src="{% static 'images/artist2.jpg' %}" class="pic shadow-4-strong d-block w-100"
-                                    alt="artist image">
-                            </div>
-                        </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"
-                            data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark"
-                            data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
+                    <div class="col-10 g-0 text-center mt-4">
+                        <iframe id="iframe-desktop" class="border border-dark rounded me-auto" src="https://www.youtube.com/embed/AEuKBFNjjaA" title="Hubble three decades of discovery"
+                            allowfullscreen></iframe>
                     </div>
                 </div>
             </div>
@@ -155,7 +137,7 @@
 
     <!-- Contact form -->
     <h1 class="p-2 text-center metal-light d-lg-none contact-me">Contact Me</h1>
-    <div class="contact-form text-center p-4 mt-0 d-lg-none" id="contact-form">
+    <div class="contact-form text-center p-4 mt-0 d-lg-none mx-auto" id="contact-form">
         <form method="POST" action="{% url 'message' %}">
             {% csrf_token %}
             <p>
@@ -169,13 +151,13 @@
             </p>
             <div class="form-group">
                 <label for="name"></label>
-                <input type="text" class="form-control" id="name" name="name" aria-describedby="nameHelp"
+                <input type="text" class="form-control w-75" id="name" name="name" aria-describedby="nameHelp"
                     placeholder="Enter your name...">
             </div>
 
             <div class="form-group mt-3">
                 <label for="email"></label>
-                <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp"
+                <input type="email" class="form-control w-75" id="email" name="email" aria-describedby="emailHelp"
                     placeholder="Enter your email...">
             </div>
             <small id="emailHelp" class="form-text text-muted">
@@ -184,13 +166,21 @@
 
             <div class="form-group mt-3">
                 <label for="message"></label>
-                <textarea class="form-control" id="message" name="message" rows="5"
+                <textarea class="form-control w-75" id="message" name="message" rows="5"
                     placeholder="Enter your message..."></textarea>
             </div>
             <input type="hidden" name="redirect_url" value="{{ request.path }}">
             <button type="submit" class="btn metal linear mt-3">Send</button>
         </form>
     </div>
+
+    <!-- Video Interview with Ross -->
+    <h1 class="p-2 text-center metal-light d-md-none contact-me">Interview with the Artist</h1>
+    <div class="col-12 d-md-none text-center mt-4" id="vid">
+        <iframe id="iframe-mobile" class="border border-dark rounded" src="https://www.youtube.com/embed/AEuKBFNjjaA" title="Hubble three decades of discovery"
+            allowfullscreen></iframe>
+    </div>
+    
 
 </main>
 {% endblock content %}

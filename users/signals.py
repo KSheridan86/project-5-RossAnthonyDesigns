@@ -16,15 +16,14 @@ def new_user(sender, instance, created, **kwargs):
         line = '\n'
         send_mail(
             'Welcome',
-            f"\
-            Hi {name[0]},{line}\
-            {line}\
-            We're happy you chose to register for an account.{line}\
-            You can now leave reviews and avail of any special friends{line}\
-            of Forged Nature discounts that pop up occasionally.{line}\
-            {line}\
-            Kind Regards,{line}\
-            The Forged Nature Team.",
+            f"Hi {name[0]},\n"
+            f"\n"
+            f"We're happy you chose to register for an account.\n"
+            f"You can now leave reviews and avail of any special friends"
+            f"of Forged Nature discounts that pop up occasionally.\n"
+            f"\n"
+            f"Kind Regards,\n"
+            f"The Forged Nature Team.",
             'bobthewind420@gmail.com',
             [email[0]],
             fail_silently=False,)

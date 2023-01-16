@@ -736,6 +736,11 @@ Single-item page error:
 In the single item page when trying to select a quantity to add to the cart I noticed that on each press of the + button items were being added to the cart before the add to cart button was pushed.
 I found that inside the form that handles this functionality if I changed those + and - buttons from button tags to divs the problem resolved, the button was triggering the form as a whole but the div just operates the increment and decrement functionality leaving the user free to add how ever many products they like and then click add to cart. 
 
+Header background:
+I noticed in the dev tools that the background for the header was cutting off the bottom of the video element. So I incresed the height until it looked good.
+BUT then I noticed that on real tablets that it was much too big, leaving lots of empty space.
+In the devtools the tablet setting is the correct width but the height is less than the width and since most people will hold a tablet portrait style when browsing the internet I once again changed the height of the header to fit with this conclusion.
+
 
 [Back to the Top](#table-of-contents)
 

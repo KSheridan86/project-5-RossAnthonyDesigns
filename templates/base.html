@@ -163,9 +163,9 @@
 
         <!-- Newsletter Signup -->
         <div class="container-fluid g-5 mt-4">
-            <div class="row justify-content-lg-center">
+            <div class="row justify-content-lg-center justify-content-md-center">
                 <form method="POST" action="{% url 'newsletter' %}"
-                    class="col-12 col-lg-6 col-xl-3 form-inline footer-borders">
+                    class="col-12 col-md-7 col-lg-6 col-xl-3 form-inline footer-borders">
                     {% csrf_token %}
                     <div class="form-group mb-2 text-center mt-3">
                         <h5>Keep up to date with upcoming events and special offers<br>

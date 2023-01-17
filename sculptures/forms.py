@@ -6,7 +6,7 @@ from .models import Sculpture
 class AddSculpture(ModelForm):
     class Meta:
         model = Sculpture
-        fields = ['title', 'description',
+        fields = ['title', 'description', 'detailed_description',
                   'price', 'image', 'quantity', 'available']
 
     def __init__(self, *args, **kwargs):
@@ -17,6 +17,9 @@ class AddSculpture(ModelForm):
         self.fields['description'].widget.attrs.update(
             {'class': 'form-control',
              'placeholder': 'Please give a short description...'})
+        self.fields['detailed_description'].widget.attrs.update(
+            {'class': 'form-control',
+             'placeholder': 'Please give a detailed description...'})
         self.fields['price'].widget.attrs.update(
             {'class': 'form-control',
              'placeholder': 'Sculpture Price...'})

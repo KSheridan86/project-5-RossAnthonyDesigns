@@ -139,6 +139,9 @@ ul {
 .pic {
     opacity: .85;
     border-radius: 50%;
+    height: 100%;
+    width: auto;
+    object-fit: cover;
 }
 
 .footer-borders {
@@ -159,6 +162,12 @@ ul {
 
 
 /* Home Page */
+
+.carousel-item {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
 
 .featured-image {
     height: 70%;
@@ -388,7 +397,7 @@ input[type=number] {
 /* Header Image behind carousels and footer*/
 
 .header {
-    background: url("https://res.cloudinary.com/ken86/image/upload/v1673564547/static/images/hazy-forest-background.5030849929b3.webp"); 
+    background: url("https://res.cloudinary.com/ken86/image/upload/v1673955325/static/images/hazy-forest-background.a8df61b072c7.webp"); 
     text-align: center;
     width: 100%;
     height: 145vh;
@@ -413,7 +422,7 @@ input[type=number] {
 }
 
 .header-footer {
-    background: url("https://res.cloudinary.com/ken86/image/upload/v1673564547/static/images/hazy-forest-background.5030849929b3.webp");
+    background: url("https://res.cloudinary.com/ken86/image/upload/v1673955325/static/images/hazy-forest-background.a8df61b072c7.webp");
     text-align: center;
     width: 100%;
     height: 15vh;

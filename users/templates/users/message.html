@@ -28,7 +28,7 @@
                 <h6 class="mt-3 text-center p-2">{{message.message}}</h6>
             </div>
             <div class="text-center mt-4">
-                <a href="mailto: {{message.email}}" aria-label="send email link">
+                <a href="mailto:{{message.email}}" aria-label="send email link">
                     <i class="fa fa-reply fs-2 mx-5" aria-hidden="true"></i>
                 </a>
                 <a href="{% url 'delete_message' message.id %}" aria-label="delete private message button">

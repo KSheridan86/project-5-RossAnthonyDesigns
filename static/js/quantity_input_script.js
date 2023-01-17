@@ -11,13 +11,13 @@
     function add(e) {
         e.preventDefault();
         if (quantity.valueAsNumber < availableQuantity.value) {
-            quantity.valueAsNumber++
+            quantity.valueAsNumber++;
         }
     }
 
     function subtract(e) {
         e.preventDefault();
         if (quantity.valueAsNumber > 1) {
-            quantity.valueAsNumber--
+            quantity.valueAsNumber--;
         }
     }

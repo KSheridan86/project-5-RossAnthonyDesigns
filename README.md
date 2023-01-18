@@ -329,21 +329,33 @@ Testing was divided into different sections to ensure everything was tested indi
 #### Validator Testing
 All code files were validated using suitable validators for the specific language.
 HTML & CSS code passed the validation.
-JavaScript code produced one warning about the use of an anonymous function within a loop.
-When this function was named and moved outside the loop but referenced inside the loop, it broke functionality.
-After attempting a few fixes I decided that an anonymous function inside a for loop was an acceptable JavaScript practice.
+JavaScript code produced one warning about an undefined variable but this is nothing to worry about as it is defined in another file.
 All validation screenshots are included below.
 
 All HTML validation returned the same result so I have included only 1 screenshot here.
-![HTML Validation](./docs/html-validation.png)
-![CSS Validation](./docs/css%20validation.png)
-![JS Validation](./docs/jshint.png)
+## HTML
+![HTML Validation](./docs/HTML-validation.png)
+## CSS
+![CSS Validation](./docs/CSS-validation.png)
+## Script JS
+![Script JS](./docs/JS-script.png)
+## Stripe JS
+![Stripe JS](./docs/JS-stripe.png)
+## Quantity Input JS
+![Quantity Input JS](./docs/JS-quantity-input.png)
 
 
 #### Lighthouse Testing
 Below you can see the results of Googles Lighthouse Testing.
 
-![Lighthouse Testing](./docs/lighthouse-testing.png)
+The desktop results were near perfect but the mobile testing could only produce scores in the low 80's for performance, (all other categories were upwards 0f 90).
+
+The cause of this appeared to be "render blocking resources" & "cache policy".
+The "render blocking resources" in question appeared to be Stripe & Bootstrap, I am not sure of how to resolve this issue as those resources are integral to the functionality of the site.
+Likewise the cache policy is beyond my grasp, I did a little research on what is needed to fix this and the solution falls outside the realms of this course.
+
+![Lighthouse Testing Desktop](./docs/lighthouse-desktop.png)
+![Lighthouse Testing Mobile](./docs/Lighthouse-mobile.png)
 
 
 #### Python/JavaScript Testing

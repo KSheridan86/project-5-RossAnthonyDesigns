@@ -94,7 +94,7 @@ def checkout_success(request, order_number):
     Updates stock quantity after successful purchase.
     """
     order = get_object_or_404(Order, order_number=order_number)
-    messages.success(request, f'Order successfully processed! \
+    messages.success(request, f'Payment successful! \
                                 A confirmation email will been sent to \
                                 {order.email}.')
 
@@ -102,7 +102,15 @@ def checkout_success(request, order_number):
     alter_quantity = []
     product_object = []
     number = 0
-    email_content = f"Hi {order.full_name},\n\nThank you for your order of: \n"
+    email_intro = f"Hi {order.full_name},\n\nThank you for your order of: \n\n"
+    email_outro = (
+        f"\nWe will do our best to ship your items "
+        + f"as soon as possible."
+        + f"\nIf you have any questions about your order "
+        + f"please feel free to get in touch. \n"
+        + f"\nKind Regards, \n"
+        + f"The forged Nature Team")
+    email_body = ""
 
     try:
         for item_id, quantity in cart.items():
@@ -110,23 +118,14 @@ def checkout_success(request, order_number):
             alter_quantity.append(quantity)
 
             for item in product_object:
-                email_str = (
-                    "" + str(item.title) + ", "
-                    + "Quantity :" + f"{quantity} \n"
-                    + f"\n"
-                    + f"We will do our best to ship your items "
-                    + f"as soon as possible."
-                    + f"\n"
-                    + f"If you have any questions about your order "
-                    + f"please feel free to get in touch. \n"
-                    + f"\n"
-                    + f"Kind Regards, \n"
-                    + f"The forged Nature Team")
-            email_content = email_content + email_str
+                if item.title not in email_body:
+                    email_body += (str(item.title) + f", Quantity : {quantity}, \n")
+
+        email_intro = email_intro + email_body + email_outro
 
         send_mail(
             "Thank you for you order!",
-            f"{email_content}",
+            f"{email_intro}",
             settings.EMAIL_HOST_USER,
             [order.email],
             fail_silently=False,)

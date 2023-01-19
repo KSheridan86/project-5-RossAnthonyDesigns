@@ -738,7 +738,8 @@ All Tests Passed &#x2611;
 ## Bugs
 
 Stripe server error:
-I noticed that after the site was deployed to Heroku I could not access the checkout page, I would receive a server error message instead, currently working on a fix for this.
+I noticed that after the site was deployed to Heroku I could not access the checkout page, I would receive a server error message instead.
+Turns out it was an easy fix, I had forgot to include environment variables in Heroku.
 
 Cart Error:
 I noticed that even though I limited the amount of items that could be added to the cart to the total quantity available, this could be bypassed by adding items directly from the cart.

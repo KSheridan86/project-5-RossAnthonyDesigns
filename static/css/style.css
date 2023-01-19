@@ -13,7 +13,7 @@ body {
     background-color: rgb(111, 140, 162);
     color: black;
     box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.2);
-    height: 10vh;
+    height: 14vh;
     width: 80vw;
     position: fixed;
     margin-top: 5rem;
@@ -406,7 +406,7 @@ input[type=number] {
     background-attachment: fixed;
     position: relative;
     overflow: hidden;
-    border-radius: 0 0 85% 85% / 20%;
+    border-radius: 0 0 85% 85% / 10%;
     z-index: 5;
 }
 
@@ -594,6 +594,7 @@ input[type=number] {
 
     .header {
         height: 140vh;
+        border-radius: 0 0 85% 85% / 20%;
     }
 
     .blur {
@@ -661,6 +662,7 @@ input[type=number] {
 
     .header {
         height: 90vh;
+        border-radius: 0 0 85% 85% / 20%;
     }
 
     .blur {
@@ -742,6 +744,7 @@ input[type=number] {
 
     .header-artist-carousel {
         height: 135vh;
+        border-radius: 0 0 85% 85% / 20%;
     }
 
     .btn-header {

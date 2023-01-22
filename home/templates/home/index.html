@@ -1,6 +1,5 @@
 {% extends 'base.html' %}
 {% load static %}
-<!-- Fix inline styles for font type -->
 {% block content %}
 <!-- Carousel & Header, Carousel from Bootstrap -->
 
@@ -50,7 +49,7 @@
                                 <br>
                             </p>
                             <a href="https://chimera-gallery.com/" aria-label="link to a gallery website"
-                                target="_blank" rel="noopener">
+                                target="_blank" rel="nofollow">
                                 <p class="text-decoration-underline fs-5 gallery-link">
                                     Now on display in
                                     <strong>The Chimera Gallery</strong>
@@ -81,7 +80,7 @@
                         Specializing in hand forged, nature inspired items for display in home or garden.
                         With products ranging from a simple Butterfly to life size predatory Barn Owls.
                     </p>
-                    <a href="https://chimera-gallery.com/" target="_blank" rel="noopener"
+                    <a href="https://chimera-gallery.com/" target="_blank" rel="nofollow"
                         aria-label="link to gallery site">
                         <p class="text-decoration-underline fs-6 gallery-link">
                             Now on display in
@@ -113,10 +112,17 @@
 
             {% for piece in sculptures %}
             <div class="col-12 col-md-6 col-lg-4 col-xl-4 p-4 mb-5 mt-3 fade-in">
+                {% if 'placeholder' in piece.image.url %}
+                <a href="{% url 'single_item' piece.id %}" aria-label="single item page">
+                    <img class="featured-image" src="{% static 'images/coming-soon.png' %}"
+                        alt="image of hand forged metal sculpture">
+                </a>
+                {% else %}
                 <a href="{% url 'single_item' piece.id %}" aria-label="single item page">
                     <img class="featured-image" src="{{piece.image.url}}" alt="image of hand forged metal sculpture"
                         loading="lazy">
                 </a>
+                {% endif %}
                 <h2 class="mt-3 metal-light featured-title">{{piece.title}}</h2>
                 <p class="product-description mx-auto">{{piece.description}}</p>
                 <h4>€{{piece.price|floatformat:0}}</h4>

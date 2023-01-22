@@ -20,7 +20,6 @@
                             class="dropdown-item">Price Desc
                             &#8595;</a>
                     </li>
-
                 </ul>
             </div>
         </div>
@@ -30,13 +29,22 @@
         <div class="row justify-content-center  ">
             {% for piece in sculptures %}
             <div class="col-10 col-md-6 col-lg-3 p-2 mt-5 border-bottom border-2">
+                {% if 'placeholder' in piece.image.url %}
                 <a href="{% url 'single_item' piece.id %}" aria-label="link to single item">
-                    <img class="col-12 col-md-10 featured-image-shop" src="{{piece.image.url}}" alt="image of hand forged metal sculpture">
+                    <img class="col-12 col-md-10 featured-image-shop" src="{% static 'images/coming-soon.png' %}"
+                        alt="image of hand forged metal sculpture">
                 </a>
+                {% else %}
+                <a href="{% url 'single_item' piece.id %}" aria-label="link to single item">
+                    <img class="col-12 col-md-10 featured-image-shop" src="{{piece.image.url}}"
+                        alt="image of hand forged metal sculpture">
+                </a>
+                {% endif %}
                 <h3 class="mt-3 featured-title-shop">{{piece.title}}</h3>
                 <p class="product-description mx-auto">{{piece.description}}</p>
                 <h4>€{{piece.price|floatformat:0}}</h4>
-                <a href="{% url 'single_item' piece.id %}" class="btn info-btn metal linear mt-2 mb-3" aria-label="link to single item">
+                <a href="{% url 'single_item' piece.id %}" class="btn info-btn metal linear mt-2 mb-3"
+                    aria-label="link to single item">
                     Info
                 </a>
             </div>

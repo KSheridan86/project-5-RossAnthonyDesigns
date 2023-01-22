@@ -109,7 +109,7 @@ def checkout_success(request, order_number):
         + f"\nIf you have any questions about your order "
         + f"please feel free to get in touch. \n"
         + f"\nKind Regards, \n"
-        + f"The forged Nature Team")
+        + f"The Forged Nature Team")
     email_body = ""
 
     try:

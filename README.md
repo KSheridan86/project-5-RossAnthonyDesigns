@@ -741,6 +741,10 @@ Stripe server error:
 I noticed that after the site was deployed to Heroku I could not access the checkout page, I would receive a server error message instead.
 Turns out it was an easy fix, I had forgot to include environment variables in Heroku.
 
+CORS warnings in the console:
+During testing I noticed that when using Firefox, when I navigate to the payments page, Lots of CORS warnings show up one after the other.
+This does not happen on Chrome, I could not find a solution to this but upon further research I came across information that this could just be a Firefox issue and not limited to my app.
+
 Cart Error:
 I noticed that even though I limited the amount of items that could be added to the cart to the total quantity available, this could be bypassed by adding items directly from the cart.
 This was fixed in the view by first checking the available stock and only adding items if they were available.

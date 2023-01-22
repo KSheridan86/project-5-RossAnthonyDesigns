@@ -3,7 +3,6 @@
 
 {% block content %}
 
-
 <main>
 
     <!-- Checkout -->
@@ -22,6 +21,7 @@
     </a>
     <h1 class="text-center mt-3 text-decoration-underline">Checkout</h1>
     {% if cart_items %}
+    <!-- Summary of items in cart -->
 <div class="container mx-auto">
     <div class="row justify-content-center">
         <ul class="col-10 col-md-8 col-lg-6">
@@ -47,11 +47,10 @@
             {% endfor %}
         </ul>
     </div>
- 
 </div>
 
     {% endif %}
-
+    <!-- Payment form -->
     <div class="container">
         <div class="lg-screen row justify-content-center mt-2 mb-5">
             <div class="col-12 col-md-8 col-lg-10 p-3 mb-md-5 mb-5">
@@ -70,10 +69,10 @@
                             {{form.phone_number}}
                         </div>
                         <small class="form-text text-muted">
-                            **If you require delivery outside of the Republic of Ireland<br>please
-                            <strong class="text-uppercase"><a href="{% url 'artist' %}#contact-form">Contact me</a></strong> for
+                            If you require delivery outside of the<br>Republic of Ireland<br>
+                            <strong class="text-uppercase"><a href="{% url 'artist' %}#contact-form">Contact me</a></strong><br>for
                             assistance
-                            and delivery costs.**
+                            and delivery costs.
                         </small>
                     </div>
 
@@ -98,10 +97,6 @@
 
                     </div>
 
-
-
-
-
                     <h4 class="mt-4">Payment Details</h4>
 
                     <div class="col-10 col-md-8 col-lg-6">
@@ -114,10 +109,7 @@
                         </div>
                     </div>
 
-
-
                     <!-- Submit section -->
-                    <!-- fix inline styles -->
                     <div class="submit-button">
 
                         <button id="submit-button" class="btn newsletter mt-3 metal linear" type="submit">Pay Now
@@ -146,4 +138,3 @@
 {{ client_secret|json_script:'id_client_secret' }}
 <script src="{% static 'js/stripe_elements.js' %}"></script>
 {% endblock postload_js %}
-

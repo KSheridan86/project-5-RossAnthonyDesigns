@@ -79,18 +79,14 @@ To aid in the user experience users have the ability to open up a seperate page 
 
 Artist Page:
 
-Users can view a page dedicated to the artist himself, this page includeds basic information and photos 
-
-aswell as a contact form used for basic communication or requests for commissions.
+Users can view a page dedicated to the artist himself, this page includes basic information and photos, aswell as a contact form used for basic communication or requests for commissions.
 
 ![Artist Wireframe](./docs/artist-wireframe.jpg)
 
 
 Cart Page:
 
-Users can view a cart with their chosen items, it includes a total price for items in the cart, 
-
-delivery cost and grand total (price + delivery)
+Users can view a cart with their chosen items, it includes a total price for items in the cart, delivery cost and grand total (price + delivery)
 
 ![Cart Wireframe](./docs/cart-wireframe.jpg)
 
@@ -110,10 +106,7 @@ The Footer is responsive and universal across the site, it includes a newsletter
 
 
 Wireframes were also produced for each major page for both mobile and tablet devices. 
-
-With the intention of the site being fully responsive so that no matter the device size 
-
-the user is viewing the site on, it will display accordingly.
+With the intention of the site being fully responsive so that no matter the device size the user is viewing the site on, it will display accordingly.
 
 
 * [Individual product wireframe](./docs/single-item-wireframe.jpg)
@@ -616,7 +609,7 @@ Acceptance Criteria:
 * Given that I am a user I can navigate to the Shopping cart page.
 
 Implementation of tests:
-* Create an shopping Cart page.
+* Create a shopping Cart page.
 * Wire up views and URLS for Shopping cart page.
 * Ensure Cart is visible and accessible all over the site.
 
@@ -633,7 +626,7 @@ Acceptance Criteria:
 * Given that I am a user when I navigate to my Cart I can remove products.
 
 Implementation of tests:
-* Create an "Delete from Cart" button.
+* Create a "Delete from Cart" button.
 * Wire up views and URLS for "Delete from Cart" button.
 * Ensure items deleted are in fact deleted.
 
@@ -852,7 +845,7 @@ User Story:
 > Leave Reviews - As a registered and logged in User I have the option to leave testimonials.
 
 Acceptance Criteria:
-*Given that I am a registered and logged in user I can see the option to review the artist and leave a testimonial.
+* Given that I am a registered and logged in user I can see the option to review the artist and leave a testimonial.
 
 Implementation of tests:
 * Include a form for leaving testimonials.
@@ -870,7 +863,7 @@ All Tests Passed &#x2611;
 
 Stripe server error:
 I noticed that after the site was deployed to Heroku I could not access the checkout page, I would receive a server error message instead.
-Turns out it was an easy fix, I had forgot to include environment variables in Heroku.
+Turns out it was an easy fix, I had forgotten to include environment variables in Heroku.
 
 CORS warnings in the console:
 During testing I noticed that when using Firefox, when I navigate to the payments page, Lots of CORS warnings show up one after the other.
@@ -945,7 +938,7 @@ The site was deployed via Heroku, and the live link can be found here - [Forged 
 To deploy the project through Heroku I followed these steps:
 * Sign up / Log in to [Heroku](https://www.heroku.com/)
 * From the main Heroku Dashboard page select 'New' and then 'Create New App'
-* Give the project a name - I entered The-Pantry and select a suitable region, then select create app. The name for the app must be unique.
+* Give the project a name - I entered RossAnthonyDesigns and select a suitable region, then select create app. The name for the app must be unique.
 * This will create the app within Heroku and bring you to the deploy tab. From the submenu at the top, navigate to the resources tab.
 * Add the database to the app, in the add-ons section search for 'Heroku Postgres', select the package that appears and add 'Heroku Postgres' as the database
 * Navigate to the setting tab, within the config vars section copy the DATABASE_URL to the clipboard for use in the Django configuration.
@@ -963,14 +956,14 @@ To deploy the project through Heroku I followed these steps:
 * In Heroku, add the CLOUDINARY_URL and value copied to the clipboard to the config vars
 * Also add the KEY - DISABLE_COLLECTSTATIC with the Value - 1 to the config vars
 * this key value pair must be removed prior to final deployment
-* Add the cloudinary libraries to the list of installed apps, the order they are inserted is important, 'cloudinary_storage' goes above 'django.contrib.staitcfiles' and 'cloudinary' goes below it.
+* Add the cloudinary libraries to the list of installed apps, the order they are inserted is important, 'cloudinary_storage' goes above 'django.contrib.staticfiles' and 'cloudinary' goes below it.
 * in the Settings.py file - add the STATIC files settings - the url, storage path, directory path, root path, media url and default file storage path.
 * Link the file to the templates directory in Heroku TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 * Change the templates directory to TEMPLATES_DIR - 'DIRS': [TEMPLATES_DIR]
 * Add Heroku to the ALLOWED_HOSTS list the format will be the app name given in Heroku when creating the app followed by .herokuapp.com
 * In your code editor, create three new top level folders, media, static, templates
 * Create a new file on the top level directory - Procfile
-* Within the Procfile add the code - web: guincorn PROJECT_NAME.wsgi
+* Within the Procfile add the code - web: gunicorn PROJECT_NAME.wsgi
 * In the terminal, add the changed files, commit and push to GitHub
 * In Heroku, navigate to the deployment tab and deploy the branch manually - watch the build logs for any errors.
 * Heroku will now build the app for you. Once it has completed the build process you will see a 'Your App Was Successfully Deployed' message and a link to the app to visit the live site.
@@ -1017,7 +1010,7 @@ Further research was done by building walk through projects available freely on 
 
 ## Acknowledgements
 
-I would like to acknowledge the help and support given by my mentor Chris Quinn, he is never short of good ideas. 
+I would like to acknowledge the help and support given by my mentor [Chris Quinn](https://github.com/10xOXR), he is never short of good ideas. 
 All of the students in my own study group aswell as all the students in the wider Code Institute Slack channels. My cohort Facilitator [Kasia](https://github.com/bezebee) and all of the staff at Code Institute. The sense of comraderie among all of these individuals has helped me to feel at home on my journey to a new career in programming.
 
 On top of all these wonderful people I can't forget to thank my wife Rebecca for her help and understanding (and cups of tea!), without which none of this would be possible.

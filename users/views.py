@@ -214,16 +214,26 @@ def delete_user(request):
 
 
 def unsubscribe(request):
-    subscribed = Newsletter.objects.values_list('email', flat=True)
+    try:
+        subscribed = Newsletter.objects.values_list('email', flat=True)
 
-    if request.method == 'POST':
-        name = request.POST['email']
-        if name in subscribed:
-            toremove = Newsletter.objects.get(email=name)
-            toremove.delete()
-        messages.success(
-                request,
-                f"{name} has been successfully removed from our mailing list."
-            )
+        if request.method == 'POST':
+            name = request.POST['email']
+            if name in subscribed:
+                to_remove = Newsletter.objects.get(email=name)
+                to_remove.delete()
+                messages.success(
+                        request,
+                        f"{name} has been removed from our mailing list."
+                )
+            else:
+                messages.error(
+                    request,
+                    "Sorry we couldn't find that email on our mailing list.")
+            return redirect('home')
+    except Exception:
+        messages.error(
+            request, 'Whoops, Heuston we have a problem!'
+        )
         return redirect('home')
     return render(request, 'users/unsubscribe.html')

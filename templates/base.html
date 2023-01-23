@@ -35,7 +35,7 @@
     <script src="https://js.stripe.com/v3/"></script>
     {% endblock corejs %}
 
-    <title>RossAnthonyDesigns {% block extra_title %}{% endblock extra_title %}</title>
+    <title>ForgedNature {% block extra_title %}{% endblock extra_title %}</title>
 
     <link rel="icon" type="image/png" href="{% static 'images/anvil.webp' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -97,7 +97,7 @@
                             aria-label="navbar link">Artist</a>
                     </li>
                     <li class="nav-item h4 me-2 me-lg-5">
-                        <a class="nav-link" href="#footer" aria-label="navbar link">Contact</a>
+                        <a class="nav-link" href="#contact-info" aria-label="navbar link">Contact</a>
                     </li>
                     {% if request.user.is_authenticated %}
                     <li class="h4 mb-0 d-md-none me-2 me-lg-5">
@@ -242,7 +242,7 @@
                 </div>
 
                 <!-- Contact Info -->
-                <div class="col-md-4 col-lg-5 col-xl-3 mx-auto mb-md-0 mb-4 text-center footer-borders-4x4">
+                <div id="contact-info" class="col-md-4 col-lg-5 col-xl-3 mx-auto mb-md-0 mb-4 text-center footer-borders-4x4">
                     <h5 class="text-uppercase mb-4 mt-3">Contact</h5>
                     <p>
                         <i class="fas fa-home me-3"></i>
@@ -267,18 +267,27 @@
         <div class="header-footer">
             <div class="overlay">
                 {% if user.is_authenticated %}
-                <a class="copyright text-decoration-underline text-uppercase mx-5" href="{% url 'delete_user' %}">
-                    Delete Account
-                </a>
+                <span class="px-3 px-md-5">
+                    <a class="copyright text-decoration-underline text-uppercase" href="{% url 'delete_user' %}">
+                        Delete Account
+                    </a>
+                </span>
+                
                 {% endif %}
-                <a class="copyright text-decoration-underline text-uppercase mx-5" href="{% url 'unsubscribe' %}">
-                    Unsubscribe
-                </a>
+                <span class="px-3 px-md-5">
+                    <a class="copyright text-decoration-underline text-uppercase" href="{% url 'unsubscribe' %}">
+                        Unsubscribe
+                    </a>
+                </span>
+                
 
-                <div class="text-start p-2 copyright">
+                <div class="p-2 text-start copyright position-absolute bottom-0 start-0">
                     <a href="https://www.chimptech.ie" target="_blank" rel="noopener"
                         aria-label="link to web design business that built site">
-                        Designed & Built by ChimpTech.ie <br>© 2022 ChimpTech <br>
+                        Designed & Built by ChimpTech.ie
+                        <br>
+                        © 2022 ChimpTech
+                        <br>
                     </a>
                 </div>
 

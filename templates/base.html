@@ -266,12 +266,19 @@
         <!-- Footer image to mirror header -->
         <div class="header-footer">
             <div class="overlay">
-                <div class="text-start p-4 copyright">
+                {% if user.is_authenticated %}
+                <a class="copyright text-decoration-underline text-uppercase" href="{% url 'delete_user' %}">
+                    Delete Account
+                </a>
+                {% endif %}
+
+                <div class="text-start p-2 copyright">
                     <a href="https://www.chimptech.ie" target="_blank" rel="noopener"
                         aria-label="link to web design business that built site">
                         Designed & Built by ChimpTech.ie <br>© 2022 ChimpTech <br>
                     </a>
                 </div>
+
             </div>
         </div>
         <!-- Back to top button -->
@@ -291,7 +298,7 @@
     {% block postload_js %}
     <script src="{% static 'js/script.js' %}" defer></script>
     <script src="https://kit.fontawesome.com/7beb4c51dd.js" crossorigin="anonymous" defer></script>
-    
+
     {% endblock postload_js %}
 
 </body>

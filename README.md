@@ -17,6 +17,7 @@
 - [Design](#design)
 - [UX](#ux)
 - [Agile Development](#agile-development)
+- [Web Marketing](#web-marketing)
 - [Features](#features)
 - [Testing](#testing)
 - [Technologies](#technologies)
@@ -236,6 +237,35 @@ These are the user stories that were completed within the projects first release
 
 ---
 
+
+## Web Marketing
+
+#### **E-Commerce Application Type**
+Forged Nature is a B2C e-commerce application. Selling directly to consumers means that the site is designed to sell quickly, on impulse, and in smaller quantities. While wholesale is a possible future goal, the website was not yet intended to sell to other businesses. For this reason, a large amount of the functionality is focused on the user experience and the ability to purchase products quickly and effectively
+
+#### **Marketing Strategy**
+As Forged Nature is a start-up business, the budget for marketing is limited. However, there are several ways that Forged Nature can market itself to help increase sales and brand awareness. Using Facebook to pump out content and drive traffic is the first and most straightforward. The use of paid ads allows the business to target specific demographics and increase brand awareness. The use of social media is also a great way to get feedback from customers and to help with customer service. There is an image of the Facebook page below and a link to the page [here](https://www.facebook.com/forged.nature.irl).
+
+The second is the use of google ads which are a great way to increase brand awareness and help with SEO. The use of google ads can also help with the use of long-tail keywords and help with the ranking of the site.
+
+The third is the use of influencers. Influencers are a great way to increase brand awareness. Free samples could be sent to popular influencers on youtube in exchange for a mention/hashtag/ link in the description. This further helps raise brand awareness because the video could be posted on Facebook and the influencer tagged in the post, which with the help of the Facebook algorithm, would help bring an organic audience to the Facebook page and, hopefully, the store.
+
+The final method would then be sending regular news letters to the mailing list obtained via the signup form. The newsletter would contain links to recent articles, the latest products, special offers and promotions. This would help with brand awareness building a community around the brand.
+
+#### **Search Engine Optimization**
+SEO research is key to driving traffic from a browser based search i.e. Google to the website. The keyword research has played a crucial role in incorporating words that users typically search for when seeking to purchase art online. To help improve the search engine ranking I ensured the site carries meta tags for a description and keywords which encapsulate the general content and focus of this B2C site.
+
+#### **XML Sitemap**
+Additionally to help the search engines crawl the website, I've added an XML sitemap file to the main root directory. The file was created using the free service through XML-Sitemaps.com. A sitemap is a way of organizing a website, identifying the URLs and the data under each section. Previously, the sitemaps were primarily geared for the users of the website. However, Google's XML format was designed for the search engines, allowing them to find the data faster and more efficiently.
+
+A robots.txt file has also be included in the build to tell the search engine crawlers which URLs the crawler can access on this site. This is used mainly to avoid overloading the site with requests.
+
+#### **Facebook Page**
+![Facebook Page](./docs/Facebook-mockup.png)
+
+---
+
+
 ## Features
 
 **Features planned:**
@@ -367,92 +397,21 @@ This is reflected in the fact that all of the user stories below are working and
 ------
 User Story:
 
-> Create a User Account - As a User, I would like to be able to create an account, so that I can create and save recipes
+> Log in/out - As a User, I can log in/out so that I can use the sites functionality and protect my account
 
 Acceptance Criteria:
-* Given that I am an unregistered user, When I am on the homepage, Then I can see a button to sign up, And, When I click on the button, Then I am taken to the user registration page.
-* Given that I am an unregistered user, And, I am on the user registration page, When I enter my username, email address and password, And, I click on the register button, Then The system creates me an account, And, signs me in.
-* Given that I have an account, And, I am signed into the account, When I have an option to create a recipe, And, when I click on that option, Then I am taken to a page where I can provide the details of my recipe.
 
-Implementation of tests:
-* Check for clearly accessible call to action on homepage to register for an account and that it works as expected.
-* Clearly accessible link to login or register within main navigation bar and that it functions correctly.
-* Easy to use User registration process, user account and profile is created upon submission.
-* Clear UX design, prevent unnecessary links to register as a user, if user is already logged in.
-
-All Tests Passed &#x2611;
----
-
------
-
-User Story:
-
-> Users can view their profile - As a User, I would like to be able to see the details in my user profile, so that I can see what information other users can see about me.
-
-Acceptance Criteria:
-* Given that I am logged into my user account I can access an option to view my profile.
-
-Implementation of tests:
-* Once a user is registered a button giving them access to their account appears in the menu.
-
-All Tests Passed &#x2611;
----
-
------
-
-User Story:
-
-> Users can edit their profile - As a User, I would like to be able to edit my profile, so that I can keep the information upto date.
-
-Acceptance Criteria:
-* Given that I am logged into my account when I am viewing my profile then I should be able to edit the details.
-* Given that I am logged into my account when I click on the edit button on my profile page then I should be taken to a page to edit the details.
-* Given that I am not logged into my account when I view my profile page, or anyone elses then I should not be able to see the edit button.
-* Given that I am not logged into my account when I type in the address to edit my profile, or anyone elses then I should be redirected to the log in page.
-
-Implementation of tests:
-* Provide a clearly accessible button on a user's profile for the profile owner only, so they can edit their profile.
-* Provide a simple and clear edit profile form, linked from the edit profile button.
-
-All Tests Passed &#x2611;
----
-
------
-
-User Story:
-
-Users can delete their account - As a User, I can delete my account, so that I can remove my details and recipes at my request.
-
-Acceptance Criteria:
-* Given that I am a registered user when I navigate to my account then I have an option to delete my account.
-* Given that I am a registered user viewing my account details when I click on the option to delete my account then I am requested to confirm the request.
-* Given that I am a registered user viewing my account details when I click on the option to delete my account
-And, When I confirm the request then My account and the recipes that I have created are deleted.
-* Given that I am a registered user when I delete my account then I should receive confirmation of the account deletion.
-
-Implementation of tests:
-* Provide users with an easily accessible option to delete their account.
-* Provide users with a secure confirmation process to confirm account deletion requests to prevent accidents.
-* Link all user created elements so that when a user deletes their account, all associated records are deleted.
-* Provide the user with confirmation that their account has been deleted.
-
-All Tests Passed &#x2611;
----
-
------
-
-User Story:
-
-> User Account Login / Logout - As a User, I would like to be able to login or logout of my account, so that I can keep my account secure.
-
-Acceptance Criteria:
 * Given that I am a registered user, who is not logged in when I navigate to the sign in page and I enter my credentials correctly and press sign in then I am signed into my account.
 * Given that I am a registered user, who is currently logged in when I click on the sign out link then I am signed out of my account.
 * Given that I am a registered user, who has signed out of my account when I use the browser navigation buttons such as back button then I can not access information which requires me to be signed in.
+* Given that I am a user my logged in status should be clear
+
 
 Implementation of tests:
-* Provide login and logout functionality.
-* Secure restricted pages from access when a user is not signed in.
+* Check that the login button triggers the login view and processes the users information.
+* Check that the logout button triggers the logout view and the user is successfully logged out.
+* Check that when logged out, ensure that the user has no access to restricted pages.
+* Check to ensure logged in status is conveyed to the user.
 
 All Tests Passed &#x2611;
 ---
@@ -461,17 +420,14 @@ All Tests Passed &#x2611;
 
 User Story:
 
-> Features restricted to signed in users - As a Site Owner, I would like to restrict some features of the site to registered users, so that it encourages people to sign up to the site.
+> Reset Password - As a User I can reset my password so that my account stays secure.
 
 Acceptance Criteria:
-* Given that a user is not registered or signed in, when they look at a recipe then they do not have the ability to create a recipe.
-* Given that a user is not registered or signed in, when they look at a recipe then they are unable to leave a comment.
-* Given that a user is not registered or signed in, when they encounter functionality that requires them to be signed in then they are redirected to the login or register page.
+* Given that I am a registered user, When logging in I should see an option to reset my password.
 
 Implementation of tests:
-* Restrict the ability to create a recipe to authenticated users.
-* Restrict the ability to comment on recipes to authenticated users.
-* Redirect users who make a request for functionality that requires them to be authenticated users to the login page
+* Check that upon pressing the password reset button the user is brought to a page to fill in their email details.
+* Check that upon entering these details the user receives an email and can successfully change their password.
 
 All Tests Passed &#x2611;
 ---
@@ -480,142 +436,13 @@ All Tests Passed &#x2611;
 
 User Story:
 
-> Create a Recipe - As a User, I would like to be able to share my own recipes, with family and friends.
+> Send Welcome Email - As a User I can receive welcome emails so that I am kept informed of my activity.
 
 Acceptance Criteria:
-* Given that I am a logged in user when I navigate to the recipe section of my account then I have the option to create a recipe.
-* Given that I have created a recipe as a logged in user when I save the completed recipe then it is available to other users to view.
+* Given that I am a new user, when I register an account I should receive a welcome email.
 
 Implementation of tests:
-* Provide authenticated users with a clear option to create a recipe.
-* Make saved recipes available to other users to view.
-
-All Tests Passed &#x2611;
----
-
------
-
-User Story:
-
-> View Recipes - As a User, I can access the recipes on the site, so that I can follow them at home.
-
-Acceptance Criteria:
-* Given that I am a user on the site when I navigate to the recipes page then I am presented with a list of the recipes available.
-* Given that I am a user on the site when I navigate to the recipes page And When I click on a recipe then I am presented with the full recipe details.
-
-Implementation of tests:
-* Provide users of the site with the ability to access all recipes.
-* Provide users of the site with the ability to access the full recipe details from the recipe summary card.
-
-All Tests Passed &#x2611;
----
-
------
-
-User Story:
-
->  Update a recipe - As a user, I can update a recipe that I have created, so that I can correct any mistakes I may have made.
-
-Acceptance Criteria:
-* Given that I am a registered user who has created a recipe when I navigate to my profile page then I have the option to edit the details of my recipes.
-* Given that I am a registered user when I navigate to someone else's recipe then I do not get the edit option.
-
-Implementation of tests:
-* Provide easy access to recipe owners to edit recipes.
-* Prevent other users from editing a recipe they did not create.
-* Provide a method for recipe owners to edit the recipe details.
-* Ensure recipe edits are saved to the database and users are informed of changes.
-
-All Tests Passed &#x2611;
----
-
------
-
-User Story:
-
-> Delete a recipe - As a user, I can delete a recipe that I have created, so that I can remove it from the site.
-
-Acceptance Criteria:
-* Given that I am a registered user who is logged in, and has created a recipe when I navigate to my profile page then I have the option to delete my recipes.
-* Given that I am a registered user who is logged in and wishes to delete a recipe, when I click the delete recipe button then I receive a confirmation window to confirm that I really want to delete the recipe.
-* Given that I am a registered user who is logged in, has created a recipe, navigated to that recipe and clicked on the delete recipe button when the confirmation window appears and I confirm the deletion then the recipe is deleted from the system.
-* Given that I am a registered user, or a non registered user when I navigate to a recipe page that I did not create then I do not have the option to delete the recipe.
-
-Implementation of tests:
-* Provide recipe owners with the option to delete their recipe.
-* Provide recipe deletion requests with a confirmation window to prevent mistakes.
-* Ensure confirmed deletion requests are processed on the database correctly.
-* Prevent unauthorised access to recipe deletion functionality.
-
-All Tests Passed &#x2611;
----
-
------
-
-User Story:
-
-> Recipe Searching - As a User, I would like to be able to find recipes.
-
-Acceptance Criteria:
-* Given that I am a user of the website when I navigate to the homepage then I can access a link to all the recipes.
-* Given that I am a user of the website when I want to view a specific recipe then I can access the full recipe details by clicking on the recipe.
-
-Implementation of tests:
-* Provide ease of access to full recipe list.
-* Provide users with the ability to access full recipe details from the summary card.
-
-All Tests Passed &#x2611;
----
-
------
-
-User Story:
-
-> Recipe Search - Advanced - As a User, I would like to be able to search the recipes, so that I can find the ones that match my fancy at that point in time.
-
-Acceptance Criteria:
-* Given that I am a user of the website when I navigate to the site then I can access a search function to access related recipes.
-* Given that I am a user of the website when I search the recipes then the search results show relevant recipes.
-
-Implementation of tests:
-* Provide all users the ability to search the recipes.
-* Enable search query to match with recipe title, ingredients and author.
-
-All Tests Passed &#x2611;
----
-
------
-
-User Story:
-
-> Clear Recipe Layout - As a User, I would like clear instructions on how to make each recipe, so that I am able to follow along as an inexperienced cook.
-
-
-Acceptance Criteria:
-* Given that I am a user when I click on a recipe to view the details then The instructions on how to make the recipe are clearly accessible.
-* Given that I am a user accessing the recipe details when I access a recipe instructions then they should be easy to follow.
-
-Implementation of tests:
-* Provide users with a clean and simple recipe detail page layout.
-* Provide users with a easy to follow instruction list.
-
-All Tests Passed &#x2611;
----
-
------
-
-User Story:
-
-> Responsive Templates - As a Site Owner, I would like my site to be fully responsive, so that Users accessing the site from different devices have an enjoyable experience.
-
-Acceptance Criteria:
-* Given that I am a user accessing the site on my smartphone when I navigate through the site then all pages should be formatted to my device.
-* Given that I am a user accessing the site on my tablet when I navigate through the site then all pages should be formatted to my device.
-* Given that I am a user accessing the site on my laptop when I navigate through the site then all pages should be formatted to my device.
-* Given that I am a user accessing the site on my desktop computer when I navigate the site then all pages should be formatted to suit my screen size.
-
-Implementation of tests:
-* Provide users with a fully responsive site that responds to mobile, tablet, laptop and desktop sized devices.
+* Ensure that functionality to send welcome emails is in place and create an account to test it.
 
 
 All Tests Passed &#x2611;
@@ -625,14 +452,16 @@ All Tests Passed &#x2611;
 
 User Story:
 
-> Comment on Recipes - As a User, I would like to be able to comment on Recipes, so that all users can give and receive feedback on Recipes.
+> Logged in status is visible - As a User I can clearly see if I am logged in or not.
 
 Acceptance Criteria:
-* Given that I am logged in I should be able to post comments and read other users comments.
-* Given that I am logged in I should be able to reply to comments left on Recipes .
+* Given that I am a registered user, who is not logged in I can see this clearly and login if I want to.
+* Given that I am a registered user, who is currently logged in this is clearly visible.
+* Given that I am not a registered user I can see this and register if I want to.
 
 Implementation of tests:
-* Provide users with the ability to leave/view/reply to comments on Recipes.
+* Ensure to clearly show users their current logged in state.
+* Redirect users to login or register if they require it.
 
 
 All Tests Passed &#x2611;
@@ -642,15 +471,13 @@ All Tests Passed &#x2611;
 
 User Story:
 
-> Visit Inbox - As a logged in user, I should be able to navigate to my Inbox easily.
+> Implement Navbar - As a User, I would like to be able to login or logout of my account, so that I can keep my account secure.
 
 Acceptance Criteria:
-* Given that I am a logged in user, it should be easy for me to navigate to my inbox.
-* Given that I am not logged in I should have no access to an inbox.
+* Given that I am a user of the website when I use the Navbar. all site navigation is clearly laid out.
 
 Implementation of tests:
-* Provide users with a link to their inbox in the menu aswell as a clickable message icon in the navbar.
-* Ensure that users who are not logged in have no acces to an inbox.
+* Ensure Navbar is visible and all link are clear and easy to use.
 
 
 All Tests Passed &#x2611;
@@ -660,13 +487,13 @@ All Tests Passed &#x2611;
 
 User Story:
 
-> Send Private Messages - As a User I should be able to send other users private messages.
+> Home Page - As a User when I first navigate to the page I am directed to the Home/Landing page.
 
 Acceptance Criteria:
-* Given that I am a user visiting another users profile page I should easily see a button to send a private message.
+* Given that I am a user of the website I am brought to the Home page first.
 
 Implementation of tests:
-* On all users account pages their is a button to send private messages.
+* Ensure URL for the home page is the first point of contact.
 
 
 All Tests Passed &#x2611;
@@ -676,15 +503,139 @@ All Tests Passed &#x2611;
 
 User Story:
 
-> Reply to private messages - As a logged in user I should be easily able to reply to private messages I have received through my inbox.
+> Easy navigation from landing page - As a User I can navigate through the site from the landing page easily, other pages and purchases should require minimum navigation.
 
 Acceptance Criteria:
-* Given that I am a logged in user I can see a Reply button inside any private message I have received from another logged in user.
-* Given that I am a logged in user I can see an email address with which to respond to private messages from users who do not have an account.
+* Given that I am a user of the website when I navigate to the landing page there are clear links to the other pages.
+* Given that I am a user of the website when I navigate to the landing page there are clear links to purchase items.
 
 Implementation of tests:
-* Inside each private message received from a registered user there is a button to reply to that message.
-* Inside each private message received from a non-registered user their email address is clearly marked for responding to their message.
+* Ensure navigation links to other pages are clear and easy to use.
+* Ensure navigation links to purchase items are clear and easy to use.
+
+All Tests Passed &#x2611;
+---
+
+-----
+
+User Story:
+
+> View Products - As User I can See a list of products for sale with the ability to click on each item for more information so that I can make informed purchases.
+
+Acceptance Criteria:
+* Given that I am a user I can clearly see a list of products available for sale.
+* Given that I am a user when I click on any of the products for sale I am brought to a page that displays more information about the product.
+
+Implementation of tests:
+* Place some featured items for sale on the home page.
+* When clicked these links take the user to the product page.
+* Create a stand alone products page which shows all of the products for sale.
+
+All Tests Passed &#x2611;
+---
+
+-----
+
+User Story:
+
+>  Create New Products - As a Superuser I can add new products for sale to the database.
+
+Acceptance Criteria:
+* Given that I am a Superuser I should see the option to add a product without going to the Admin page.
+
+Implementation of tests:
+* Create an "Add Product" button.
+* Ensure only logged in Superusers can see the button to create a product.
+* Wire up views and URLS for "Add Product" button.
+* Ensure new Products are added to the database for other users to see.
+
+All Tests Passed &#x2611;
+---
+
+-----
+
+User Story:
+
+> Edit Products - As a Superuser I can Edit products for sale and save changes to the database.
+
+Acceptance Criteria:
+* Given that I am a Superuser and logged in I should see the option to Edit a product without going to the Admin page.
+
+Implementation of tests:
+* Create an "Edit Product" button.
+* Ensure only logged in Superusers can see the button to Edit a product.
+* Wire up views and URLS for "Edit Product" button.
+* Ensure edited Product details are added to the database for other users to see.
+
+All Tests Passed &#x2611;
+---
+
+-----
+
+User Story:
+
+> Delete Products - As a Superuser I can Delete products from the database.
+
+Acceptance Criteria:
+* Given that I am a logged in Superuser I should see the option to Delete a product without going to the Admin page.
+
+Implementation of tests:
+* Create a "Delete Product" button.
+* Only logged in Superusers can see the button to Delete a product.
+* Wire up views and URLS for "Delete Product" button.
+* Ensure Products are Deleted from the database.
+
+All Tests Passed &#x2611;
+---
+
+-----
+
+User Story:
+
+> Add to Cart - As a User I can add products to a shopping Cart.
+
+Acceptance Criteria:
+* Given that I am a user when I navigate to a product I wish to purchase then I have the option to add it to a Cart.
+
+Implementation of tests:
+* Create an "Add to Cart" button.
+* Wire up views and URLS for "Add to Cart" button.
+* Ensure items added to the cart are accessible all over the site.
+
+All Tests Passed &#x2611;
+---
+
+-----
+
+User Story:
+
+> View Cart - As a User I can View a shopping Cart.
+
+
+Acceptance Criteria:
+* Given that I am a user I can navigate to the Shopping cart page.
+
+Implementation of tests:
+* Create an shopping Cart page.
+* Wire up views and URLS for Shopping cart page.
+* Ensure Cart is visible and accessible all over the site.
+
+All Tests Passed &#x2611;
+---
+
+-----
+
+User Story:
+
+> Remove Items from Cart - As a User I can Delete products from my shopping Cart.
+
+Acceptance Criteria:
+* Given that I am a user when I navigate to my Cart I can remove products.
+
+Implementation of tests:
+* Create an "Delete from Cart" button.
+* Wire up views and URLS for "Delete from Cart" button.
+* Ensure items deleted are in fact deleted.
 
 
 All Tests Passed &#x2611;
@@ -694,17 +645,13 @@ All Tests Passed &#x2611;
 
 User Story:
 
-> Delete private messages - As a logged in user I should be easily able to delete to private messages.
+> View Cart Total - As a User I can View a running total of the items in the shopping Cart.
 
 Acceptance Criteria:
-* Given that I am a logged in user I can see a Delete button inside any private message I have received.
-* Given that I am a logged in user I can see a Delete button beside any message I have received in my inbox.
-* Given that I am a logged in user and I click the Delete message button I am shown a warning and asked to confirm that I wish to Delete this message.
+* Given that I am a user I can navigate to the Shopping cart page and see a total cost of the items contained within.
 
 Implementation of tests:
-* Inside each private message received from a registered user there is a button to reply to that message.
-* Inside each private message received from a non-registered user their email address is clearly marked for responding to their message.
-* After the Delete button has been clicked a warning message appears to clarify that the message will be deleted.
+* Create a function that adds the prices of the items in the cart and displays this to the user.
 
 
 All Tests Passed &#x2611;
@@ -714,18 +661,202 @@ All Tests Passed &#x2611;
 
 User Story:
 
-> Pagination, As a user only a limited number of recipes/profile should be visible on any given page and I should be provided with easy navigation links to move to next/previous page.
+> User Feedback - As a User I am constantly informed of actions I take on the site.
 
 Acceptance Criteria:
-* Given that I am a User I can see buttons to navigate through the page results.
-* Given that I am a User when I click on these buttons I am taken to the correct page.
-* Given that I am a User and I use the search functionality, the page navigation buttons should reflect the current search results
+* Given that I am a user I am given Feedback about my actions on the site.
 
 Implementation of tests:
-* Pagination buttons are clearly visible at the bottom of the recipes/profiles pages.
-* When Clicked these buttons take the user to the desired page.
-* When a user user the search functionality the pagination shown is directly linked to the results of the user search.
-* 6 items are shown per page, this number works well across different devices, I.E Mobile = 1 column with 6 Items, Tablet = 2 columns with 3 items each, Desktop = 3 columns with 2 items each.
+* Implement Django messages and trigger them on each user activity that requires feedback.
+
+
+All Tests Passed &#x2611;
+---
+
+-----
+
+User Story:
+
+> Order Confirmation - As a User I receive a confirmation email if I make a purchase.
+
+Acceptance Criteria:
+* Given that I am a user who makes a purchase, I should be shown a confirmation message after the order is placed.
+
+Implementation of tests:
+* Implement a confirmation page and trigger it when a user makes a purchase.
+
+
+All Tests Passed &#x2611;
+---
+
+-----
+
+User Story:
+
+> Confirmation Email - As a User who makes a purchase I should receive a confirmation email.
+
+Acceptance Criteria:
+* Given that I am a user who makes a purchase, I should receive a confirmation email.
+
+Implementation of tests:
+* Implement functionality to send confirmation emails when a user makes a purchase.
+
+
+All Tests Passed &#x2611;
+---
+
+-----
+
+User Story:
+
+> Payment screen - As a User who moves to make a purchase, I should be redirect to a secure payment screen.
+
+Acceptance Criteria:
+* Given that I am a user who is making a purchase, I should be redirected to a secure checkout page.
+
+Implementation of tests:
+* Implement Stripe payment functionality and payment screen templates.
+
+
+All Tests Passed &#x2611;
+---
+
+-----
+
+User Story:
+
+> Input card Details - As a User who moves to make a purchase, I should be prompted to enter my Credit/Debit card details.
+
+Acceptance Criteria:
+* Given that I am a user who is making a purchase, I should be redirected to a secure checkout page and clearly see a space to enter my card details.
+
+Implementation of tests:
+* Implement Stripe payment functionality for inputting and processing card payments.
+
+
+All Tests Passed &#x2611;
+---
+
+-----
+
+User Story:
+
+> Create Account - As a User I can Create an account so that I can sign in and avail of the sites full functionality.
+
+Acceptance Criteria:
+* Given that I am an unregistered user, When I am on the homepage, Then I can see a button to sign up, And, When I click on the button, Then I am taken to the user registration page.
+* Given that I am an unregistered user, And, I am on the user registration page, When I enter my username, email address and password, And, I click on the register button, Then The system creates me an account.
+
+Implementation of tests:
+* Create Registration button.
+* Link button to views and URL that creates a user account.
+* If user is logged in, register button is not visible.
+
+
+All Tests Passed &#x2611;
+---
+
+-----
+
+User Story:
+
+> Delete Account - As a User I can delete my account so that I can remove my footprint from the website if i no longer use it.
+
+Acceptance Criteria:
+* Given that I am a registered user when I click on the option to delete my account then I am requested to confirm the request.
+* Given that I am a registered user when I click on the option to delete my account And, When I confirm the request then My account is deleted.
+* Given that I am a registered user when I delete my account then I should receive confirmation of the account deletion.
+
+Implementation of tests:
+* Create a Delete account Button.
+* Provide a confirmation page after the delete button is pressed.
+* After an account is deleted provide feedback to the user.
+
+
+All Tests Passed &#x2611;
+---
+
+-----
+
+User Story:
+
+> Newsletter - As a User I can sign up to a newsletter to keep up to date with deals and events.
+
+Acceptance Criteria:
+* Given that I am a user I can see the option to sign up to the newsletter.
+
+Implementation of tests:
+* Create a Newsletter Sign up button.
+* Link button to views and URL that adds user to the mailing list.
+
+
+All Tests Passed &#x2611;
+---
+
+-----
+
+User Story:
+
+> Contact Form - As a User I can see an option to contact the artist for inquiries or commissions.
+
+Acceptance Criteria:
+* Given that I am a user I can see the option to fill out a contact form so that I can get in touch with the artist directly.
+
+Implementation of tests:
+* Create a "Contact me" form.
+* Link form to views and URL that sends the artist an email.
+
+
+All Tests Passed &#x2611;
+---
+
+-----
+
+User Story:
+
+> Social Media Links/Contact Info - As a User I can clearly see Social media links and contact info about the artist.
+
+Acceptance Criteria:
+* Given that I am a user I can see Social media links, when clicked they take me to the artists Social pages.
+* Given that I am a user I can clearly see the artists contact information.
+
+Implementation of tests:
+* Include links to all of the artists Social media pages.
+* Ensure all links are working.
+
+
+All Tests Passed &#x2611;
+---
+
+-----
+
+User Story:
+
+> View Customer Reviews - As a User I can clearly see past customer testimonials.
+
+Acceptance Criteria:
+* Given that I am a user, when I navigate to the home page I can clearly see testimonials from past customers.
+
+Implementation of tests:
+* Include customer testimonials section near the bottom of the home page.
+* Ensure these are visible to all users on all devices.
+
+
+All Tests Passed &#x2611;
+---
+
+-----
+
+User Story:
+
+> Leave Reviews - As a registered and logged in User I have the option to leave testimonials.
+
+Acceptance Criteria:
+*Given that I am a registered and logged in user I can see the option to review the artist and leave a testimonial.
+
+Implementation of tests:
+* Include a form for leaving testimonials.
+* Ensure testimonials need to be vetted before being posted to the site.
 
 
 All Tests Passed &#x2611;

@@ -20,7 +20,7 @@ def new_user(sender, instance, created, **kwargs):
             f"\n"
             f"We're happy you chose to register for an account.\n"
             f"You can now leave reviews and avail of any special friends"
-            f"of Forged Nature discounts that pop up occasionally.\n"
+            f" of Forged Nature discounts that pop up occasionally.\n"
             f"\n"
             f"Kind Regards,\n"
             f"The Forged Nature Team.",

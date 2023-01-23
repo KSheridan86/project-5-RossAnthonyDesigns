@@ -192,3 +192,22 @@ def delete_review(request, pk):
     except RuntimeError:
         messages.error(
             request, "Whoops, looks like you're not authorised to be here!")
+
+
+@login_required(login_url='home')
+def delete_user(request):
+    page = 'delete_account'
+    user = request.user
+    try:
+        if request.method == 'POST':
+            user.delete()
+            messages.success(
+                request, 'Your account has been successfully deleted!')
+            return redirect('home')
+    except RuntimeError:
+        messages.error(request, 'Whoops something strange has happened!')
+    context = {
+        'page': page,
+        'user': user
+    }
+    return render(request, 'sculptures/delete_sculpture.html', context)

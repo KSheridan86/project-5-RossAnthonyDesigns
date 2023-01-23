@@ -6,7 +6,7 @@
 Hello from Forged Nature!
 
 You're receiving this e-mail because {{ user_display }} has given your email address to connect their account.
-<br>
+
 To confirm this is correct, go to {{ activate_url }}
 {% endblocktrans %}
 {% blocktrans with site_name=current_site.name site_domain=current_site.domain %}Thank you from {{ site_name }}!

@@ -2,6 +2,28 @@
 {% load static %}
 
 {% block content %}
+
+{% if page == 'delete_account' %}
+<a href="{% url 'home' %}" class="btn rounded-0" aria-label="link to home page">
+    <span class="icon">
+        <i class="fas fa-chevron-left"></i>
+    </span>
+    <span class="text-uppercase">Back</span>
+</a>
+<div class="container text-center mt-5 mb-5">
+    <div class="row justify-content-center">
+        <div class="col-10">
+            <h1>Delete Account</h1>
+            <p>Are you sure you want to Delete your account {{user}}?</p>
+            <form method="post" action="{% url 'delete_user' %}">
+                {% csrf_token %}
+                <button class="btn mt-3 metal linear" type="submit">Delete</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% else %}
 <a href="{% url 'dashboard' %}" class="btn rounded-0" aria-label="link to admin dashboard">
     <span class="icon">
         <i class="fas fa-chevron-left"></i>
@@ -15,10 +37,11 @@
             <p>Are you sure you want to Delete {{piece.title}}?</p>
             <form method="post" action="{% url 'delete_sculpture' piece.id %}">
                 {% csrf_token %}
-                <button class="btn mt-3 metal linear" type="submit">Delete?</button>
+                <button class="btn mt-3 metal linear" type="submit">Delete</button>
             </form>
         </div>
     </div>
 </div>
+{% endif %}
 
 {% endblock %}

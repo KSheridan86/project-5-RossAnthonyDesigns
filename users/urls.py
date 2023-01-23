@@ -13,4 +13,5 @@ urlpatterns = [
      path('delete_message/<str:pk>',
           views.delete_message, name="delete_message"),
      path('delete_user', views.delete_user, name='delete_user'),
+     path('unsubscribe', views.unsubscribe, name='unsubscribe'),
 ]

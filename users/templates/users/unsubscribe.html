@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<a href="{% url 'home' %}" class="btn rounded-0 mt-3" aria-label="home page link">
+    <span class="icon">
+        <i class="fas fa-chevron-left"></i>
+    </span>
+    <span class="text-uppercase">Back</span>
+</a>
+<div class="container text-center mb-5">
+    <div class="row justify-content-center">
+        <div class="col-10 col-md-8 col-lg-6 p-3">
+
+            <h1>Unsubscribe from Newsletter</h1>
+            <br>
+            <p>
+                Enter your e-mail address below and you will be removed straight away.
+            </p>
+
+            <form method="POST" action="{% url 'unsubscribe' %}" class="">
+                {% csrf_token %}
+
+                <div class="form-group">
+                <label for="email"></label>
+                <br>
+                <input class="form-control" type="email" name="email" size="30" placeholder="E-mail address" required="" id="email">
+                </div>
+                <br>
+                <input class="btn metal linear mb-2" type="submit" value="Submit" />
+            </form>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

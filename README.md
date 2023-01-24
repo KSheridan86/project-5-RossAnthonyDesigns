@@ -234,7 +234,7 @@ These are the user stories that were completed within the projects first release
 ## Web Marketing
 
 #### **E-Commerce Application Type**
-Forged Nature is a B2C e-commerce application. Selling directly to consumers means that the site is designed to sell quickly, on impulse, and in smaller quantities. While wholesale is a possible future goal, the website was not yet intended to sell to other businesses. For this reason, a large amount of the functionality is focused on the user experience and the ability to purchase products quickly and effectively
+Forged Nature is a B2C e-commerce application. Selling directly to consumers means that the site is designed to sell quickly, on impulse, and in smaller quantities aswell as cater to people who may wish to commission a piece. While wholesale is a possible future goal, the website was not yet intended to sell to other businesses. For this reason, a large amount of the functionality is focused on the user experience and the ability to purchase products quickly and effectively
 
 #### **Marketing Strategy**
 As Forged Nature is a start-up business, the budget for marketing is limited. However, there are several ways that Forged Nature can market itself to help increase sales and brand awareness. Using Facebook to pump out content and drive traffic is the first and most straightforward. The use of paid ads allows the business to target specific demographics and increase brand awareness. The use of social media is also a great way to get feedback from customers and to help with customer service. There is an image of the Facebook page below and a link to the page [here](https://www.facebook.com/forged.nature.irl).
@@ -1013,7 +1013,7 @@ Further research was done by building walk through projects available freely on 
 I would like to acknowledge the help and support given by my mentor [Chris Quinn](https://github.com/10xOXR), he is never short of good ideas. 
 All of the students in my own study group aswell as all the students in the wider Code Institute Slack channels. My cohort Facilitator [Kasia](https://github.com/bezebee) and all of the staff at Code Institute. The sense of comraderie among all of these individuals has helped me to feel at home on my journey to a new career in programming.
 
-On top of all these wonderful people I can't forget to thank my wife Rebecca for her help and understanding (and cups of tea!), without which none of this would be possible.
+On top of all these wonderful people I can't forget to thank my incredible wife Rebecca for her help and understanding (and cups of tea!), without which none of this would be possible.
 
 -----
 

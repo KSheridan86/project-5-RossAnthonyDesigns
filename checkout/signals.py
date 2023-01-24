@@ -22,11 +22,11 @@ def new_order(sender, instance, created, **kwargs):
         send_mail(
             'New Order',
             f"Hey Ross dude,"
-            f"\n"
+            f"\n\n"
             f"Someone liked your stuff enough to part with actual cash!"
-            f"\n"
+            f"\n\n"
             f"Log in and check out the order."
-            f"\n"
+            f"\n\n"
             f"Peace!",
             settings.EMAIL_HOST_USER,
             ['kensheridan86@gmail.com'],

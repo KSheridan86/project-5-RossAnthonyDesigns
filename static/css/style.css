@@ -18,6 +18,7 @@ body {
     margin-top: 6rem;
     z-index: 50;
 }
+
 .close-btn {
     height: 1.5rem;
     width: 1.5rem;
@@ -52,6 +53,22 @@ ul {
     font-size: 1.25rem;
 }
 
+.dropdown-menu {
+    background-image: linear-gradient(320deg, #ff85436b 0%, #6f8ca2 70%);
+}
+
+.dropdown-item {
+    background-color: rgb(111, 140, 162, 0);
+}
+
+.dropdown-item:hover {
+    background-color: rgb(111, 140, 162, 0);
+}
+
+#dropdownMenuButton {
+    width: 2rem;
+}
+
 .avatar {
     height: 2rem;
     width: 2rem;
@@ -82,6 +99,7 @@ ul {
     height: 3rem;
     width: 5rem;
 }
+
 .info-btn {
     width: 5rem;
     height: 2.6rem;
@@ -212,6 +230,7 @@ a .featured-image:hover {
     aspect-ratio: 2/2;
     object-fit: cover;
 }
+
 .featured-title-shop {
     height: 4rem;
 }
@@ -236,16 +255,16 @@ a .featured-image:hover {
 
 
 /* Remove standard increment & decrement from number inputs */
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
-    -webkit-appearance: none; 
-    margin: 0; 
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
 /* Firefox */
 input[type=number] {
     -moz-appearance: textfield;
     appearance: textfield;
-    }
+}
 
 
 /* Single Item Page */
@@ -284,13 +303,16 @@ input[type=number] {
     background-color: #6f8ca2;
     height: 3.5rem;
 }
+
 #vid {
     background-color: whitesmoke;
 }
+
 #iframe-mobile {
     height: 20rem;
     width: 90%;
 }
+
 #iframe-desktop {
     height: 40rem;
     width: 40rem;
@@ -326,6 +348,7 @@ input[type=number] {
     margin-right: 1rem;
     border-radius: 5%;
 }
+
 .cart-img-recap {
     height: 4rem;
     margin-right: 1rem;
@@ -377,6 +400,7 @@ input[type=number] {
     margin-top: -4rem;
     margin-left: 1rem;
 }
+
 .clear-cart-btn {
     float: left;
 }
@@ -385,9 +409,10 @@ input[type=number] {
     margin-left: -5.25rem;
     margin-top: -2rem;
 }
+
 .back-to-cart-btn {
     float: right;
-    
+
 }
 
 .up {
@@ -405,7 +430,7 @@ input[type=number] {
 /* Dashboard page */
 
 .dash-box {
-    overflow-y: scroll; 
+    overflow-y: scroll;
     overflow-x: hidden;
     height: 50vh;
     background-color: white;
@@ -422,7 +447,7 @@ input[type=number] {
 /* Header Image behind carousels and footer*/
 
 .header {
-    background: url("https://res.cloudinary.com/ken86/image/upload/v1673955325/static/images/hazy-forest-background.a8df61b072c7.webp"); 
+    background: url("https://res.cloudinary.com/ken86/image/upload/v1673955325/static/images/hazy-forest-background.a8df61b072c7.webp");
     text-align: center;
     width: 100%;
     height: 145vh;
@@ -524,7 +549,10 @@ input[type=number] {
     }
 }
 
-#animate-nav li:hover {
+#animate-nav li:hover,
+.nav-link:hover,
+.btn-group a:hover {
+    color: black;
     text-decoration: none;
     animation-name: hero-zoom;
     animation-duration: .5s;
@@ -535,8 +563,9 @@ input[type=number] {
     from {
         transform: scale(1);
     }
+
     to {
-        transform: scale(1.2);
+        transform: scale(1.1);
     }
 }
 
@@ -591,9 +620,11 @@ input[type=number] {
     .list-group-item {
         height: 22vh;
     }
+
     .section-header {
         font-size: 2rem;
     }
+
     #logo {
         font-size: 2rem;
     }
@@ -660,17 +691,22 @@ input[type=number] {
     .squeeze-up {
         margin-right: 0.25rem;
     }
+
     .squeeze-in {
         margin-left: .5rem;
         margin-right: -1rem;
     }
+
     .messages-container {
         width: 50vw;
     }
+
     .section-header {
         font-size: 3rem;
     }
-    #contact-form, #contact-form-mobile {
+
+    #contact-form,
+    #contact-form-mobile {
         width: 75%
     }
 }
@@ -724,16 +760,20 @@ input[type=number] {
         margin-top: 1rem;
         line-height: 3rem;
     }
+
     .cart-box {
         width: 60%;
     }
+
     .list-group-item {
         height: 20vh;
     }
+
     .messages-container {
         width: 50vw;
         margin-top: 7rem;
     }
+
     .section-header {
         font-size: 3.5rem;
     }
@@ -755,6 +795,7 @@ input[type=number] {
         margin-left: 2rem;
         margin-top: 1rem;
     }
+
     .cart-img-recap {
         height: 3rem;
         margin-right: 3rem;
@@ -793,16 +834,20 @@ input[type=number] {
     .artist-blurb {
         font-size: 1.25rem;
     }
+
     .cart-box {
         width: 50%;
     }
+
     .list-group-item {
         height: 35vh;
     }
+
     .messages-container {
         width: 30vw;
         margin-top: 7rem;
     }
+
     .list-group-item {
         height: 28vh;
     }
@@ -812,9 +857,11 @@ input[type=number] {
     .list-group-item {
         height: 15vh;
     }
+
     .lg-screen {
         height: 60vh;
     }
+
     .messages-container {
         width: 30vw;
         margin-top: 10rem;

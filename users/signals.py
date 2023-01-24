@@ -13,7 +13,6 @@ def new_user(sender, instance, created, **kwargs):
             '-date_joined').values_list('email', flat=True)[0:1]
         name = User.objects.all().order_by(
             '-date_joined').values_list('username', flat=True)[0:1]
-        line = '\n'
         send_mail(
             'Welcome',
             f"Hi {name[0]},\n"

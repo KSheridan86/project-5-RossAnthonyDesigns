@@ -9,7 +9,6 @@ from .models import OrderLineItem, Order
 import stripe
 
 
-# add try except block/ask chris about this one
 def checkout(request):
     """
     Checkout function, creates users order and calls stripe payments,
@@ -92,6 +91,7 @@ def checkout_success(request, order_number):
     """
     Calls the order confirmation page,
     Updates stock quantity after successful purchase.
+    Sends order confirmation email.
     """
     order = get_object_or_404(Order, order_number=order_number)
     messages.success(request, f'Payment successful! \
@@ -119,7 +119,8 @@ def checkout_success(request, order_number):
 
             for item in product_object:
                 if item.title not in email_body:
-                    email_body += (str(item.title) + f", Quantity : {quantity}, \n")
+                    email_body += (
+                        str(item.title) + f", Quantity : {quantity}, \n")
 
         email_intro = email_intro + email_body + email_outro
 

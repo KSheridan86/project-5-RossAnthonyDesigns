@@ -73,6 +73,9 @@ def subtract_from_cart(request, item_id):
 
 
 def delete_item_from_cart(request, item_id):
+    """
+    Deletes individual items from the cart
+    """
     piece = get_object_or_404(Sculpture, id=item_id)
     redirect_url = request.POST.get('redirect_url')
     cart = request.session.get('cart', {})

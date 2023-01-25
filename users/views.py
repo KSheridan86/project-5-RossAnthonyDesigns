@@ -233,7 +233,7 @@ def unsubscribe(request):
             return redirect('home')
     except Exception:
         messages.error(
-            request, 'Whoops, Heuston we have a problem!'
+            request, 'Whoops, Houston we have a problem!'
         )
         return redirect('home')
     return render(request, 'users/unsubscribe.html')

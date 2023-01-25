@@ -122,20 +122,21 @@
                 {% endif %}
                 <ul class="mt-3">
                     <li class="navbar-nav h4 mx-4 d-none d-md-flex">
-                        <a class="p-2 h4 nav-link" href="{% url 'account_logout' %}"
-                            aria-label="navbar link">Log out</a>
+                        <a class="p-2 h4 nav-link" href="{% url 'account_logout' %}" aria-label="navbar link">Log
+                            out</a>
                     </li>
                 </ul>
                 {% else %}
                 <div class="btn-group me-5 d-none d-md-flex">
                     <a class="p-2 h4" href="{% url 'account_login' %}" aria-label="sign in button">Log In</a>
-                    <button class="btn dropdown-toggle dropdown-toggle-split" type="button"
-                        id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                    <button class="btn dropdown-toggle dropdown-toggle-split" type="button" id="dropdownMenuButton"
+                        data-bs-toggle="dropdown" aria-expanded="false">
                         <span class="visually-hidden">Toggle Dropdown</span>
                     </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <ul class="dropdown-menu mt-2" aria-labelledby="dropdownMenuButton">
                         <li class="navbar-nav h4 mx-4 d-none d-md-flex">
-                            <a class="dropdown-item" href="{% url 'account_signup' %}" aria-label="sign up button">Register</a>
+                            <a class="dropdown-item" href="{% url 'account_signup' %}"
+                                aria-label="sign up button">Register</a>
                         </li>
                     </ul>
                 </div>

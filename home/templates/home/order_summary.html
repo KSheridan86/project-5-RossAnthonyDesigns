@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<main>
+    <div>
+        <h1>Hello</h1>
+        {% for i in item %}
+        {{i.order}}
+        {{i.product}}
+        {{i.quantity}}
+        {% endfor %}
+    </div>
+    
+</main>
+{% endblock content %}

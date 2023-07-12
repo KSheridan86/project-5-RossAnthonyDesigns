@@ -104,23 +104,23 @@
 
 
             <!-- Orders -->
-            <div class="col-10 col-lg-5 border border-dark border-4 rounded dash-box p-2 justify-content-center">
+            <div class="col-10 border border-dark border-4 rounded dash-box p-2 justify-content-center">
                 <h5 class="dashboard-title p-3 fw-bold">Orders:</h5>
 
                 {% for order in orders %}
                 <div class="row mx-auto border-bottom">
                     <div class="col-10 mt-3">
-                        <a href="{% url 'view_review' review.id %}" aria-label="link to view review">
+                        <a href="{% url 'order_summary' %}" aria-label="link to view order">
                             <i class="fa-solid fa-right-to-bracket"></i>
-                            {{order.full_name}} -- {{order.grand_total}}......
+                            Date: {{order.date}} -- Total: €{{order.grand_total}} -- Ordered by: {{order.full_name}} -- Order number: {{order.order_number}}
                         </a>
                     </div>
                     <div class="col-2">
-                        <a href="{% url 'delete_review' review.id %}" class="remove-item-button fs-2 mb-3" aria-label="delete review button">
-                            <i class="fa-sharp fa-solid fa-circle-xmark"></i>
-                        </a>
                     </div>
                 </div>
+                {% endfor %}
+                {% for item in items %}
+                {{item.order}}
                 {% endfor %}
             </div>
         </div>

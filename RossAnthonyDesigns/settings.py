@@ -19,9 +19,14 @@ ALLAUTH_DIR = os.path.join(BASE_DIR, 'templates', 'allauth')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = int(os.environ.get("DEVELOPMENT", default=0))
+# DEBUG = int(os.environ.get("DEVELOPMENT", default=0))
+Debug = True
 
-ALLOWED_HOSTS = ["rossanthonydesigns.herokuapp.com", "localhost", "8000-ksheridan86-project5ros-76fb1laquce.ws-eu100.gitpod.io"]
+ALLOWED_HOSTS = ["rossanthonydesigns.herokuapp.com",
+                 "localhost",
+                 "8000-ksheridan86-project5ros-76fb1laquce.ws-eu100.gitpod.io",
+                 "8000-ksheridan86-project5ros-76fb1laquce.ws-eu101.gitpod.io"
+                 ]
 
 
 # Application definition

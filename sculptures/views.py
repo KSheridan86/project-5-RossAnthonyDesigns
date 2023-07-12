@@ -63,19 +63,22 @@ def add_sculpture(request):
     User needs to be logged in and a superuser.
     Get method displays the add sculpture form.
     """
-    form = AddSculpture()
-    try:
-        if request.method == 'POST' and request.user.is_superuser:
-            form = AddSculpture(request.POST, request.FILES)
-            if form.is_valid():
-                form.save()
-                messages.success(request, 'Product added successfully!')
-                return redirect('dashboard')
-    except ValueError:
-        messages.error(
-            request,
-            'Whoops, looks like you might not be authorised\
-                to view this page.')
+    if request.user.is_superuser:
+        form = AddSculpture()
+        try:
+            if request.method == 'POST' and request.user.is_superuser:
+                form = AddSculpture(request.POST, request.FILES)
+                if form.is_valid():
+                    form.save()
+                    messages.success(request, 'Product added successfully!')
+                    return redirect('dashboard')
+        except ValueError:
+            messages.error(
+                request,
+                'Whoops, looks like you might not be authorised\
+                    to view this page.')
+    else:
+        return redirect('account_login')
     context = {
         'form': form,
     }
@@ -89,20 +92,24 @@ def edit_sculpture(request, pk):
     User needs to be logged in and a superuser.
     Get method displays the edit sculpture form.
     """
-    piece = get_object_or_404(Sculpture, id=pk)
-    form = AddSculpture(instance=piece)
-    try:
-        if request.method == 'POST' and request.user.is_superuser:
-            form = AddSculpture(request.POST, request.FILES, instance=piece)
-            if form.is_valid():
-                form.save()
-                messages.success(request, 'Product edited successfully!')
-                return redirect('dashboard')
-    except ValueError:
-        messages.error(
-            request,
-            'Whoops, looks like you might not be authorised\
-                to perform this action.')
+    if request.user.is_superuser:
+        piece = get_object_or_404(Sculpture, id=pk)
+        form = AddSculpture(instance=piece)
+        try:
+            if request.method == 'POST' and request.user.is_superuser:
+                form = AddSculpture(
+                    request.POST, request.FILES, instance=piece)
+                if form.is_valid():
+                    form.save()
+                    messages.success(request, 'Product edited successfully!')
+                    return redirect('dashboard')
+        except ValueError:
+            messages.error(
+                request,
+                'Whoops, looks like you might not be authorised\
+                    to perform this action.')
+    else:
+        return redirect('account_login')
     context = {
         'form': form,
         'piece': piece
@@ -117,17 +124,20 @@ def delete_sculpture(request, pk):
     User needs to be logged in and a superuser.
     Get method displays the delete warning message.
     """
-    piece = get_object_or_404(Sculpture, id=pk)
-    try:
-        if request.method == 'POST' and request.user.is_superuser:
-            piece.delete()
-            messages.success(request, 'Product deleted successfully!')
-            return redirect('dashboard')
-    except RuntimeError:
-        messages.error(
-            request,
-            'Whoops, looks like you might not be authorised\
-                to perform this action.')
+    if request.user.is_superuser:
+        piece = get_object_or_404(Sculpture, id=pk)
+        try:
+            if request.method == 'POST' and request.user.is_superuser:
+                piece.delete()
+                messages.success(request, 'Product deleted successfully!')
+                return redirect('dashboard')
+        except RuntimeError:
+            messages.error(
+                request,
+                'Whoops, looks like you might not be authorised\
+                    to perform this action.')
+    else:
+        return redirect('account_login')
     context = {
         'piece': piece
     }

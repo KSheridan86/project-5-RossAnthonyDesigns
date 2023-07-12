@@ -3,6 +3,7 @@ from django.contrib.auth.decorators import login_required
 from sculptures.models import Sculpture
 from users.models import Newsletter, Message, Review
 from users.models import Review
+from checkout.models import Order
 
 
 def index(request):
@@ -64,6 +65,7 @@ def dashboard(request):
             reviews = Review.objects.all()
             newsletter = Newsletter.objects.all()
             message = Message.objects.all()
+            orders = Order.objects.all()
         else:
             return redirect('account_login')
     except RuntimeError:
@@ -76,6 +78,7 @@ def dashboard(request):
         'sculptures': sculptures,
         'newsletter': newsletter,
         'message': message,
+        'orders': orders,
         'page': page
     }
     return render(request, 'home/dashboard.html', context)

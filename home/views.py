@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from sculptures.models import Sculpture
 from users.models import Newsletter, Message, Review
@@ -86,10 +86,21 @@ def dashboard(request):
     return render(request, 'home/dashboard.html', context)
 
 
-# @login_required(login_url='account_login')
-def order_summary(request):
-    item = OrderLineItem.objects.all()[0:3]
+@login_required(login_url='account_login')
+def order_summary(request, order_number):
+    try:
+        if request.user.is_superuser:
+            order = get_object_or_404(Order, order_number=order_number)
+            line_items = order.lineitems.all()
+        else:
+            return redirect('account_login')
+    except RuntimeError:
+        messages.error(
+            request,
+            'Whoops, looks like you might not be authorised\
+                to access this page.')
     context = {
-        'item': item,
+        'order': order,
+        'line_items': line_items
     }
     return render(request, 'home/order_summary.html', context)

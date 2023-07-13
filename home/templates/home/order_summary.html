@@ -2,13 +2,104 @@
 {% load static %}
 {% block content %}
 <main>
-    <div>
-        <h1>Hello</h1>
-        {% for i in item %}
-        {{i.order}}
-        {{i.product}}
-        {{i.quantity}}
-        {% endfor %}
+
+    <div class="container">
+        <!-- <div class="row justify-content-evenly g-4 mt-3">
+
+
+            <div class="col-8 border border-dark border-4 rounded dash-box p-2 justify-content-center">
+                <h5 class="dashboard-title p-3 fw-bold">New Order</h5>
+                <h2 class="text-center">Order Information</h2><hr>
+
+                <p><strong>Order Number:</strong> <br></p>
+                <ul>
+                    <li>{{order.order_number}}</li>
+                </ul>
+
+                <p><strong>Date ordered: </strong></p>
+                <ul>
+                    <li>{{order.date}}</li>
+                </ul>
+                <p><strong>Ordered by: </strong></p>
+                <ul>
+                    <li>{{order.full_name}}</li>
+                </ul>
+                <p><strong>Email: </strong></p>
+                <ul>
+                    <li>{{order.email}}</li>
+                </ul>
+                <p><strong>Phone: </strong></p>
+                <ul>
+                    <li>{{order.phone_number}}</li>
+                </ul>
+                <h2 class="text-center">Products & Quantity</h2><hr>
+                {% for line_item in line_items %}
+                    <p><strong>Product: </strong>{{ line_item.product }}</p>
+                    <p><strong>Quantity: </strong>{{ line_item.quantity }}</p>
+                {% endfor %}
+                <h2 class="text-center">Delivery Address</h2><hr>
+                <p><strong>Address line 1: </strong>{{ order.street_address1 }}</p>
+                <p><strong>Address line 2: </strong>{{ order.street_address2 }}</p>
+                <p><strong>Town or City: </strong>{{ order.town_or_city }}</p>
+                <p><strong>County: </strong>{{ order.county }}</p>
+                <p><strong>Postcode: </strong>{{ order.postcode }}</p>
+            </div> -->
+            <div class="row justify-content-center">
+        
+                <div class="col-10 col-md-8 col-lg-5 p-2">
+                    
+                    <h2 class="text-center border-bottom border-4 mb-2">New Order</h2>
+                    <div class="border-bottom border-4">
+                        <h5><strong>Order Number:</strong></h5>
+                        <h5 class="mt-3 text-center p-2">{{order.order_number}}</h5>
+                    </div>
+                    <div class="border-bottom border-4 mb-2">
+                        <h5><strong>Ordered on:</strong></h5>
+                        <h5 class="text-center">{{order.date}}</h5>
+                    </div>
+                    <div class="border-bottom border-4 mb-2">
+                        <h5><strong>Customer Name:</strong></h5>
+                        <h5 class="text-capitalize text-center">{{order.full_name}}</h5>
+                    </div>
+                    <div class="border-bottom border-4 mb-2">
+                        <h5><strong>Email:</strong></h5>
+                        <h5 class="text-center">{{order.email}}</h5>
+                    </div>
+                    <div class="border-bottom border-4">
+                        <h5><strong>Phone Number:</strong></h5>
+                        <h5 class="mt-3 text-center p-2">{{order.phone_number}}</h5>
+                    </div>
+                    <div class="border-bottom border-4">
+                        <h5><strong>Delivery Address:</strong></h5>
+                        <h5 class="mt-3 text-center p-2">
+                            {{order.street_address1}}<br>
+                            {{order.street_address2}}<br>
+                            {{order.town_or_city}}<br>
+                            {{order.county}}<br>
+                            {{order.postcode}}<br>
+                        </h5>
+                    </div>
+                    <div class="border-bottom border-4">
+                        <h5><strong>Products Ordered:</strong></h5>
+                        <h5 class="mt-3 text-center p-2">
+                            {% for line_item in line_items %}
+                            <p>{{ line_item.product }} x {{line_item.quantity}}</p>
+                        {% endfor %}
+                        </h5>
+                    </div>
+                    <div class="border-bottom border-4">
+                        <h5><strong>Price Paid:</strong></h5>
+                        <h5 class="mt-3 text-center p-2">
+                            Total excl delivery: <br>€{{order.order_total}}<br><hr>
+                            Delivery: <br>€{{order.delivery_cost}}<br><hr>
+                            Grand Total: <br>€{{order.grand_total}}<br>
+
+                        </h5>
+                    </div>
+
+                </div>
+            </div>
+        </div>
     </div>
     
 </main>

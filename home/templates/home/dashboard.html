@@ -8,6 +8,24 @@
     <div class="container">
         <div class="row justify-content-evenly g-4 mt-3">
 
+            <!-- Orders -->
+            <div class="col-10 col-lg-5 border border-dark border-4 rounded dash-box p-2 justify-content-center">
+                <h5 class="dashboard-title p-3 fw-bold">Orders:</h5>
+        
+                {% for order in orders %}
+                    <div class="row mx-auto border-bottom">
+                        <div class="col-10 mt-3">
+                            <a href="{% url 'order_summary' order_number=order.order_number %}" aria-label="link to view order">
+                                <i class="fa-solid fa-right-to-bracket"></i>
+                                Date: {{order.date}}<br> Total: €{{order.grand_total}} -- Ordered by: {{order.full_name}}
+                            </a>
+                        </div>
+                        <div class="col-2">
+                        </div>
+                    </div>
+                        {% endfor %}
+                    </div>
+
             <!-- Newsletter Signups -->
             <div class="col-10 col-lg-5 border border-dark border-4 rounded dash-box p-2 justify-content-center">
                 <h5 class="dashboard-title p-3 fw-bold">Newsletter signups:</h5>
@@ -99,28 +117,6 @@
                         </a>
                     </div>
                 </div>
-                {% endfor %}
-            </div>
-
-
-            <!-- Orders -->
-            <div class="col-10 border border-dark border-4 rounded dash-box p-2 justify-content-center">
-                <h5 class="dashboard-title p-3 fw-bold">Orders:</h5>
-
-                {% for order in orders %}
-                <div class="row mx-auto border-bottom">
-                    <div class="col-10 mt-3">
-                        <a href="{% url 'order_summary' %}" aria-label="link to view order">
-                            <i class="fa-solid fa-right-to-bracket"></i>
-                            Date: {{order.date}} -- Total: €{{order.grand_total}} -- Ordered by: {{order.full_name}} -- Order number: {{order.order_number}}
-                        </a>
-                    </div>
-                    <div class="col-2">
-                    </div>
-                </div>
-                {% endfor %}
-                {% for item in items %}
-                {{item.order}}
                 {% endfor %}
             </div>
         </div>

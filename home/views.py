@@ -1,9 +1,12 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 from sculptures.models import Sculpture
 from users.models import Newsletter, Message, Review
-from users.models import Review
+from .models import AddToGallery
+# from users.models import Review
 from checkout.models import Order, OrderLineItem
+from .forms import GalleryPicForm
 
 
 def index(request):
@@ -67,6 +70,7 @@ def dashboard(request):
             message = Message.objects.all()
             orders = Order.objects.all().order_by('-date')
             items = OrderLineItem.objects.all()
+            pictures = AddToGallery.objects.all()
         else:
             return redirect('account_login')
     except RuntimeError:
@@ -81,6 +85,7 @@ def dashboard(request):
         'message': message,
         'orders': orders,
         'items': items,
+        'pictures': pictures,
         'page': page
     }
     return render(request, 'home/dashboard.html', context)
@@ -112,9 +117,55 @@ def gallery(request):
     Page variable is used for the active link in the navbar.
     """
     page = 'gallery'
-    sculptures = Sculpture.objects.all()
+    pictures = AddToGallery.objects.all()
     context = {
         'page': page,
-        'sculptures': sculptures
+        'pictures': pictures
     }
     return render(request, 'home/gallery.html', context)
+
+
+@login_required(login_url='account_login')
+def add_to_gallery(request):
+    """
+    Post method adds gallery pic to the database
+    User needs to be logged in and a superuser.
+    Get method displays the add sculpture form.
+    """
+    if request.user.is_superuser:
+        form = GalleryPicForm()
+        try:
+            if request.method == 'POST' and request.user.is_superuser:
+                form = GalleryPicForm(request.POST, request.FILES)
+                if form.is_valid():
+                    form.save()
+                    messages.success(request, 'Picture added successfully!')
+                return redirect('dashboard')
+        except ValueError:
+            messages.error(
+                request,
+                'Whoops, looks like you might not be authorised\
+                    to view this page.')
+    else:
+        return redirect('account_login')
+    context = {
+        'form': form,
+    }
+    return render(request, 'home/add_to_gallery.html', context)
+
+
+@login_required(login_url='account_login')
+def delete_from_gallery(request, pk):
+    """
+    Admin can delete gallery pictures,
+    Required to be logged in and a superuser.
+    """
+    try:
+        if request.user.is_superuser:
+            picture = get_object_or_404(AddToGallery, id=pk)
+            picture.delete()
+            messages.success(request, 'Picture deleted successfully!')
+            return redirect('dashboard')
+    except RuntimeError:
+        messages.error(
+            request, "Whoops, looks like you're not authorised to be here!")

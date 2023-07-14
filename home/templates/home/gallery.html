@@ -6,19 +6,14 @@
 <main>
 <div class="container-fluid text-center">
     <div class="row">
-        {% for piece in sculptures %}
+            {% for pic in pictures %}
             <div class="col-12 col-md-6 col-lg-4 mt-5">
-                {% if 'placeholder' in piece.image.url %}
-                <a href="{{ piece.image.url }}" target="_blank" aria-label="main image of sculpture">
-                    <img class="col-12 col-md-10 featured-image-shop" src="{% static 'images/coming-soon.png' %}"
+
+                <a href="{{ pic.image.url }}" target="_blank" aria-label="main image of sculpture">
+                    <img class="col-12 col-md-10 featured-image-shop" src="{{pic.image.url}}"
                         alt="image of hand forged metal sculpture">
                 </a>
-                {% else %}
-                <a href="{{ piece.image.url }}" target="_blank" aria-label="main image of sculpture">
-                    <img class="col-12 col-md-10 featured-image-shop" src="{{piece.image.url}}"
-                        alt="image of hand forged metal sculpture">
-                </a>
-                {% endif %}
+
             </div>
             {% endfor %}
     </div>

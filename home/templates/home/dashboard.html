@@ -119,6 +119,35 @@
                 </div>
                 {% endfor %}
             </div>
+
+            <!-- Add gallery pics -->
+            
+            <div class="col-10 col-lg-5 border border-dark border-4 rounded dash-box p-2 justify-content-center">
+                <h5 class="dashboard-title p-3 fw-bold">Gallery Pics:</h5>
+                <div class="text-center border-bottom">
+                    <a class="btn review-btn metal linear mb-2" href="{% url 'add_to_gallery' %}" aria-label="add sculpture button">Add Picture</a>
+                </div>
+                {% for pic in pictures %}
+                <div class="row mx-auto border-bottom">
+                    <div class="col-10 mt-3">
+                        
+                        <a href="{{ pic.image.url }}" target="_blank" aria-label="main image of sculpture">
+                            <i class="fa-solid fa-right-to-bracket"></i>
+                            {{pic.title}}
+                        </a>
+                    </div>
+                    <div class="col-2">
+                        <a href="{% url 'delete_from_gallery' pic.id %}" class="remove-item-button fs-2 mb-3" aria-label="delete pic button">
+                            <i class="fa-sharp fa-solid fa-circle-xmark"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <div>
+                
+            </div>
         </div>
     </div>
 </main>

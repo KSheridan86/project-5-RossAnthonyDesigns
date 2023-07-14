@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<main>
+
+    <!-- Add To Gallery form -->
+
+    <a href="{% url 'dashboard' %}" class="btn rounded-0" aria-label="link to admin dashboard">
+        <span class="icon">
+            <i class="fas fa-chevron-left"></i>
+        </span>
+        <span class="text-uppercase">Back</span>
+    </a>
+    <h1 class="text-center mt-3 text-decoration-underline">Add New Gallery Pic</h1>
+    
+    <div class="container">
+        <div class="lg-screen row justify-content-center mt-2 mb-5">
+            <div class="col-10 col-lg-6 cart-box p-3 mb-md-5 mb-5">
+                <form class="login mb-2 text-center" method="POST" enctype="multipart/form-data" action="{% url 'add_to_gallery' %}">
+                    <h4>Input new picture below</h4>
+                    {% csrf_token %}
+
+                    <div class="form-group come-in mt-3 mb-3">
+                        {{form.title}}
+                    </div>
+
+                    <div class="form-group come-in mt-3 mb-3">
+                        Select Image Below:
+                        <br>
+                        {{form.image}}
+                    </div>
+                    
+                    <button type="submit" class="btn metal linear">Save</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</main>
+
+{% endblock content %}

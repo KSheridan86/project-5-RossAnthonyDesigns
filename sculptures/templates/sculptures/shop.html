@@ -42,11 +42,22 @@
                 {% endif %}
                 <h3 class="mt-3 featured-title-shop">{{piece.title}}</h3>
                 <p class="product-description mx-auto">{{piece.description}}</p>
-                <h4>€{{piece.price|floatformat:0}}</h4>
-                <a href="{% url 'single_item' piece.id %}" class="btn info-btn metal linear mt-2 mb-3"
+
+                {% if not piece.available %}
+                <p class="text-muted mt-5">
+                    Custom orders can take upwards of 8 weeks to craft,<br>
+                    Please <a href="{% url 'artist' %}#contact-form"><strong>Contact</strong></a> me for more information
+                    <br>and estimated delivery times.
+                </p>
+                {% else %}
+                    <h4>€{{ piece.price|floatformat:0 }}</h4>
+                    <a href="{% url 'single_item' piece.id %}" class="btn info-btn metal linear mt-2 mb-3"
                     aria-label="link to single item">
                     Info
                 </a>
+                {% endif %}
+                
+                
             </div>
             {% endfor %}
         </div>

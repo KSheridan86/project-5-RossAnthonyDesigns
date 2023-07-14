@@ -104,3 +104,17 @@ def order_summary(request, order_number):
         'line_items': line_items
     }
     return render(request, 'home/order_summary.html', context)
+
+
+def gallery(request):
+    """
+    Displays the artist page,
+    Page variable is used for the active link in the navbar.
+    """
+    page = 'gallery'
+    sculptures = Sculpture.objects.all()
+    context = {
+        'page': page,
+        'sculptures': sculptures
+    }
+    return render(request, 'home/gallery.html', context)

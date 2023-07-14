@@ -62,7 +62,9 @@
                 {% else %}
                 <p class="text-muted mt-5">
                     Temporarily out of stock,<br>
-                    Stock is updated daily, please check back soon.
+                    
+                    <a href="{% url 'artist' %}#contact-form"><strong>Contact</strong></a> me for more information
+                    <br>and estimated delivery times.
                 </p>
                 {% endif %}
                 {% else %}

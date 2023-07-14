@@ -34,10 +34,10 @@
     <script src="https://polyfill.io/v3/polyfill.min.js?version=3.52.1&features=fetch"></script>
     <script src="https://js.stripe.com/v3/"></script>
     {% endblock corejs %}
-
+    <!-- https://res.cloudinary.com/ken86/image/upload/v1673954562/static/images/anvil.4543718ad4de.webp -->
     <title>ForgedNature {% block extra_title %}{% endblock extra_title %}</title>
-
-    <link rel="icon" type="image/png" href="https://res.cloudinary.com/ken86/image/upload/v1673954562/static/images/anvil.4543718ad4de.webp">
+    <link rel="icon" type="image/png" href="https://res.cloudinary.com/ken86/image/upload/v1689282143/IMG_20220115_000906_922-removebg-preview_fodqmi.png
+    ">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -64,9 +64,9 @@
                     </p>
                 </div>
             </a>
-
+            <!-- {% static 'images/anvil.webp' %} -->
             <a id="logo" class="navbar-brand me-auto" href="{% url 'home' %}" aria-label="home page link">
-                Forged<img height="32" width="32" class="avatar" src="{% static 'images/anvil.webp' %}"
+                Forged<img height="32" width="32" class="avatar" src="https://res.cloudinary.com/ken86/image/upload/v1689282143/IMG_20220115_000906_922-removebg-preview_fodqmi.png"
                     alt="icon of a hammer and anvil">Nature
             </a>
 
@@ -98,6 +98,10 @@
                     </li>
                     <li class="nav-item h4 me-2 me-lg-5">
                         <a class="nav-link" href="#contact-info" aria-label="navbar link">Contact</a>
+                    </li>
+                    <li class="nav-item h4 me-2 me-lg-5">
+                        <a class="nav-link {% if page == 'gallery' %} active {% endif %}" href="{% url 'gallery' %}"
+                            aria-label="navbar link">Gallery</a>
                     </li>
                     {% if request.user.is_authenticated %}
                     <li class="h4 mb-0 d-md-none me-2 me-lg-5">

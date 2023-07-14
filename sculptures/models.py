@@ -19,7 +19,7 @@ class Sculpture(models.Model):
         """
         Helper function to organize sculptures by newest first
         """
-        ordering = ['-created_on']
+        ordering = ['-available']
 
     def __str__(self):
         return str(self.title)

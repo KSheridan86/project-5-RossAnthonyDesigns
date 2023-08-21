@@ -12,7 +12,7 @@
     </a>
     <div class="container text-center p-4 mt-3">
         <div class="row justify-content-center justify-content-xl-evenly come-in">
-            <div class="col-12 col-md-8 col-lg6 col-xl-5 come-in">
+            <!-- <div class="col-12 col-md-8 col-lg6 col-xl-5 come-in">
                 {% if 'placeholder' in piece.image.url %}
                 <img class="featured-image-item" src="{% static 'images/coming-soon.png' %}" alt="image of hand forged metal sculpture">
                 {% else %}
@@ -20,7 +20,67 @@
                     <img class="featured-image-item" src="{{piece.image.url}}" alt="image of hand forged metal sculpture">
                 </a>
                 {% endif %}
+            </div> -->
+            <div id="carouselExampleDark" class="col-12 col-md-8 col-lg-6 col-xl-5 come-in g-0 mt-3 carousel carousel-dark slide"
+            data-bs-ride="carousel">
+            <div class="carousel-inner come-in-border">
+                <div class="carousel-item active" data-bs-interval="10000">
+                    {% if 'placeholder' in piece.image.url %}
+                    <img class="pic pic-shadow shadow-4-strong d-block w-100" src="{% static 'images/coming-soon.png' %}" alt="image of hand forged metal sculpture">
+                    {% else %}
+                    <a href="{{ piece.image.url }}" target="_blank" aria-label="main image of sculpture">
+                        <img class="pic pic-shadow shadow-4-strong d-block w-100" src="{{piece.image.url}}" alt="image of hand forged metal sculpture">
+                    </a>
+                    {% endif %}
+                </div>
+                <div class="carousel-item" data-bs-interval="2000">
+                    {% if 'placeholder' in piece.image2.url %}
+                    <img class="pic pic-shadow shadow-4-strong d-block w-100" src="{% static 'images/coming-soon.png' %}" alt="image of hand forged metal sculpture">
+                    {% else %}
+                    <a href="{{ piece.image2.url }}" target="_blank" aria-label="main image of sculpture">
+                        <img class="pic pic-shadow shadow-4-strong d-block w-100" src="{{piece.image2.url}}" alt="image of hand forged metal sculpture">
+                    </a>
+                    {% endif %}
+                </div>
+                <div class="carousel-item">
+                    {% if 'placeholder' in piece.image3.url %}
+                    <img class="pic pic-shadow shadow-4-strong d-block w-100" src="{% static 'images/coming-soon.png' %}" alt="image of hand forged metal sculpture">
+                    {% else %}
+                    <a href="{{ piece.image3.url }}" target="_blank" aria-label="main image of sculpture">
+                        <img class="pic pic-shadow shadow-4-strong d-block w-100" src="{{piece.image3.url}}" alt="image of hand forged metal sculpture">
+                    </a>
+                    {% endif %}
+                </div>
+                <div class="carousel-item">
+                    {% if 'placeholder' in piece.image4.url %}
+                    <img class="pic pic-shadow shadow-4-strong d-block w-100" src="{% static 'images/coming-soon.png' %}" alt="image of hand forged metal sculpture">
+                    {% else %}
+                    <a href="{{ piece.image4.url }}" target="_blank" aria-label="main image of sculpture">
+                        <img class="pic pic-shadow shadow-4-strong d-block w-100" src="{{piece.image4.url}}" alt="image of hand forged metal sculpture">
+                    </a>
+                    {% endif %}
+                </div>
+                <div class="carousel-item">
+                    {% if 'placeholder' in piece.image5.url %}
+                    <img class="pic pic-shadow shadow-4-strong d-block w-100" src="{% static 'images/coming-soon.png' %}" alt="image of hand forged metal sculpture">
+                    {% else %}
+                    <a href="{{ piece.image5.url }}" target="_blank" aria-label="main image of sculpture">
+                        <img class="pic pic-shadow shadow-4-strong d-block w-100" src="{{piece.image5.url}}" alt="image of hand forged metal sculpture">
+                    </a>
+                    {% endif %}
+                </div>
             </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
 
             <div class="col-12 col-lg-6 col-xl-4">
                 <h1 class="mt-4">{{piece.title}}</h1>

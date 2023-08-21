@@ -24,7 +24,10 @@ DEBUG = int(os.environ.get("DEVELOPMENT", default=0))
 ALLOWED_HOSTS = ["rossanthonydesigns.herokuapp.com",
                  "localhost",
                  "8000-ksheridan86-project5ros-76fb1laquce.ws-eu100.gitpod.io",
-                 "8000-ksheridan86-project5ros-76fb1laquce.ws-eu101.gitpod.io"
+                 "8000-ksheridan86-project5ros-76fb1laquce.ws-eu101.gitpod.io",
+                 "8000-ksheridan86-project5ros-76fb1laquce.ws-eu104.gitpod.io",
+                 "forgednature.ie",
+                 "forgednature.com"
                  ]
 
 

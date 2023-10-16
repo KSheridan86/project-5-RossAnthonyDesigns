@@ -29,5 +29,5 @@ def new_order(sender, instance, created, **kwargs):
             f"\n\n"
             f"Peace!",
             settings.EMAIL_HOST_USER,
-            ['kensheridan86@gmail.com'],
+            ['forged.nature.irl@gmail.com'],
             fail_silently=False,)

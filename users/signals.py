@@ -37,7 +37,7 @@ def new_private_message(sender, instance, created, **kwargs):
             'New Message',
             f'A new private message has been received from {sender[0]}.',
             email[0],
-            ['kensheridan86@gmail.com'],
+            ['forged.nature.irl@gmail.com'],
             fail_silently=False,)
 
 
@@ -50,5 +50,5 @@ def new_review(sender, instance, created, **kwargs):
             'New Review',
             f'{name[0]} has submitted a review for consideration',
             email[0],
-            ['kensheridan86@gmail.com'],
+            ['forged.nature.irl@gmail.com'],
             fail_silently=False,)

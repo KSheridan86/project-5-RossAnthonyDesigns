@@ -93,6 +93,10 @@
                             aria-label="navbar link">Sculptures</a>
                     </li>
                     <li class="nav-item h4 me-2 me-lg-5">
+                        <a class="nav-link {% if page == 'gifts' %} active {% endif %}" href="{% url 'gifts' %}"
+                            aria-label="navbar link">ForgeCraft</a>
+                    </li>
+                    <li class="nav-item h4 me-2 me-lg-5">
                         <a class="nav-link {% if page == 'artist' %} active {% endif %}" href="{% url 'artist' %}"
                             aria-label="navbar link">Artist</a>
                     </li>

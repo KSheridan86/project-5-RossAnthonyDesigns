@@ -10,7 +10,7 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),
     path('checkout/', include('checkout.urls')),
     path('shop/', include('sculptures.urls')),
-    path('gifts/', include('sculptures.urls')),
+    path('sculptures/', include('sculptures.urls')),
     path('cart/', include('cart.urls')),
     path('users/', include('users.urls')),
 ] + static(

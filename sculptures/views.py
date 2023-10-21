@@ -11,7 +11,7 @@ def shop(request):
     Page variable is used for the active link in the navbar.
     """
     page = 'shop'
-    sculptures = Sculpture.objects.all()
+    sculptures = Sculpture.objects.filter(price__gt=200)
 
     sort = None
     direction = None
@@ -45,8 +45,8 @@ def gifts(request):
     Displays the shop page, and allows sorting by price.
     Page variable is used for the active link in the navbar.
     """
-    page = 'shop'
-    sculptures = Sculpture.objects.all()
+    page = 'gifts'
+    sculptures = Sculpture.objects.filter(price__lte=200)
 
     sort = None
     direction = None
@@ -72,7 +72,7 @@ def gifts(request):
         'page': page,
         'current_sorting': current_sorting
     }
-    return render(request, 'sculptures/shop.html', context)
+    return render(request, 'sculptures/gifts.html', context)
 
 
 def single_item(request, pk):

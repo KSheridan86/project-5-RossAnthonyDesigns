@@ -4,12 +4,21 @@
 {% block content %}
 <!-- Displays a page about a single product from the database -->
 <main>
+    {% if piece.price > 200 %}
     <a href="{% url 'shop' %}" class="btn rounded-0" aria-label="shop">
         <span class="icon">
             <i class="fas fa-chevron-left"></i>
         </span>
         <span class="text-uppercase">Keep Shopping</span>
     </a>
+    {% else %}
+    <a href="{% url 'gifts' %}" class="btn rounded-0" aria-label="shop">
+        <span class="icon">
+            <i class="fas fa-chevron-left"></i>
+        </span>
+        <span class="text-uppercase">Keep Shopping</span>
+    </a>
+    {% endif %}
     <div class="container text-center p-4 mt-3">
         <div class="row justify-content-center justify-content-xl-evenly come-in">
             <div id="carouselExampleDark" class="col-12 col-md-8 col-lg-6 col-xl-5 come-in g-0 mt-3 carousel carousel-dark slide"

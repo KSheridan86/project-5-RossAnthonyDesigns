@@ -171,7 +171,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 # Stripe
-FREE_DELIVERY_THRESHOLD = 1000
+FREE_DELIVERY_THRESHOLD = 1
 STANDARD_DELIVERY_PERCENTAGE = 5
 STRIPE_CURRENCY = 'eur'
 STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')

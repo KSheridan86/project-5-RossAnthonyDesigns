@@ -102,6 +102,15 @@
             <div class="text-center mb-5 mt-4">
                 <a class="btn pay-now metal linear" href="{% url 'checkout' %}" aria-label="pay now button">Pay Now</a>
             </div>
+            <p class="text-danger text-center mt-5">
+                <i class="fas fa-exclamation-circle"></i>
+                <small><strong class="text-uppercase">Please note: </strong>Free delivery only available within the Republic of Ireland.<br />
+                    If you require delivery outside of the Republic of Ireland please 
+                    <strong class="text-uppercase">
+                        <a href="{% url 'artist' %}#contact-form">Contact me</a>
+                    </strong> for delivery cost.
+                </small>
+            </p>
         </div>
     </div>
 

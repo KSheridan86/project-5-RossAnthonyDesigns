@@ -33,7 +33,8 @@ ALLOWED_HOSTS = ["rossanthonydesigns.herokuapp.com",
                  "www.forgednature.ie",
                  "www.tech-connect.ie",
                  "tech-connect.ie",
-                 "8000-ksheridan86-project5ros-76fb1laquce.ws-eu105.gitpod.io"
+                 "8000-ksheridan86-project5ros-76fb1laquce.ws-eu105.gitpod.io",
+                 "8000-ksheridan86-project5ros-76fb1laquce.ws-eu107.gitpod.io"
                  ]
 
 

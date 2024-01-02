@@ -68,11 +68,10 @@
                         <div class="form-group come-in mt-3 mb-5">
                             {{form.phone_number}}
                         </div>
-                        <small class="form-text text-muted">
-                            If you require delivery outside of the<br>Republic of Ireland<br>
-                            <strong class="text-uppercase"><a href="{% url 'artist' %}#contact-form">Contact me</a></strong><br>for
-                            assistance
-                            and delivery costs.
+                        <small class="form-text text-danger">
+                            Free delivery only available to the<br>Republic of Ireland<br>
+                            for assistance and delivery costs <strong>outside</strong> of the <br />Republic of Ireland.<br />
+                            <strong class="text-uppercase"><a href="{% url 'artist' %}#contact-form">Contact me</a></strong><br>
                         </small>
                     </div>
 
@@ -94,7 +93,9 @@
                         <div class="form-group come-in mt-3 mb-3">
                             {{form.postcode}}
                         </div>
-
+                        <div class="form-group come-in mt-3 mb-3">
+                            {{form.country}}
+                        </div>
                     </div>
 
                     <h4 class="mt-4">Payment Details</h4>
